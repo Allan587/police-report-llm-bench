@@ -1,0 +1,12 @@
+models:
+  - name: llama3
+    provider: ollama
+    enabled: true
+
+  - name: gemma
+    provider: ollama
+    enabled: false
+
+  - name: falcon:7b
+    provider: ollama
+    enabled: false
