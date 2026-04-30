@@ -1,8 +1,0 @@
-# Data & utils
-pandas>=2.0.0
-pyyaml>=6.0
-requests>=2.30.0
-tqdm>=4.66.0
-
-# Opcional (If you want to validate HF lightning integration)
-# transformers==4.41.2
