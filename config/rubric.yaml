@@ -1,0 +1,40 @@
+rubric:
+  - id: data_fidelity
+    name: Fidelidad a los datos
+    weight: 0.20
+
+  - id: field_coverage
+    name: Cobertura de campos clave
+    weight: 0.15
+
+  - id: no_fake_people
+    name: No invención de personas
+    weight: 0.10
+
+  - id: no_fake_weapons
+    name: No invención de armas
+    weight: 0.10
+
+  - id: temporal_consistency
+    name: Consistencia temporal
+    weight: 0.10
+
+  - id: spatial_consistency
+    name: Consistencia espacial
+    weight: 0.10
+
+  - id: empty_fields
+    name: Respeto de campos vacíos
+    weight: 0.10
+
+  - id: crime_type
+    name: Coherencia del tipo de crimen
+    weight: 0.05
+
+  - id: formal_language
+    name: Lenguaje formal policial
+    weight: 0.05
+
+  - id: contradiction_check
+    name: Detección de contradicciones
+    weight: 0.05

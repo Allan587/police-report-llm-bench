@@ -1,12 +1,21 @@
 models:
-  - name: llama3
-    provider: ollama
-    enabled: true
-
-  - name: gemma
-    provider: ollama
+  - name: gemma_4
+    provider: huggingface
+    model_id: google/gemma-4-31B-it
     enabled: false
 
-  - name: falcon:7b
-    provider: ollama
+  - name: mistral
+    provider: huggingface
+    model_id: mistralai/Mistral-7B-Instruct-v0.3
     enabled: false
+
+  - name: llama
+    provider: huggingface
+    model_id: meta-llama/Llama-2-7b-chat-hf
+    enabled: false
+
+  - name: gpt-neox
+    provider: huggingface
+    model_id: EleutherAI/gpt-neox-20b
+    enabled: false
+  

@@ -1,0 +1,21 @@
+# Core Hugging Face
+transformers==4.41.2
+datasets==2.19.1
+accelerate==0.30.1
+
+# Deep Learning (GPU)
+torch>=2.2.0
+
+# Fine-tuning
+peft==0.11.1
+trl==0.8.6
+
+# Quantization
+bitsandbytes>=0.43.0
+
+# Data & utils
+pandas>=2.0.0
+pyyaml>=6.0
+requests>=2.30.0
+tqdm>=4.66.0
+scikit-learn>=1.4.0
