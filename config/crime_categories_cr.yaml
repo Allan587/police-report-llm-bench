@@ -1,0 +1,172 @@
+categories:
+  preserve_original:
+    description: >
+      Mantener la descripción original cuando los datos no permiten una clasificación jurídica clara
+      o cuando el crimen no debe reinterpretarse.
+    use_when:
+      - Datos insuficientes.
+      - Código o descripción desconocida.
+      - Descripción técnica difícil de adaptar al contexto costarricense.
+      - No hay evidencia de violencia, fuerza, intimidación, ingreso forzado o arma.
+    output_rule: >
+      Conservar el tipo original del incidente o mencionarlo como descripción registrada.
+
+  possible_hurto:
+    description: >
+      Posible hurto, sustracción o apoderamiento sin violencia, intimidación ni arma reportada.
+    compatible_crimes:
+      - VEHICLE - STOLEN
+      - BIKE - STOLEN
+      - THEFT PLAIN
+      - THEFT PLAIN - PETTY
+      - THEFT-GRAND
+      - SHOPLIFTING
+      - TILL TAP
+      - THEFT FROM MOTOR VEHICLE
+      - THEFT FROM PERSON - ATTEMPT
+      - DEFRAUDING INNKEEPER/THEFT OF SERVICES
+    required_conditions:
+      - no_weapon_reported
+      - no_violence_reported
+      - no_intimidation_reported
+    output_rule: >
+      Puede redactarse como posible hurto, sustracción o apoderamiento si no hay datos de violencia,
+      intimidación o arma. No afirmar robo con violencia.
+
+  possible_robo:
+    description: >
+      Posible robo cuando el tipo de crimen o los datos disponibles indican violencia, intimidación,
+      amenaza, fuerza o arma.
+    compatible_crimes:
+      - ROBBERY
+      - ATTEMPTED ROBBERY
+      - ASSAULT WITH DEADLY WEAPON, AGGRAVATED ASSAULT
+      - BRANDISH WEAPON
+      - CRIMINAL THREATS - NO WEAPON DISPLAYED
+      - EXTORTION
+    required_conditions:
+      - violence_or_intimidation_or_force_or_weapon_reported
+    output_rule: >
+      Puede orientarse como posible robo, amenaza o hecho violento únicamente si los datos lo respaldan.
+      No convertir stolen, theft o shoplifting en robo violento.
+
+  possible_ingreso_no_autorizado:
+    description: >
+      Posible ingreso no autorizado, permanencia indebida o sustracción desde inmueble o vehículo.
+    compatible_crimes:
+      - BURGLARY
+      - BURGLARY FROM VEHICLE
+      - BURGLARY FROM VEHICLE - ATTEMPTED
+      - TRESPASSING
+    output_rule: >
+      Redactar como posible ingreso no autorizado, permanencia no autorizada o sustracción desde
+      inmueble/vehículo. No afirmar violencia, amenaza o arma si no aparecen en los datos.
+
+  possible_dano:
+    description: >
+      Posible daño a la propiedad.
+    compatible_crimes:
+      - VANDALISM
+      - ARSON
+    output_rule: >
+      Enfocar como posible daño a la propiedad, incendio o afectación material sin inventar responsables,
+      intención, monto, víctimas o mecanismo.
+
+  possible_agresion:
+    description: >
+      Posible agresión o afectación contra una persona.
+    compatible_crimes:
+      - INTIMATE PARTNER - SIMPLE ASSAULT
+      - INTIMATE PARTNER - AGGRAVATED ASSAULT
+      - BATTERY - SIMPLE ASSAULT
+      - BATTERY POLICE
+      - OTHER ASSAULT
+      - CHILD ABUSE (PHYSICAL) - SIMPLE ASSAULT
+      - ASSAULT WITH DEADLY WEAPON, AGGRAVATED ASSAULT
+    output_rule: >
+      Enfocar como posible agresión o afectación contra una persona. No inventar lesiones, arma,
+      gravedad ni responsables si no están registrados.
+
+  possible_amenaza:
+    description: >
+      Posible amenaza, intimidación o conducta de peligro.
+    compatible_crimes:
+      - CRIMINAL THREATS - NO WEAPON DISPLAYED
+      - BRANDISH WEAPON
+      - BOMB SCARE
+      - DISCHARGE FIREARMS/SHOTS FIRED
+      - SHOTS FIRED AT INHABITED DWELLING
+      - SHOTS FIRED AT MOVING VEHICLE, TRAIN OR AIRCRAFT
+    output_rule: >
+      Enfocar como amenaza, intimidación o conducta de peligro solo si el tipo de crimen lo respalda.
+      No agregar víctimas, lesiones ni armas adicionales.
+
+  possible_fraude:
+    description: >
+      Posible fraude, engaño, falsificación, apropiación indebida o afectación patrimonial no violenta.
+    compatible_crimes:
+      - THEFT OF IDENTITY
+      - BUNCO
+      - EMBEZZLEMENT
+      - DOCUMENT FORGERY
+      - UNAUTHORIZED COMPUTER ACCESS
+      - DEFRAUDING INNKEEPER/THEFT OF SERVICES
+    output_rule: >
+      Enfocar como posible fraude, engaño, falsificación, apropiación indebida o afectación patrimonial.
+      No inventar montos, mecanismos, cuentas, documentos específicos ni personas involucradas.
+
+  possible_sexual:
+    description: >
+      Posible delito sexual o conducta sexual ilícita.
+    compatible_crimes:
+      - RAPE
+      - ORAL COPULATION
+      - SEXUAL PENETRATION
+      - SEXUAL UNLAWFUL
+      - INDECENT EXPOSURE
+      - LETTERS, LEWD
+      - PIMPING
+      - PANDERING
+      - CRM AGNST CHLD
+    output_rule: >
+      Conservar una redacción prudente y técnica. No agregar detalles explícitos, lesiones,
+      circunstancias no registradas ni identidad de personas.
+
+  possible_judicial_order:
+    description: >
+      Posible incumplimiento de orden judicial, desacato o resistencia.
+    compatible_crimes:
+      - VIOLATION OF COURT ORDER
+      - VIOLATION OF RESTRAINING ORDER
+      - CONTEMPT OF COURT
+      - RESISTING ARREST
+      - SEX OFFENDER REGISTRAND OUT OF COMPILANCE
+      - FAILURE TO YIELD
+    output_rule: >
+      Enfocar como incumplimiento, desacato, resistencia o infracción administrativa/judicial según el
+      dato registrado. No inventar audiencia, autoridad específica ni resolución judicial.
+
+  miscellaneous:
+    description: >
+      Delitos o categorías misceláneas que deben conservarse con especial prudencia.
+    compatible_crimes:
+      - OTHER MISCELLANEOUS CRIME
+      - DISTURBING THE PEACE
+      - CHILD STEALING
+      - CHILD NEGLECT
+      - KIDNAPPING
+    output_rule: >
+      Conservar la descripción original si no hay información suficiente para una clasificación más clara.
+
+global_rules:
+  - La clasificación jurídica es orientativa, no definitiva.
+  - La fuente principal siempre son los datos originales del incidente.
+  - No recalificar automáticamente delitos por traducción literal.
+  - Traducir o parafrasear un tipo de crimen no es alucinación si conserva el significado factual.
+  - No convertir theft, stolen o shoplifting en robo violento si no hay violencia, fuerza, intimidación o arma.
+  - No convertir burglary from vehicle en vehículo robado.
+  - No convertir robbery en hurto simple.
+  - Unknown crime code debe conservarse como dato original.
+  - Not specified debe conservarse si aparece como valor técnico.
+  - No inventar violencia, fuerza, intimidación, arma, sospechosos, víctimas, testigos ni lesiones.
+  - Si el dato es ambiguo, usar expresiones como "según los datos disponibles" o conservar la descripción original.

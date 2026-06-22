@@ -1,21 +1,22 @@
 models:
-  - name: gemma_4
-    provider: huggingface
-    model_id: google/gemma-4-31B-it
-    enabled: false
+  - name: gemma_2b 
+    provider: huggingface 
+    model_id: google/gemma-2-2b-it 
+    enabled: true
 
-  - name: mistral
-    provider: huggingface
-    model_id: mistralai/Mistral-7B-Instruct-v0.3
-    enabled: false
+  - name: mistral 
+    provider: huggingface 
+    model_id: mistralai/Mistral-7B-Instruct-v0.3 
+    enabled: true
 
-  - name: llama
+  - name: llama_3_2
     provider: huggingface
-    model_id: meta-llama/Llama-2-7b-chat-hf
-    enabled: false
+    model_id: meta-llama/Llama-3.2-3B-Instruct
+    enabled: true
 
-  - name: gpt-neox
-    provider: huggingface
-    model_id: EleutherAI/gpt-neox-20b
+  # This modele was discarted because its hallucination is to high
+  - name: phi_3 
+    provider: huggingface 
+    model_id: microsoft/Phi-3-mini-4k-instruct 
     enabled: false
   

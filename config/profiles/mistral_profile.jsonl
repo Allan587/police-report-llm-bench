@@ -1,0 +1,52 @@
+{
+  "model_name": "mistral",
+
+  "strengths": [
+    "Excelente estructura narrativa.",
+    "Lenguaje institucional muy natural.",
+    "Integra los datos de forma fluida.",
+    "Produce reportes cercanos al estilo humano.",
+    "Maneja adecuadamente registros desconocidos.",
+    "Excelente legibilidad y fluidez narrativa.",
+    "Buen tratamiento de múltiples códigos de delito.",
+    "Buena integración de múltiples delitos.",
+    "Maneja correctamente códigos desconocidos en la mayoría de los casos.",
+    "Genera reportes cercanos al estilo policial."
+  ],
+
+  "weaknesses": [
+    "Tiende a sobreinterpretar algunos hechos.",
+    "Puede transformar parcialmente el incidente original.",
+    "Parafrasea demasiado algunos elementos.",
+    "Tiende a reinterpretar valores vacíos.",
+    "Puede alterar fechas originales.",
+    "Tiende a agregar acciones posteriores al incidente.",
+    "Realiza algunas reinterpretaciones innecesarias.",
+    "A veces omite atributos de la víctima."
+  ],
+
+  "common_hallucinations": [
+    "Reinterpretación del hecho registrado.",
+    "Transformación parcial del tipo de incidente.",
+    "Información contextual no presente en los datos.",
+    "Investigaciones en curso.",
+    "Solicitudes de colaboración ciudadana.",
+    "Interpretación incorrecta de edad 0.",
+    "Ausencia de testigos no registrada.",
+    "Atribución de acciones a responsables no registrados."
+  ]
+
+  "fine_tuning_priorities": [
+    "Reducir la sobreinterpretación.",
+    "Aumentar la fidelidad factual.",
+    "Mantener la naturalidad actual.",
+    "Controlar el parafraseo excesivo.",
+    "Preservar exactamente fechas y valores especiales.",
+    "Evitar convertir campos vacíos en conclusiones.",
+    "Eliminar acciones futuras e investigativas.",
+    "Reducir errores temporales (cambios de las fechas originales).",
+    "Conservar todos los atributos de la víctima.",
+    "Mantener la naturalidad actual.",
+    "Evitar reinterpretaciones del tipo de delito."
+  ]
+}

@@ -1,0 +1,48 @@
+{
+  "model_name": "gemma",
+
+  "strengths": [
+    "Muy pocas invenciones de personas o armas.",
+    "Comportamiento conservador.",
+    "Buen manejo de códigos desconocidos.",
+    "Buen desempeño en delitos patrimoniales repetitivos.",
+    "Manejo consistente de códigos desconocidos.",
+    "Alta fidelidad factual.",
+    "Pocas alucinaciones severas.",
+    "Conserva correctamente múltiples códigos de delito.",
+    "Narrativa cada vez más estable."
+  ],
+
+  "weaknesses": [
+    "Errores frecuentes con fechas.",
+    "Narrativa menos natural.",
+    "Cierres rígidos y repetitivos.",
+    "Puede omitir algunos datos relevantes.",
+    "Puede omitir algunos campos secundarios.",
+    "Puede interpretar incorrectamente valores especiales como victim_age=0.",
+    "Tiende a agregar información administrativa no solicitada.",
+    "Narrativa algo rígida.",
+    "Puede dejar plantillas o descripciones parciales no respaldadas por los datos."
+  ],
+
+  "common_hallucinations": [
+    "Modus operandi inexistente.",
+    "Atribución de información a responsables no registrados.",
+    "Información contextual no proporcionada.",
+    "Interpretar edad 0 como menor de edad.",
+    "Añadir seguimiento posterior al caso.",
+    "Inferencias leves sobre ausencia de información.",
+    "Marcadores o descripciones incompletas de objetos inexistentes."
+  ],
+
+  "fine_tuning_priorities": [
+    "Corregir errores temporales.",
+    "Mejorar la estructura narrativa.",
+    "Mantener la fidelidad factual.",
+    "Aumentar la naturalidad del lenguaje.",
+    "Reducir omisiones de información disponible.",
+    "Mejorar manejo de valores especiales.",
+    "Eliminar referencias a investigaciones posteriores.",
+    "Aumentar naturalidad narrativa."
+  ]
+}

@@ -4,13 +4,17 @@ outputs/*
 results/
 reports/
 
+#fine-tuning 
+!finetuning/checkpoint/.gitkeep
+!finetuning/rejected_reports/.gitkeep
+!finetuning/approved_reports/.gitkeep
+
 # Local models
 models/*
 !models/.gitkeep
 
 # Data sensitive / local
 data/raw/
-data/private/
 *.jsonl.bak
 
 # Python
