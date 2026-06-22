@@ -1,0 +1,12 @@
+{
+    "run_id": "2026-05-29_10-44-17_95887543",
+    "start_index": 1,
+    "limit": 1,
+    "models": [
+        {
+            "name": "gemma_2b",
+            "model_id": "google/gemma-2-2b-it",
+            "enabled": true
+        }
+    ]
+}

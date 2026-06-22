@@ -1,0 +1,13 @@
+{
+    "run_id": "2026-05-22_08-38-45_2e47bb55",
+    "models": [
+        {
+            "model_name": "mistral",
+            "total_reports": 1,
+            "average_score": 4.05,
+            "status_counts": {
+                "apto": 1
+            }
+        }
+    ]
+}

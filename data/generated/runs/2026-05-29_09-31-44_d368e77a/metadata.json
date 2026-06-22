@@ -1,0 +1,12 @@
+{
+    "run_id": "2026-05-29_09-31-44_d368e77a",
+    "start_index": 0,
+    "limit": 1,
+    "models": [
+        {
+            "name": "mistral",
+            "model_id": "mistralai/Mistral-7B-Instruct-v0.3",
+            "enabled": true
+        }
+    ]
+}

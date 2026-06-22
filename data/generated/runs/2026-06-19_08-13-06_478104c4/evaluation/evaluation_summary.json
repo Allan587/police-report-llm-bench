@@ -1,0 +1,35 @@
+{
+    "run_id": "2026-06-19_08-13-06_478104c4",
+    "models": [
+        {
+            "model_name": "gemma_2b",
+            "total_reports": 20,
+            "average_score": 3.77,
+            "status_counts": {
+                "apto": 9,
+                "requiere_revision": 2,
+                "no_apto": 9
+            }
+        },
+        {
+            "model_name": "mistral",
+            "total_reports": 20,
+            "average_score": 3.72,
+            "status_counts": {
+                "no_apto": 10,
+                "apto": 6,
+                "requiere_revision": 4
+            }
+        },
+        {
+            "model_name": "llama_3_2",
+            "total_reports": 20,
+            "average_score": 3.74,
+            "status_counts": {
+                "apto": 4,
+                "requiere_revision": 2,
+                "no_apto": 14
+            }
+        }
+    ]
+}

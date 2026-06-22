@@ -1,0 +1,29 @@
+{
+    "run_id": "2026-05-29_10-27-41_2bb0be3a",
+    "models": [
+        {
+            "model_name": "zephyr",
+            "total_reports": 1,
+            "average_score": 5.0,
+            "status_counts": {
+                "apto": 1
+            }
+        },
+        {
+            "model_name": "phi_3",
+            "total_reports": 1,
+            "average_score": 5.0,
+            "status_counts": {
+                "apto": 1
+            }
+        },
+        {
+            "model_name": "mistral",
+            "total_reports": 1,
+            "average_score": 5.0,
+            "status_counts": {
+                "apto": 1
+            }
+        }
+    ]
+}

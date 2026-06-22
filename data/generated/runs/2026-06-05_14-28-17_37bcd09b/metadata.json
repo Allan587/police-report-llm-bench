@@ -1,0 +1,22 @@
+{
+    "run_id": "2026-06-05_14-28-17_37bcd09b",
+    "start_index": 3,
+    "limit": 1,
+    "models": [
+        {
+            "name": "gemma_2b",
+            "model_id": "google/gemma-2-2b-it",
+            "enabled": true
+        },
+        {
+            "name": "mistral",
+            "model_id": "mistralai/Mistral-7B-Instruct-v0.3",
+            "enabled": true
+        },
+        {
+            "name": "llama_3_2",
+            "model_id": "meta-llama/Llama-3.2-3B-Instruct",
+            "enabled": true
+        }
+    ]
+}

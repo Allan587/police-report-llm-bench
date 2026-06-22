@@ -1,0 +1,29 @@
+{
+    "run_id": "2026-05-29_14-29-39_70664d05",
+    "models": [
+        {
+            "model_name": "gemma_2b",
+            "total_reports": 1,
+            "average_score": 2.5,
+            "status_counts": {
+                "no_apto": 1
+            }
+        },
+        {
+            "model_name": "mistral",
+            "total_reports": 1,
+            "average_score": 4.4,
+            "status_counts": {
+                "apto": 1
+            }
+        },
+        {
+            "model_name": "llama_3_2",
+            "total_reports": 1,
+            "average_score": 2.7,
+            "status_counts": {
+                "no_apto": 1
+            }
+        }
+    ]
+}
