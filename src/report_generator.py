@@ -178,9 +178,7 @@ def generate_reports(start_index: int = 0, end_index: int = 0) -> None:
                 "model_name": model_name,
                 "model_id": model_id,
                 "statement_index": statement_index,
-                "incident_index": incident_index,
-                "statement_record": statement_record,
-                "prompt": prompt,
+                "incident_index": incident_index, 
                 "draft_report": result,
             })
 
@@ -214,4 +212,4 @@ if __name__ == "__main__":
 
     args = parser.parse_args()
 
-    generate_reports(start_index=110,end_index=115) 
+    generate_reports(start_index=5,end_index=9) 
