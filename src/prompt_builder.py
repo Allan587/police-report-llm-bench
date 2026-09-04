@@ -39,34 +39,3 @@ Redacta un cierre breve, formal y neutral.
 Clasificación del delito:
 Indica la clasificación orientativa del delito y una justificación breve.
 """.strip()
-
-''' 
-Adapt build_finetuning_gereration_prompt to the current workflow
-
-def build_finetuning_generation_prompt(
-    incident: Dict[str, Any]
-) -> str:
-
-    incident_data = format_incident_data(
-        incident,
-        include_status=False,
-    )
-
-    return f"""
-DATOS DEL INCIDENTE:
-{incident_data}
-
-TAREA:
-
-Redacta únicamente la narrativa y el cierre del reporte policial.
-
-REQUISITOS:
-- Redacta en español.
-- Mantén fidelidad total a los datos.
-- No inventes personas, armas ni hechos.
-- Conserva valores técnicos como "Not specified".
-- No hagas recomendaciones.
-- No agregues acciones futuras.
-- No hagas conclusiones legales definitivas.
-""".strip()
-'''
