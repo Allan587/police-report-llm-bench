@@ -1,0 +1,67 @@
+{
+"statement_index": 2,
+"reviewers": [
+"chatgpt",
+"gemini",
+"grok"
+],
+"classification_consensus": {
+"reviewer_classifications": {
+"chatgpt": "Hurto",
+"gemini": "Hurto / Hurto de equipaje o bienes en vehículo",
+"grok": "Hurto (posiblemente agravado por tratarse de bienes de vehículo dejado en lugar de acceso público)"
+},
+"final_category": "Hurto",
+"consensus": "unanimous",
+"final_justification": "Los tres revisores coinciden en orientar el hecho hacia hurto. Esta conclusión puede reconstruirse directamente desde la declaración: se describe el ingreso sin autorización a un vehículo y la sustracción de bienes de su interior, sin que se indiquen violencia, amenazas, intimidación ni fuerza sobre las cosas. La posible modalidad agravada sugerida por algunos revisores no se adopta porque requiere una determinación jurídica adicional que no resulta necesaria para establecer la categoría general respaldada por los hechos."
+},
+"selected_elements": {
+"factuality": [
+"La persona denunciante tenía 47 años y era de sexo masculino.",
+"El hecho fue descubierto el 08/02/2020 cerca de las 18:00 horas.",
+"El incidente ocurrió en una parada o terminal de autobús ubicada en 1000 S FLOWER ST, dentro del área de Central.",
+"Se ingresó sin autorización a un vehículo y se sustrajeron bienes de su interior."
+],
+"narrative_structure": [
+"Se conserva una narración cronológica, objetiva, institucional y en tercera persona.",
+"El cierre se limita a dejar constancia de los hechos sin incorporar investigaciones, solicitudes policiales ni acciones futuras."
+],
+"classification": [
+"La declaración sustenta la categoría general de hurto por la sustracción de bienes.",
+"No se incorporan fuerza, violencia, intimidación ni otros elementos que no estén presentes en la declaración."
+],
+"discarded_elements": [
+"La clasificación de robo propuesta por Gemma y Mistral.",
+"La ambigüedad entre robo y hurto mantenida por Llama.",
+"Las referencias de Mistral a autores desconocidos, investigación, identificación de responsables y posibles testigos.",
+"Las afirmaciones de Gemma y Llama sobre investigaciones futuras o en trámite.",
+"Los comentarios meta de Llama sobre información ausente y sobre la forma de adquisición de los bienes.",
+"Las referencias a artículos específicos del Código Penal introducidas por algunos outputs o revisores.",
+"La posible modalidad agravada sugerida por algunos revisores, al no ser necesaria para la clasificación general respaldada directamente por la declaración."
+]
+},
+"final_report": {
+"narrative": "Una persona denunciante, de 47 años y de sexo masculino, relató que el 08/02/2020, cerca de las 18:00 horas, descubrió que habían ingresado sin autorización a un vehículo y sustraído bienes de su interior en una parada o terminal de autobús ubicada en 1000 S FLOWER ST, dentro del área de Central.",
+"closing": "Se deja constancia de los hechos relatados por la persona denunciante.",
+"crime_classification": {
+"category": "Hurto",
+"justification": "La declaración describe el ingreso sin autorización a un vehículo y la sustracción de bienes de su interior. Los hechos relatados sustentan orientativamente la categoría de hurto, sin que la declaración aporte elementos de fuerza sobre las cosas, violencia o intimidación que permitan fundamentar una clasificación distinta."
+}
+},
+"quality_control": {
+"factual_consistency": "pass",
+"unsupported_information": "pass",
+"relevant_information_preserved": "pass",
+"temporal_consistency": "pass",
+"spatial_consistency": "pass",
+"third_person": "pass",
+"institutional_language": "pass",
+"classification_supported": "pass",
+"narrative_classification_consistency": "pass",
+"format_valid": "pass"
+},
+"decision": {
+"status": "approved",
+"reason": "La declaración permite construir un reporte factual y coherente sin incorporar información externa. Los hechos relevantes se conservan y la clasificación orientativa de hurto puede sustentarse directamente desde la declaración."
+}
+}

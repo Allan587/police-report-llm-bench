@@ -1,0 +1,104 @@
+{
+  "reviewer": "grok",
+  "model_reviews": [
+    {
+      "model_name": "gemma",
+      "factuality": {
+        "status": "pass",
+        "findings": [
+          "Conservó correctamente fecha (08/02/2020), hora aproximada (18:00), ubicación (1000 S FLOWER ST, área de Central, parada o terminal de autobús), edad y sexo del denunciante, ingreso sin autorización al vehículo y sustracción de bienes del interior."
+        ]
+      },
+      "hallucinations": [
+        "Agregó en el cierre que se procede a la investigación correspondiente, acción no mencionada en la declaración."
+      ],
+      "omissions": [],
+      "narrative_quality": {
+        "status": "minor_issues",
+        "findings": [
+          "Lenguaje institucional y objetivo en la narrativa.",
+          "Error menor de espaciado ('áreade')."
+        ]
+      },
+      "crime_classification": {
+        "model_category": "Robo",
+        "assessment": "incorrect",
+        "proposed_category_cr": "Hurto (posiblemente agravado por tratarse de bienes de vehículo dejado en lugar de acceso público)",
+        "justification": "La declaración describe ingreso sin autorización y sustracción de bienes del interior del vehículo, sin mención de violencia, intimidación ni fuerza en las cosas. En el Código Penal de Costa Rica (arts. 208 y 209) ello corresponde a hurto, no a robo."
+      },
+      "useful_elements": [
+        "Narrativa fiel a los hechos esenciales y datos temporales/espaciales.",
+        "Estructura clara de narrativa + cierre + clasificación."
+      ]
+    },
+    {
+      "model_name": "mistral",
+      "factuality": {
+        "status": "minor_issues",
+        "findings": [
+          "Conservó fecha, hora, ubicación y hechos principales de ingreso sin autorización y sustracción.",
+          "Introdujo 'al menos una persona desconocida' y 'su vehículo' sin respaldo explícito de propiedad o número de autores en la declaración."
+        ]
+      },
+      "hallucinations": [
+        "Cierre solicita a los agentes investigar, identificar responsables y pide a testigos información; ninguna de estas acciones aparece en la declaración.",
+        "Cita artículo 309 del Código Penal (inexistente o incorrecto para el tipo)."
+      ],
+      "omissions": [],
+      "narrative_quality": {
+        "status": "minor_issues",
+        "findings": [
+          "Narrativa relativamente clara y en tercera persona.",
+          "Problemas menores de espaciado."
+        ]
+      },
+      "crime_classification": {
+        "model_category": "robo (artículo 309 del Código Penal)",
+        "assessment": "incorrect",
+        "proposed_category_cr": "Hurto (posiblemente agravado por vehículo en lugar de acceso público)",
+        "justification": "No se describe fuerza en las cosas, violencia ni intimidación. La clasificación correcta orientativa es hurto según los hechos de la declaración."
+      },
+      "useful_elements": [
+        "Conservación de los datos temporales y de ubicación."
+      ]
+    },
+    {
+      "model_name": "llama",
+      "factuality": {
+        "status": "pass",
+        "findings": [
+          "Conservó fecha, hora, ubicación y hechos de ingreso sin autorización y sustracción de bienes."
+        ]
+      },
+      "hallucinations": [
+        "Agregó comentario meta: 'No se detallan los detalles específicos sobre el vehículo, los bienes sustraídos ni la identidad de las personas involucradas.'",
+        "Cierre indica que se está en trámite la investigación."
+      ],
+      "omissions": [],
+      "narrative_quality": {
+        "status": "minor_issues",
+        "findings": [
+          "Incluye comentarios meta sobre información ausente que no aportan a una narrativa policial objetiva.",
+          "Lenguaje mayoritariamente institucional."
+        ]
+      },
+      "crime_classification": {
+        "model_category": "Robo o hurto",
+        "assessment": "partially_correct",
+        "proposed_category_cr": "Hurto (posiblemente agravado)",
+        "justification": "Reconoce la incertidumbre pero justifica incorrectamente con la ausencia de compensación económica; el elemento decisivo es la ausencia de fuerza/violencia/intimidación."
+      },
+      "useful_elements": [
+        "Reconocimiento de la falta de detalles específicos sobre mecanismo y bienes."
+      ]
+    }
+  ],
+  "proposed_ideal_report": {
+    "narrative": "La persona denunciante, de 47 años y de sexo masculino, relató que el 08/02/2020, cerca de las 18:00 horas, descubrió que habían ingresado sin autorización a un vehículo y sustraído bienes de su interior en una parada o terminal de autobús ubicada en 1000 S FLOWER ST, dentro del área de Central.",
+    "closing": "Se recibe la denuncia correspondiente.",
+    "crime_classification": {
+      "category": "Hurto (posiblemente agravado por tratarse de bienes sustraídos de vehículo dejado en lugar de acceso público)",
+      "justification": "Los hechos describen apoderamiento ilegítimo de bienes del interior de un vehículo sin mención de violencia, intimidación ni fuerza en las cosas. Conforme al Código Penal de Costa Rica (arts. 208 y 209), corresponde a hurto; el inciso de vehículos en vía pública o lugares de acceso público puede configurar agravante."
+    }
+  }
+}

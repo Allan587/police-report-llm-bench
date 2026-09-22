@@ -1,0 +1,70 @@
+{
+"statement_index": 6,
+"reviewers": [
+"chatgpt",
+"gemini",
+"grok"
+],
+"classification_consensus": {
+"reviewer_classifications": {
+"chatgpt": "Hurto",
+"gemini": "Hurto simple",
+"grok": "hurto"
+},
+"final_category": "Hurto",
+"consensus": "unanimous",
+"final_justification": "La declaración describe que una persona tomó mercadería de un establecimiento y salió con ella sin realizar el pago correspondiente. No se describen violencia o intimidación sobre personas ni fuerza sobre las cosas, por lo que los hechos permiten orientar la clasificación hacia hurto."
+},
+"selected_elements": {
+"factuality": [
+"Fecha del hecho: 10/03/2020.",
+"Hora aproximada: 20:37 horas.",
+"Ubicación: tienda de ropa en 14000 RIVERSIDE DR, área de Van Nuys.",
+"La persona denunciante tenía 19 años y era de sexo masculino.",
+"La persona denunciante observó a otra persona tomar mercadería del establecimiento y salir con ella sin realizar el pago correspondiente."
+],
+"narrative_structure": [
+"Narración cronológica y objetiva en tercera persona.",
+"Conservación de los datos temporales, espaciales y demográficos expresamente proporcionados.",
+"Descripción neutral del apoderamiento sin introducir anticipadamente una calificación jurídica en la narrativa."
+],
+"classification": [
+"El hecho positivo que sustenta la clasificación es la toma de mercadería y la salida del establecimiento sin realizar el pago.",
+"La declaración no describe violencia, intimidación ni fuerza sobre las cosas.",
+"Los tres revisores orientan finalmente los hechos hacia hurto, aunque utilizan las denominaciones Hurto y Hurto simple."
+],
+"discarded_elements": [
+"Clasificación de Gemma como robo simple.",
+"Uso del término 'robado' por Gemma dentro de la narrativa.",
+"Investigación en curso agregada por Gemma.",
+"Número de expediente ficticio y solicitud a potenciales testigos agregados por Mistral.",
+"Caracterización de la persona denunciante de 19 años como menor de edad realizada por Llama.",
+"Afirmaciones de Llama sobre ausencia de datos de la persona sospechosa o su destino posterior.",
+"Investigación en trámite u otras actuaciones posteriores no descritas en la declaración."
+]
+},
+"final_report": {
+"narrative": "El 10/03/2020, aproximadamente a las 20:37 horas, en una tienda de ropa ubicada en 14000 RIVERSIDE DR, dentro del área de Van Nuys, la persona denunciante, de 19 años y sexo masculino, observó a una persona tomar mercadería del establecimiento y salir con ella sin realizar el pago correspondiente.",
+"closing": "Se deja constancia de los hechos descritos en la declaración.",
+"crime_classification": {
+"category": "Hurto",
+"justification": "La declaración describe el apoderamiento de mercadería mediante su toma y posterior salida del establecimiento sin realizar el pago correspondiente, sin referir violencia o intimidación sobre personas ni fuerza sobre las cosas, por lo que los hechos se orientan hacia hurto."
+}
+},
+"quality_control": {
+"factual_consistency": "pass",
+"unsupported_information": "pass",
+"relevant_information_preserved": "pass",
+"temporal_consistency": "pass",
+"spatial_consistency": "pass",
+"third_person": "pass",
+"institutional_language": "pass",
+"classification_supported": "pass",
+"narrative_classification_consistency": "pass",
+"format_valid": "pass"
+},
+"decision": {
+"status": "approved",
+"reason": "La declaración contiene información suficiente para construir un reporte factual y coherente. La clasificación se sustenta directamente en la toma de mercadería y salida sin pago, sin que la declaración describa elementos de violencia, intimidación o fuerza sobre las cosas."
+}
+}

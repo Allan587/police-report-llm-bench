@@ -1,0 +1,74 @@
+{
+"statement_index": 1,
+"reviewers": [
+"chatgpt",
+"gemini",
+"grok"
+],
+"classification_consensus": {
+"reviewer_classifications": {
+"chatgpt": "Robo simple",
+"gemini": "Robo agravado",
+"grok": "Robo (con intimidación sobre las personas)"
+},
+"final_category": "Robo simple",
+"consensus": "disagreement",
+"final_justification": "La declaración describe un apoderamiento del vehículo obtenido mediante intimidación directa: una persona exigió las llaves y advirtió a la persona afectada que la golpearía si se negaba, tras lo cual esta entregó las llaves y la otra persona se llevó el vehículo. Estos hechos permiten sustentar robo por intimidación sobre la persona. La declaración no aporta una circunstancia adicional de agravación que permita elevar de manera suficientemente fundada la clasificación a robo agravado, por lo que la categoría orientativa final es robo simple."
+},
+"selected_elements": {
+"factuality": [
+"Se conservan la fecha 01/03/2020 y la hora aproximada de las 21:30 horas.",
+"Se conserva la ubicación 1900 S LONGWOOD AV, dentro del área de Wilshire.",
+"Se conserva que la persona afectada es de sexo masculino.",
+"Se conserva la exigencia de entregar las llaves.",
+"Se conserva expresamente la amenaza de golpear a la persona afectada si se negaba.",
+"Se conserva que, ante la intimidación, la persona afectada entregó las llaves y la otra persona se llevó el vehículo."
+],
+"narrative_structure": [
+"Se mantiene la secuencia causal entre exigencia, amenaza, entrega de las llaves y apoderamiento del vehículo.",
+"Se utiliza tercera persona y lenguaje institucional y objetivo.",
+"Se conserva expresamente la amenaza concreta porque constituye un hecho relevante para comprender la clasificación.",
+"Se eliminan actuaciones policiales futuras y comentarios meta no contenidos en la declaración."
+],
+"classification": [
+"La amenaza expresa de golpear a la persona afectada constituye el elemento de intimidación que permite diferenciar el hecho de un hurto.",
+"La intimidación está directamente vinculada con la obtención de las llaves y el posterior apoderamiento del vehículo.",
+"La declaración permite sustentar robo, pero no aporta por sí misma una circunstancia adicional que fundamente de manera suficiente una modalidad agravada.",
+"Se adopta Robo simple como categoría orientativa final."
+],
+"discarded_elements": [
+"La afirmación de Gemma de que se procede a una investigación correspondiente.",
+"Las solicitudes de Mistral para investigar el caso e identificar a la persona responsable.",
+"La identificación realizada por Llama de la persona afectada como titular del vehículo.",
+"Las observaciones de Llama sobre la ausencia de nombres o sobre la relación entre las personas.",
+"La afirmación de Llama de que concluyó la recopilación de información relevante.",
+"La generalización de la amenaza concreta a una referencia exclusivamente genérica a intimidación cuando ello elimina un hecho relevante.",
+"Las actuaciones de remisión o investigación incorporadas en algunos reportes ideales.",
+"La propuesta de Robo agravado sustentada únicamente en la existencia de intimidación."
+]
+},
+"final_report": {
+"narrative": "El 01/03/2020, aproximadamente a las 21:30 horas, una persona afectada de sexo masculino se encontraba junto a un vehículo en la vía pública, en 1900 S LONGWOOD AV, dentro del área de Wilshire, cuando una persona se le acercó y le exigió entregar las llaves, advirtiéndole que lo golpearía si se negaba. Ante la intimidación, la persona afectada entregó las llaves y la otra persona se llevó el vehículo.",
+"closing": "No se aportaron más detalles sobre las circunstancias del hecho.",
+"crime_classification": {
+"category": "Robo simple",
+"justification": "El apoderamiento del vehículo se produjo mediante intimidación directa contra la persona afectada, concretamente mediante la amenaza de golpearla si se negaba a entregar las llaves. La declaración no describe circunstancias adicionales que permitan fundamentar de manera suficiente una modalidad agravada."
+}
+},
+"quality_control": {
+"factual_consistency": "pass",
+"unsupported_information": "pass",
+"relevant_information_preserved": "pass",
+"temporal_consistency": "pass",
+"spatial_consistency": "pass",
+"third_person": "pass",
+"institutional_language": "pass",
+"classification_supported": "pass",
+"narrative_classification_consistency": "pass",
+"format_valid": "pass"
+},
+"decision": {
+"status": "approved",
+"reason": "Aunque existe desacuerdo entre los revisores respecto de la modalidad del robo, la discrepancia puede resolverse a partir de los hechos de la declaración. La amenaza expresa sustenta la existencia de intimidación y, por tanto, de robo, mientras que no se describe una circunstancia adicional que permita fundamentar suficientemente una modalidad agravada. El caso puede utilizarse como referencia de entrenamiento con la clasificación orientativa de Robo simple."
+}
+}

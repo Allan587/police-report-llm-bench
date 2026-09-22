@@ -1,0 +1,121 @@
+{
+  "reviewer": "chatgpt",
+  "model_reviews": [
+    {
+      "model_name": "gemma",
+      "factuality": {
+        "status": "minor_issues",
+        "findings": [
+          "Conservó correctamente la fecha, hora aproximada, ubicación, exigencia de las llaves, intimidación y apoderamiento del vehículo.",
+          "La expresión 'amenaza de agresión física' representa adecuadamente la advertencia de que la víctima sería golpeada.",
+          "El cierre afirma que se procede a una investigación, acción no indicada en la declaración."
+        ]
+      },
+      "hallucinations": [
+        "Indicó que se procede a la investigación correspondiente sin respaldo en la declaración."
+      ],
+      "omissions": [],
+      "narrative_quality": {
+        "status": "minor_issues",
+        "findings": [
+          "La narrativa es clara, institucional y conserva la secuencia causal entre amenaza, entrega de llaves y apoderamiento.",
+          "Presenta errores menores de espaciado como 'unrobo' y 'puedeclasificar'.",
+          "El cierre agrega una actuación institucional inexistente en la fuente."
+        ]
+      },
+      "crime_classification": {
+        "model_category": "robo simple",
+        "assessment": "correct",
+        "proposed_category_cr": "Robo simple",
+        "justification": "La persona obtiene las llaves y se apodera del vehículo mediante intimidación directa contra la víctima, concretamente mediante la amenaza de golpearla si no las entregaba. La declaración no aporta elementos adicionales que permitan fundamentar una modalidad agravada."
+      },
+      "useful_elements": [
+        "Identificó correctamente la relevancia jurídica de la amenaza.",
+        "Conservó la secuencia de intimidación, entrega de llaves y apoderamiento.",
+        "Propuso una clasificación compatible con los hechos descritos."
+      ]
+    },
+    {
+      "model_name": "mistral",
+      "factuality": {
+        "status": "minor_issues",
+        "findings": [
+          "Conservó correctamente la amenaza, exigencia de las llaves y posterior apoderamiento del vehículo.",
+          "El cierre solicita investigación policial e identificación de la persona responsable, acciones futuras no contenidas en la declaración."
+        ]
+      },
+      "hallucinations": [
+        "Agregó una solicitud a los agentes para investigar el caso.",
+        "Agregó como acción futura identificar a la persona responsable."
+      ],
+      "omissions": [
+        "Omitió mencionar explícitamente el sexo masculino de la persona afectada, aunque utilizó posteriormente el término 'ciudadano'."
+      ],
+      "narrative_quality": {
+        "status": "minor_issues",
+        "findings": [
+          "La narrativa mantiene una secuencia lógica y comprensible.",
+          "Presenta problemas de espaciado como 'las21:30'.",
+          "El cierre introduce instrucciones policiales ajenas a la declaración."
+        ]
+      },
+      "crime_classification": {
+        "model_category": "robo aggravado",
+        "assessment": "incorrect",
+        "proposed_category_cr": "Robo simple",
+        "justification": "La amenaza de golpear a la víctima constituye intimidación relevante para diferenciar el robo del hurto, pero la sola existencia de intimidación no basta para concluir que se trata de robo agravado. La declaración no aporta otras circunstancias que fundamenten orientativamente la modalidad agravada."
+      },
+      "useful_elements": [
+        "Detectó correctamente que la intimidación modifica la naturaleza del hecho respecto de una sustracción sin violencia.",
+        "Conservó la secuencia principal del incidente."
+      ]
+    },
+    {
+      "model_name": "llama",
+      "factuality": {
+        "status": "minor_issues",
+        "findings": [
+          "Conservó la fecha, hora, ubicación, exigencia de las llaves y entrega del vehículo ante intimidación.",
+          "Sustituyó la condición de persona afectada por 'titular del vehículo', aunque la declaración no establece expresamente su titularidad.",
+          "Indicó que no se determinó la relación entre las personas, información innecesaria que no forma parte de los hechos afirmados por la declaración.",
+          "El cierre afirma que concluyó la recopilación de información relevante, circunstancia no indicada."
+        ]
+      },
+      "hallucinations": [
+        "Identificó a la víctima como titular del vehículo sin respaldo explícito.",
+        "Indicó que se concluyó la recopilación de información relevante sin respaldo en la declaración."
+      ],
+      "omissions": [
+        "Omitió en la narrativa la amenaza concreta de golpear a la víctima si se negaba a entregar las llaves, reduciéndola al término genérico 'intimidación'."
+      ],
+      "narrative_quality": {
+        "status": "minor_issues",
+        "findings": [
+          "La narrativa mantiene una secuencia comprensible.",
+          "La generalización de la amenaza como simple intimidación elimina un detalle relevante para comprender el mecanismo del hecho y su clasificación.",
+          "Incluye consideraciones innecesarias sobre nombres y relación entre las personas.",
+          "Presenta errores de redacción y espaciado."
+        ]
+      },
+      "crime_classification": {
+        "model_category": "Robo con amenaza",
+        "assessment": "partially_correct",
+        "proposed_category_cr": "Robo simple",
+        "justification": "El modelo identificó correctamente que la amenaza e intimidación son determinantes para que el hecho sea considerado robo en lugar de hurto. Sin embargo, 'Robo con amenaza' funciona como descripción del mecanismo y no como la categoría orientativa propuesta. Con los hechos disponibles, la clasificación adecuada es robo simple."
+      },
+      "useful_elements": [
+        "Reconoció correctamente que existió coacción o intimidación.",
+        "Relacionó la amenaza con el apoderamiento del vehículo.",
+        "No clasificó el caso como una simple sustracción de vehículo sin violencia."
+      ]
+    }
+  ],
+  "proposed_ideal_report": {
+    "narrative": "El 01/03/2020, aproximadamente a las 21:30 horas, una persona afectada de sexo masculino se encontraba junto a un vehículo en la vía pública, en 1900 S LONGWOOD AV, dentro del área de Wilshire, cuando una persona se le acercó y le exigió entregar las llaves, advirtiéndole que lo golpearía si se negaba. Ante la intimidación, la persona afectada entregó las llaves y la otra persona se llevó el vehículo.",
+    "closing": "No se aportaron más detalles sobre las circunstancias del hecho.",
+    "crime_classification": {
+      "category": "Robo simple",
+      "justification": "El apoderamiento del vehículo se produjo mediante intimidación directa contra la persona afectada, concretamente mediante la amenaza de golpearla si se negaba a entregar las llaves. No se describen circunstancias adicionales que permitan fundamentar una modalidad agravada."
+    }
+  }
+}

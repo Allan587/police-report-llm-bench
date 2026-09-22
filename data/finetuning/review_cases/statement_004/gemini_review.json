@@ -1,0 +1,95 @@
+{
+  "reviewer": "Gemini",
+  "model_reviews": [
+    {
+      "model_name": "gemma",
+      "factuality": {
+        "status": "pass",
+        "findings": [
+          "Conserva adecuadamente los datos de fecha (04/11/2020), hora (17:00), ubicación (1400 W 37TH ST, Southwest) y circunstancias de la sustracción de la bicicleta."
+        ]
+      },
+      "hallucinations": [],
+      "omissions": [],
+      "narrative_quality": {
+        "status": "minor_issues",
+        "findings": [
+          "Presenta un error ortográfico menor de espaciado ('deque').",
+          "Mantiene un tono institucional y claro."
+        ]
+      },
+      "crime_classification": {
+        "model_category": "Robo de vehículo",
+        "assessment": "incorrect",
+        "proposed_category_cr": "Hurto simple",
+        "justification": "Clasifica el hecho como 'robo de vehículo', lo cual es incorrecto en el contexto legal costarricense: 1) Una bicicleta no se tipifica ni califica ordinariamente como vehículo de motor/robo de vehículo; 2) La declaración no describe el uso de violencia, fuerza sobre las cosas ni intimidación, por lo que constituye un hurto simple."
+      },
+      "useful_elements": [
+        "Estructura clara de la narrativa y precisión en los datos temporales y de ubicación."
+      ]
+    },
+    {
+      "model_name": "mistral",
+      "factuality": {
+        "status": "minor_issues",
+        "findings": [
+          "Utiliza el término 'desaparición forzosa', el cual resulta técnicamente erróneo e inapropiado en el contexto de la sustracción de un bien mueble (término reservado en materia penal para violaciones de derechos humanos contra personas)."
+        ]
+      },
+      "hallucinations": [
+        "Introduce una solicitud explícita de acciones policiales futuras e investigación ('Se solicita a los agentes de policía investigar la situación y tomar medidas pertinentes...'), lo cual no proviene de la declaración."
+      ],
+      "omissions": [],
+      "narrative_quality": {
+        "status": "minor_issues",
+        "findings": [
+          "Presenta errores menores de espaciado ('lasituación', 'ausenteal').",
+          "El uso del término 'desaparición forzosa' distorsiona la precisión del lenguaje institucional."
+        ]
+      },
+      "crime_classification": {
+        "model_category": "Hurto",
+        "assessment": "correct",
+        "proposed_category_cr": "Hurto simple",
+        "justification": "Identifica correctamente la tipificación de hurto al reconocer la sustracción o toma furtiva del bien sin violencia ni consentimiento, aunque fundamenta la definición sobre el término impreciso de 'desaparición'."
+      },
+      "useful_elements": [
+        "Correcta orientación tipológica del delito hacia la categoría de hurto."
+      ]
+    },
+    {
+      "model_name": "llama",
+      "factuality": {
+        "status": "pass",
+        "findings": [
+          "Conserva los datos clave de fecha, hora, ubicación y el hecho denunciado."
+        ]
+      },
+      "hallucinations": [],
+      "omissions": [],
+      "narrative_quality": {
+        "status": "minor_issues",
+        "findings": [
+          "Incluye comentarios meta sobre la ausencia de información explícita ('Se desconoce quién o qué entidad...', 'No se han identificado testigos ni se ha obtenido información...'), los cuales resultan innecesarios en un reporte policial objetivo."
+        ]
+      },
+      "crime_classification": {
+        "model_category": "Robo de bienes muebles",
+        "assessment": "partially_correct",
+        "proposed_category_cr": "Hurto simple",
+        "justification": "Denomina la categoría como 'Robo de bienes muebles', empleando impropiamente el término 'robo' cuando la propia fundamentación describe la pérdida sin violencia, fuerza o intimidación, lo cual encuadra propiamente en un hurto de bienes muebles."
+      },
+      "useful_elements": [
+        "Fidelidad factual estricta a los datos del incidente proporcionados."
+      ]
+    }
+  ],
+  "proposed_ideal_report": {
+    "narrative": "El 04/11/2020, aproximadamente a las 17:00 horas, se reportó un incidente en un inmueble de apartamentos ubicado en 1400 W 37TH ST, en el área de Southwest. La persona denunciante indicó que dejó su bicicleta aparcada en el lugar y, al inspeccionar posteriormente el sitio, constató que el objeto había sido sustraído sin su consentimiento.",
+    "closing": "Se recibe la declaración correspondiente sobre la sustracción de la bicicleta y se remite el informe para los trámites administrativos pertinentes.",
+    "crime_classification": {
+      "category": "Hurto simple",
+      "justification": "Los hechos descritos configuran la tipificación de hurto simple conforme al marco penal de Costa Rica (artículo 208 del Código Penal), dado que se establece la sustracción de un bien mueble ajeno (bicicleta) sin la autorización del propietario y sin que mediara violencia sobre las personas, fuerza sobre las cosas ni intimidación."
+    }
+  }
+}

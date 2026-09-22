@@ -1,0 +1,103 @@
+{
+  "reviewer": "grok",
+  "model_reviews": [
+    {
+      "model_name": "gemma",
+      "factuality": {
+        "status": "minor_issues",
+        "findings": [
+          "Conservó fecha, hora, ubicación, edad y sexo del denunciante, y el hecho de tomar mercadería y salir sin pagar.",
+          "Transformó ligeramente el relato en 'se recibió una denuncia' y usó 'había robado'."
+        ]
+      },
+      "hallucinations": [
+        "Agregó en el cierre recepción de denuncia e investigación en curso, sin respaldo."
+      ],
+      "omissions": [],
+      "narrative_quality": {
+        "status": "minor_issues",
+        "findings": [
+          "Tono institucional aceptable.",
+          "Errores de espaciado."
+        ]
+      },
+      "crime_classification": {
+        "model_category": "robo simple",
+        "assessment": "incorrect",
+        "proposed_category_cr": "hurto",
+        "justification": "No se describe violencia, intimidación ni fuerza sobre las cosas. Se trata de una sustracción de mercadería observada sin pago, tipificable como hurto."
+      },
+      "useful_elements": [
+        "Conservación de datos de fecha, hora, lugar y denunciante."
+      ]
+    },
+    {
+      "model_name": "mistral",
+      "factuality": {
+        "status": "pass",
+        "findings": [
+          "Conservó correctamente fecha, hora aproximada, ubicación, edad y sexo del denunciante, y la observación de tomar mercadería y salir sin pagar."
+        ]
+      },
+      "hallucinations": [
+        "Agregó número de expediente ficticio (XXXX) y solicitud a testigos potenciales, sin respaldo en la declaración."
+      ],
+      "omissions": [],
+      "narrative_quality": {
+        "status": "pass",
+        "findings": [
+          "Narrativa clara, objetiva e institucional."
+        ]
+      },
+      "crime_classification": {
+        "model_category": "hurto",
+        "assessment": "correct",
+        "proposed_category_cr": "hurto",
+        "justification": "Correctamente identifica la ausencia de violencia y orienta hacia hurto. La reserva sobre investigación adicional es innecesaria pero no altera la clasificación orientativa."
+      },
+      "useful_elements": [
+        "Buena conservación de los hechos.",
+        "Clasificación orientativa correcta hacia hurto."
+      ]
+    },
+    {
+      "model_name": "llama",
+      "factuality": {
+        "status": "minor_issues",
+        "findings": [
+          "Conservó fecha, hora, ubicación, edad y sexo del denunciante, y el hecho central.",
+          "Calificó incorrectamente al denunciante de 19 años como 'menor'."
+        ]
+      },
+      "hallucinations": [
+        "Afirmó que el denunciante 'no proporcionó más detalles' y que 'no se conocen los datos de la persona sospechosa ni su destino posterior', comentarios meta no derivados de la declaración.",
+        "Agregó cierre de registro e investigación en trámite."
+      ],
+      "omissions": [],
+      "narrative_quality": {
+        "status": "minor_issues",
+        "findings": [
+          "Incluye comentarios meta y reservas innecesarias.",
+          "Errores menores de espaciado."
+        ]
+      },
+      "crime_classification": {
+        "model_category": "Robo",
+        "assessment": "incorrect",
+        "proposed_category_cr": "hurto",
+        "justification": "Clasifica como robo pese a la ausencia total de violencia, intimidación o fuerza sobre las cosas. Los hechos describen únicamente una sustracción observada sin pago."
+      },
+      "useful_elements": [
+        "Conservación de los datos básicos del hecho y del denunciante."
+      ]
+    }
+  ],
+  "proposed_ideal_report": {
+    "narrative": "Cerca de las 20:37 horas del 10 de marzo de 2020, en una tienda de ropa ubicada en 14000 RIVERSIDE DR, dentro del área de Van Nuys, la persona denunciante, de 19 años de sexo masculino, observó a una persona tomar mercadería del establecimiento y salir con ella sin realizar el pago correspondiente.",
+    "closing": "Se recibe la denuncia correspondiente.",
+    "crime_classification": {
+      "category": "hurto",
+      "justification": "La declaración describe únicamente la observación de una persona que toma mercadería y sale sin pagar. No se menciona violencia, intimidación ni fuerza sobre las cosas, por lo que el hecho se orienta tipológicamente como hurto en el contexto costarricense."
+    }
+  }
+}

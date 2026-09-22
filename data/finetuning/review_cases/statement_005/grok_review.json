@@ -1,0 +1,112 @@
+{
+  "reviewer": "grok",
+  "model_reviews": [
+    {
+      "model_name": "gemma",
+      "factuality": {
+        "status": "minor_issues",
+        "findings": [
+          "Conservó fecha, hora, ubicación y el hecho central de empujón + arrebato de la bicicleta.",
+          "Transformó ligeramente el momento ('se reportó un robo') y omitió la precisión de que la víctima se disponía a retirarse con la bicicleta."
+        ]
+      },
+      "hallucinations": [
+        "Agregó en el cierre que se realizó la recepción de la denuncia y que se encuentra en proceso de investigación, sin respaldo en la declaración."
+      ],
+      "omissions": [
+        "No mencionó expresamente que se trataba de un inmueble de apartamentos o varias unidades habitacionales."
+      ],
+      "narrative_quality": {
+        "status": "minor_issues",
+        "findings": [
+          "Tono institucional aceptable, pero con errores de espaciado y redacción ('fueempujada', 'lamisma').",
+          "Narrativa breve y comprensible."
+        ]
+      },
+      "crime_classification": {
+        "model_category": "robo simple",
+        "assessment": "partially_correct",
+        "proposed_category_cr": "robo",
+        "justification": "La declaración describe empujón (violencia física) + arrebato inmediato de la bicicleta. En el contexto costarricense ello configura robo (violencia sobre las personas). La categoría 'robo simple' es imprecisa y no distingue adecuadamente."
+      },
+      "useful_elements": [
+        "Conservación de fecha, hora y lugar.",
+        "Reconocimiento del empujón como elemento del hecho."
+      ]
+    },
+    {
+      "model_name": "mistral",
+      "factuality": {
+        "status": "pass",
+        "findings": [
+          "Conservó correctamente fecha, hora, ubicación, tipo de inmueble, empujón y arrebato inmediato de la bicicleta."
+        ]
+      },
+      "hallucinations": [
+        "Agregó en el cierre solicitudes a vecinos y testigos, y afirmaciones sobre medidas de investigación y prioridad de seguridad, sin respaldo en la declaración.",
+        "Cita el Artículo 283 del Código Penal, referencia no contenida en la declaración ni verificable aquí como aplicable."
+      ],
+      "omissions": [],
+      "narrative_quality": {
+        "status": "minor_issues",
+        "findings": [
+          "Narrativa clara, cronológica e institucional.",
+          "Errores menores de espaciado."
+        ]
+      },
+      "crime_classification": {
+        "model_category": "Robo (Artículo 283 del Código Penal)",
+        "assessment": "correct",
+        "proposed_category_cr": "robo",
+        "justification": "Correctamente identifica la violencia física (empujar) como elemento que eleva el hecho a robo. La referencia legal específica no está respaldada por la declaración."
+      },
+      "useful_elements": [
+        "Buena conservación de los hechos esenciales.",
+        "Reconocimiento explícito de la violencia física como elemento diferenciador."
+      ]
+    },
+    {
+      "model_name": "llama",
+      "factuality": {
+        "status": "minor_issues",
+        "findings": [
+          "Conservó fecha, hora, ubicación y el empujón + sustracción de la bicicleta.",
+          "Agregó que 'no hubo testigos directos', dato no presente en la declaración."
+        ]
+      },
+      "hallucinations": [
+        "Afirmó ausencia de testigos directos sin respaldo.",
+        "Introdujo reserva sobre si hubo 'violencia física directa' cuando la declaración sí describe un empujón."
+      ],
+      "omissions": [
+        "No menciona el tipo de inmueble (apartamentos / varias unidades)."
+      ],
+      "narrative_quality": {
+        "status": "minor_issues",
+        "findings": [
+          "Narrativa mayoritariamente objetiva.",
+          "Incluye comentarios meta y reservas innecesarias sobre la tipificación.",
+          "Errores menores de espaciado."
+        ]
+      },
+      "crime_classification": {
+        "model_category": "Robo con violencia o intimidación",
+        "assessment": "correct",
+        "proposed_category_cr": "robo",
+        "justification": "Correctamente orienta hacia robo por el empujón. La reserva posterior debilita innecesariamente la clasificación."
+      },
+      "useful_elements": [
+        "Reconocimiento del empujón como elemento de violencia.",
+        "Conservación de datos temporales y de ubicación."
+      ]
+    }
+  ],
+  "proposed_ideal_report": {
+    "narrative": "El día 04 de noviembre de 2020, aproximadamente a las 17:00 horas, en un inmueble de apartamentos o varias unidades habitacionales ubicado en 1400 W 37TH ST, dentro del área de Southwest, una persona se disponía a retirarse con su bicicleta cuando otra persona la empujó, le arrebató la bicicleta y se retiró inmediatamente del lugar con ella.",
+    "closing": "Se recibe la denuncia correspondiente.",
+    "crime_classification": {
+      "category": "robo",
+      "justification": "La declaración describe un empujón (violencia física sobre la persona) seguido del arrebato inmediato de la bicicleta. En el ordenamiento costarricense, la sustracción con violencia sobre las personas configura el delito de robo."
+    }
+  }
+}

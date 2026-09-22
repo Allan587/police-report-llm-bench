@@ -1,0 +1,70 @@
+{
+"statement_index": 5,
+"reviewers": [
+"chatgpt",
+"gemini",
+"grok"
+],
+"classification_consensus": {
+"reviewer_classifications": {
+"chatgpt": "Robo simple",
+"gemini": "Robo simple",
+"grok": "robo"
+},
+"final_category": "Robo simple",
+"consensus": "majority",
+"final_justification": "La declaración describe que una persona empujó a la víctima e inmediatamente le arrebató la bicicleta, retirándose con ella. El empujón constituye violencia física sobre la persona directamente vinculada con el apoderamiento del bien, por lo que los hechos permiten orientar la clasificación hacia robo simple."
+},
+"selected_elements": {
+"factuality": [
+"Fecha del hecho: 04/11/2020.",
+"Hora aproximada: 17:00 horas.",
+"Ubicación: 1400 W 37TH ST, área de Southwest.",
+"El hecho ocurrió en un inmueble de apartamentos o varias unidades habitacionales.",
+"La persona se disponía a retirarse con la bicicleta.",
+"Otra persona la empujó, le arrebató la bicicleta y se retiró inmediatamente con ella."
+],
+"narrative_structure": [
+"Narración cronológica en tercera persona.",
+"Lenguaje institucional, objetivo y limitado a los hechos descritos.",
+"Conservación de la relación inmediata entre el empujón y el arrebato de la bicicleta."
+],
+"classification": [
+"El empujón constituye el hecho positivo de violencia física que sustenta la orientación hacia robo.",
+"La violencia se encuentra directamente vinculada con el apoderamiento de la bicicleta.",
+"La denominación final Robo simple coincide con la orientación propuesta por ChatGPT y Gemini y se reconstruye directamente desde los hechos de la declaración."
+],
+"discarded_elements": [
+"Investigación en curso mencionada por Gemma.",
+"Solicitudes a vecinos o testigos y futuras medidas policiales agregadas por Mistral.",
+"Referencia de Mistral al Artículo 283 del Código Penal.",
+"Afirmación de Llama sobre ausencia de testigos directos.",
+"Reservas de Gemma y Llama que minimizan o niegan la existencia de violencia pese al empujón descrito.",
+"Cierres que afirman recepción de denuncia, investigación u otras actuaciones no descritas en la declaración."
+]
+},
+"final_report": {
+"narrative": "El 04/11/2020, aproximadamente a las 17:00 horas, en un inmueble de apartamentos o varias unidades habitacionales ubicado en 1400 W 37TH ST, dentro del área de Southwest, una persona se disponía a retirarse con una bicicleta cuando otra persona la empujó y le arrebató dicho bien, retirándose inmediatamente con este.",
+"closing": "Se deja constancia de los hechos descritos en la declaración.",
+"crime_classification": {
+"category": "Robo simple",
+"justification": "La declaración describe el apoderamiento de una bicicleta mediante violencia física sobre la persona, concretamente un empujón inmediatamente vinculado con el arrebato del bien, lo que permite orientar los hechos hacia robo simple."
+}
+},
+"quality_control": {
+"factual_consistency": "pass",
+"unsupported_information": "pass",
+"relevant_information_preserved": "pass",
+"temporal_consistency": "pass",
+"spatial_consistency": "pass",
+"third_person": "pass",
+"institutional_language": "pass",
+"classification_supported": "pass",
+"narrative_classification_consistency": "pass",
+"format_valid": "pass"
+},
+"decision": {
+"status": "approved",
+"reason": "La declaración permite reconstruir de manera suficiente y coherente el hecho. El reporte final conserva los elementos relevantes sin incorporar información material no respaldada, y la clasificación se sustenta directamente en el empujón utilizado inmediatamente antes del arrebato de la bicicleta."
+}
+}

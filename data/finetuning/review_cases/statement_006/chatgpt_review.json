@@ -1,0 +1,112 @@
+{
+  "reviewer": "chatgpt",
+  "model_reviews": [
+    {
+      "model_name": "gemma",
+      "factuality": {
+        "status": "minor_issues",
+        "findings": [
+          "Conservó correctamente la fecha, hora, ubicación, edad y sexo de la persona denunciante y la sustracción de mercadería sin pago.",
+          "Agregó que la denuncia se encuentra en proceso de investigación sin respaldo en la declaración."
+        ]
+      },
+      "hallucinations": [
+        "Indicó que el caso se encuentra en proceso de investigación sin que la declaración describa actuaciones posteriores."
+      ],
+      "omissions": [],
+      "narrative_quality": {
+        "status": "minor_issues",
+        "findings": [
+          "La narrativa es breve, institucional y comprensible.",
+          "Utilizó el término 'robado' dentro de la narrativa, introduciendo anticipadamente una calificación jurídica que no corresponde a los hechos.",
+          "Presenta errores menores de espaciado."
+        ]
+      },
+      "crime_classification": {
+        "model_category": "robo simple",
+        "assessment": "incorrect",
+        "proposed_category_cr": "Hurto",
+        "justification": "La declaración únicamente describe que una persona tomó mercadería y salió del establecimiento sin pagar. No se describen violencia o intimidación sobre personas ni fuerza sobre las cosas, por lo que los hechos se orientan hacia hurto y no hacia robo."
+      },
+      "useful_elements": [
+        "Conservó correctamente los elementos esenciales de la sustracción y los datos de tiempo y lugar."
+      ]
+    },
+    {
+      "model_name": "mistral",
+      "factuality": {
+        "status": "minor_issues",
+        "findings": [
+          "Conservó correctamente la fecha, hora, ubicación, edad y sexo de la persona denunciante y la observación de la sustracción de mercadería sin pago.",
+          "Inventó un número de expediente.",
+          "Agregó una solicitud dirigida a potenciales testigos que no aparece en la declaración."
+        ]
+      },
+      "hallucinations": [
+        "Indicó que el caso fue registrado bajo el número de expediente XXXX sin respaldo en la declaración.",
+        "Solicitó a potenciales testigos contactar con la policía pese a que esa actuación no fue descrita."
+      ],
+      "omissions": [],
+      "narrative_quality": {
+        "status": "minor_issues",
+        "findings": [
+          "La narrativa principal es clara, cronológica e institucional.",
+          "El cierre incorpora contenido administrativo y policial inexistente en la fuente."
+        ]
+      },
+      "crime_classification": {
+        "model_category": "hurto",
+        "assessment": "correct",
+        "proposed_category_cr": "Hurto",
+        "justification": "La declaración describe el apoderamiento de mercadería sin pago y no contiene violencia, intimidación ni fuerza sobre las cosas. La clasificación orientativa como hurto es coherente con los hechos disponibles."
+      },
+      "useful_elements": [
+        "Diferenció correctamente el hurto de un robo.",
+        "Mantuvo una descripción prudente de la clasificación sin inventar violencia o fuerza sobre las cosas."
+      ]
+    },
+    {
+      "model_name": "llama",
+      "factuality": {
+        "status": "fail",
+        "findings": [
+          "Conservó correctamente la fecha, hora, ubicación y hecho central de la sustracción de mercadería sin pago.",
+          "Calificó incorrectamente como menor de edad a una persona de 19 años.",
+          "Agregó que no se conocen los datos de la persona sospechosa ni su destino posterior, información sobre cuya ausencia la declaración no realiza ninguna afirmación.",
+          "Agregó que el incidente se encuentra en trámite de investigación."
+        ]
+      },
+      "hallucinations": [
+        "Caracterizó como menor de edad a la persona denunciante de 19 años.",
+        "Agregó un estado de investigación no descrito en la declaración."
+      ],
+      "omissions": [],
+      "narrative_quality": {
+        "status": "minor_issues",
+        "findings": [
+          "La narrativa es comprensible en su secuencia principal.",
+          "Incluye comentarios meta sobre información no proporcionada.",
+          "La expresión 'menor de 19 años' introduce una caracterización jurídicamente incorrecta de la persona denunciante.",
+          "Presenta errores menores de espaciado y redacción."
+        ]
+      },
+      "crime_classification": {
+        "model_category": "Robo",
+        "assessment": "incorrect",
+        "proposed_category_cr": "Hurto",
+        "justification": "La mera toma de mercadería y salida del establecimiento sin pagar no aporta violencia, intimidación ni fuerza sobre las cosas. La declaración permite orientar el hecho hacia hurto. La afirmación de que faltan datos para decidir entre robo simple y otra categoría no corrige la ausencia de los elementos necesarios para clasificarlo como robo."
+      },
+      "useful_elements": [
+        "Conservó el hecho central consistente en tomar mercadería y salir sin realizar el pago."
+      ]
+    }
+  ],
+  "proposed_ideal_report": {
+    "narrative": "El 10/03/2020, aproximadamente a las 20:37 horas, en una tienda de ropa ubicada en 14000 RIVERSIDE DR, dentro del área de Van Nuys, la persona denunciante, de 19 años y sexo masculino, observó a una persona tomar mercadería del establecimiento y salir con ella sin realizar el pago correspondiente.",
+    "closing": "Se deja constancia de los hechos descritos en la declaración.",
+    "crime_classification": {
+      "category": "Hurto",
+      "justification": "La declaración describe el apoderamiento de mercadería sin pago y no refiere violencia, intimidación ni fuerza sobre las cosas, por lo que los hechos se orientan hacia hurto."
+    }
+  }
+}

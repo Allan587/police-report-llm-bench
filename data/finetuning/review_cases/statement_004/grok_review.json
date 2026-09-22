@@ -1,0 +1,108 @@
+{
+  "reviewer": "grok",
+  "model_reviews": [
+    {
+      "model_name": "gemma",
+      "factuality": {
+        "status": "pass",
+        "findings": [
+          "Conservó correctamente la fecha (04/11/2020), la hora aproximada (17:00), la ubicación (inmueble de apartamentos en 1400 W 37TH ST, área de Southwest) y el hecho central de la sustracción de la bicicleta dejada en el sitio."
+        ]
+      },
+      "hallucinations": [
+        "Clasificó el hecho como 'robo de vehículo' y afirmó que se trata de un delito tipificado como robo, sin que la declaración describa violencia, intimidación ni fuerza sobre las cosas."
+      ],
+      "omissions": [],
+      "narrative_quality": {
+        "status": "minor_issues",
+        "findings": [
+          "Narrativa en tercera persona con tono institucional y coherente.",
+          "Error menor de redacción/espaciado ('deque').",
+          "Cierre genérico de recepción de denuncia aceptable y sin invenciones de acciones futuras."
+        ]
+      },
+      "crime_classification": {
+        "model_category": "robo de vehículo",
+        "assessment": "incorrect",
+        "proposed_category_cr": "hurto",
+        "justification": "La declaración solo describe la desaparición/sustracción de una bicicleta dejada en el lugar, sin violencia, intimidación ni fuerza sobre las cosas. En el contexto penal costarricense corresponde orientativamente a hurto, no a robo ni a robo de vehículo."
+      },
+      "useful_elements": [
+        "Conservación precisa de fecha, hora, ubicación y hecho central de la sustracción.",
+        "Cierre simple de recepción de denuncia sin agregar investigaciones futuras."
+      ]
+    },
+    {
+      "model_name": "mistral",
+      "factuality": {
+        "status": "minor_issues",
+        "findings": [
+          "Conservó la fecha, hora, ubicación y el hecho de que la bicicleta previamente aparcada ya no se encontraba.",
+          "Introdujo la expresión 'desaparición forzosa', que no se desprende de la declaración y altera el carácter del hecho."
+        ]
+      },
+      "hallucinations": [
+        "Uso de 'desaparición forzosa' de la bicicleta.",
+        "Cierre con solicitud expresa a los agentes de policía de investigar, localizar la bicicleta e identificar al responsable, acciones no mencionadas en la declaración."
+      ],
+      "omissions": [],
+      "narrative_quality": {
+        "status": "minor_issues",
+        "findings": [
+          "Narrativa mayoritariamente clara y en tono institucional.",
+          "Problemas menores de espaciado y redacción ('ausenteal', 'lasituación')."
+        ]
+      },
+      "crime_classification": {
+        "model_category": "hurto",
+        "assessment": "correct",
+        "proposed_category_cr": "hurto",
+        "justification": "Clasificó correctamente como hurto al tratarse de la toma furtiva de propiedad sin consentimiento y sin describir violencia, intimidación ni fuerza sobre las cosas."
+      },
+      "useful_elements": [
+        "Clasificación orientativa correcta como hurto.",
+        "Conservación de los datos temporales, de ubicación y del hecho de la ausencia de la bicicleta."
+      ]
+    },
+    {
+      "model_name": "llama",
+      "factuality": {
+        "status": "pass",
+        "findings": [
+          "Conservó correctamente la fecha, hora, ubicación y el hecho de que la bicicleta dejada en el lugar ya no se encontraba."
+        ]
+      },
+      "hallucinations": [
+        "Comentario meta innecesario sobre la ausencia de testigos e información sobre motivos o circunstancias.",
+        "Cierre administrativo ('Se ha concluido la recopilación de información... Se remite a la unidad correspondiente') no derivado de la declaración."
+      ],
+      "omissions": [],
+      "narrative_quality": {
+        "status": "minor_issues",
+        "findings": [
+          "Narrativa objetiva en lo sustancial y en tercera persona.",
+          "Inclusión de comentarios meta y cierre administrativo que restan naturalidad institucional estricta.",
+          "Error menor de espaciado ('testigosni')."
+        ]
+      },
+      "crime_classification": {
+        "model_category": "Robo de bienes muebles",
+        "assessment": "incorrect",
+        "proposed_category_cr": "hurto",
+        "justification": "Utilizó la categoría de robo de bienes muebles pese a que la declaración no describe violencia, intimidación ni fuerza sobre las cosas; los hechos corresponden orientativamente a hurto."
+      },
+      "useful_elements": [
+        "Conservación precisa de fecha, hora, ubicación y del hecho central de la sustracción de la bicicleta.",
+        "Reconocimiento implícito de la ausencia de detalles sobre el mecanismo o el autor."
+      ]
+    }
+  ],
+  "proposed_ideal_report": {
+    "narrative": "El hecho ocurrió el 04/11/2020 alrededor de las 17:00 horas en un inmueble de apartamentos o varias unidades habitacionales ubicado en 1400 W 37TH ST, dentro del área de Southwest. La persona denunciante se percató de que la bicicleta que había dejado en el sitio ya no se encontraba allí, habiendo sido sustraída.",
+    "closing": "Se recibe la denuncia por la sustracción de la bicicleta.",
+    "crime_classification": {
+      "category": "hurto",
+      "justification": "La declaración describe únicamente la sustracción de una bicicleta dejada en el lugar, sin mención de violencia, intimidación, amenazas ni fuerza sobre las cosas. En el contexto penal costarricense corresponde orientativamente a hurto."
+    }
+  }
+}

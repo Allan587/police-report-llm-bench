@@ -1,0 +1,97 @@
+{
+  "reviewer": "Gemini",
+  "model_reviews": [
+    {
+      "model_name": "gemma",
+      "factuality": {
+        "status": "pass",
+        "findings": [
+          "Conserva adecuadamente los datos de fecha, hora, ubicación y la dinámica general del despojo."
+        ]
+      },
+      "hallucinations": [
+        "Menciona que la denuncia está en proceso de investigación en el cierre, acción no indicada en la declaración."
+      ],
+      "omissions": [],
+      "narrative_quality": {
+        "status": "minor_issues",
+        "findings": [
+          "Presenta errores menores de espaciado o concatenación de palabras (ej. 'fueempujada', 'lamisma', 'recepciónde', 'clasificarel')."
+        ]
+      },
+      "crime_classification": {
+        "model_category": "robo simple",
+        "assessment": "partially_correct",
+        "proposed_category_cr": "Robo simple",
+        "justification": "Clasifica como robo simple, lo cual es correcto dado el uso de violencia física directa (empujón) para apoderarse de la bicicleta. No obstante, en la justificación señala erróneamente que no existen elementos que sugieran violencia."
+      },
+      "useful_elements": [
+        "Identificación correcta de la categoría orientativa (Robo simple)."
+      ]
+    },
+    {
+      "model_name": "mistral",
+      "factuality": {
+        "status": "pass",
+        "findings": [
+          "Conserva la información de fecha, hora, ubicación y la mecánica del hecho."
+        ]
+      },
+      "hallucinations": [
+        "Introduce una solicitud a vecinos y testigos para que aporten información y afirma compromisos institucionales del departamento de policía no mencionados."
+      ],
+      "omissions": [],
+      "narrative_quality": {
+        "status": "pass",
+        "findings": [
+          "Narrativa clara, fluida e institucional."
+        ]
+      },
+      "crime_classification": {
+        "model_category": "Robo (Artículo 283 del Código Penal)",
+        "assessment": "correct",
+        "proposed_category_cr": "Robo simple",
+        "justification": "Identifica de forma precisa que hubo violencia física (empujón) para lograr la sustracción. Cita legislación externa que no aplica a Costa Rica, pero el encuadre conceptual es adecuado."
+      },
+      "useful_elements": [
+        "Explicación adecuada de la violencia física empleada durante el hecho."
+      ]
+    },
+    {
+      "model_name": "llama",
+      "factuality": {
+        "status": "minor_issues",
+        "findings": [
+          "Agrega que el incidente ocurrió en un entorno residencial y que 'no hubo testigos directos', circunstancias no indicadas expresamente en la declaración."
+        ]
+      },
+      "hallucinations": [
+        "Inventa la ausencia de testigos directos."
+      ],
+      "omissions": [],
+      "narrative_quality": {
+        "status": "minor_issues",
+        "findings": [
+          "Errores de espaciado (ej. '17:00horas', 'sellevó', 'deun')."
+        ]
+      },
+      "crime_classification": {
+        "model_category": "Robo con violencia o intimidación",
+        "assessment": "partially_correct",
+        "proposed_category_cr": "Robo simple",
+        "justification": "Reconoce la presencia de violencia, pero duda erróneamente al indicar que no se menciona violencia física directa cuando la declaración explicita un empujón."
+      },
+      "useful_elements": [
+        "Identificación general de la existencia de violencia."
+      ]
+    }
+  ],
+  "proposed_ideal_report": {
+    "narrative": "El 04/11/2020, a las 17:00 horas aproximadamente, en un inmueble de apartamentos ubicado en 1400 W 37TH ST, área de Southwest, se produjo un incidente en el cual una persona, cuando se disponía a retirarse del lugar con su bicicleta, fue empujada por un sujeto desconocido, quien le arrebató el vehículo de transporte y se dio a la fuga de inmediato con la propiedad.",
+    "closing": "El presente informe sintetiza los hechos declarados por la persona afectada para el registro correspondiente.",
+    "crime_classification": {
+      "category": "Robo simple",
+      "justification": "Los hechos se encuadran como Robo simple según el marco penal costarricense, toda vez que existió el empleo de violencia física sobre la víctima (empujón) para lograr el apoderamiento de la bicicleta."
+    }
+  }
+}

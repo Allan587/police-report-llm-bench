@@ -1,0 +1,115 @@
+{
+  "reviewer": "grok-4.5",
+  "model_reviews": [
+    {
+      "model_name": "gemma",
+      "factuality": {
+        "status": "minor_issues",
+        "findings": [
+          "Conservó correctamente la fecha (07/07/2020), la hora aproximada (13:40 horas), la ubicación (JAMES M WOOD, área de Rampart) y el carácter intencional del incendio que afectó bienes en la vía pública.",
+          "Omitió de forma leve la precisión de que el denunciante 'constató' el hecho, reformulándolo como 'reportó'."
+        ]
+      },
+      "hallucinations": [
+        "Agregó en el cierre que se procede a la investigación correspondiente, acción o estado no mencionado en la declaración."
+      ],
+      "omissions": [
+        "No recuperó de forma explícita que el incendio afectó bienes ubicados en el sitio en la vía pública (aunque lo aludió de manera genérica)."
+      ],
+      "narrative_quality": {
+        "status": "minor_issues",
+        "findings": [
+          "Tono institucional y objetivo en la narrativa principal.",
+          "Presentó errores menores de espaciado y redacción ('Eldenunciante', 'lo cual esun').",
+          "El cierre introduce un estado procesal no derivado de la declaración."
+        ]
+      },
+      "crime_classification": {
+        "model_category": "incendio doloso",
+        "assessment": "correct",
+        "proposed_category_cr": "Incendio (doloso)",
+        "justification": "La declaración establece expresamente que el incendio se provocó intencionalmente y afectó bienes. La categoría orientativa de incendio doloso resulta adecuada al contexto costarricense a partir de los hechos descritos."
+      },
+      "useful_elements": [
+        "Conservación correcta de fecha, hora, ubicación y carácter intencional del hecho.",
+        "Clasificación orientativa correcta como incendio doloso."
+      ]
+    },
+    {
+      "model_name": "mistral",
+      "factuality": {
+        "status": "pass",
+        "findings": [
+          "Conservó correctamente la fecha (7 de julio de 2020), la hora (13:40 horas), la ubicación (James M Wood, área de Rampart) y el carácter intencional del incendio que afectó bienes.",
+          "Reformuló de manera aceptable el relato del denunciante sin alterar los hechos centrales."
+        ]
+      },
+      "hallucinations": [
+        "Agregó en el cierre que se ha abierto una investigación para determinar los hechos y responsables, acción no respaldada por la declaración."
+      ],
+      "omissions": [],
+      "narrative_quality": {
+        "status": "minor_issues",
+        "findings": [
+          "Narrativa clara, cronológica e institucional.",
+          "Presentó un error menor de espaciado ('sedenunció').",
+          "El cierre introduce un estado investigativo no derivado de la declaración."
+        ]
+      },
+      "crime_classification": {
+        "model_category": "incendio intencional",
+        "assessment": "correct",
+        "proposed_category_cr": "Incendio (doloso)",
+        "justification": "La declaración indica expresamente provocación intencional del incendio con afectación de bienes. La orientación a incendio intencional/doloso es correcta según los hechos y el contexto costarricense."
+      },
+      "useful_elements": [
+        "Buena conservación de los hechos centrales, fecha, hora y ubicación.",
+        "Clasificación orientativa correcta.",
+        "Narrativa principal clara y objetiva."
+      ]
+    },
+    {
+      "model_name": "llama",
+      "factuality": {
+        "status": "minor_issues",
+        "findings": [
+          "Conservó correctamente la fecha (07/07/2020), la hora (13:40 horas), la ubicación (JAMES M WOOD, área de Rampart) y el carácter intencional del incendio que afectó bienes.",
+          "Agregó que la persona denunciante 'informó haber observado el incidente', matiz no explícitamente respaldado de esa forma en la declaración (solo se indica que constató el hecho)."
+        ]
+      },
+      "hallucinations": [
+        "Incluyó comentarios meta sobre la ausencia de detalles adicionales (causa del fuego, responsables u otra información).",
+        "Agregó un cierre administrativo no respaldado ('Este informe se ha redactado con base en la declaración proporcionada y se mantiene una actitud objetiva y neutral').",
+        "Introdujo una referencia al Código Penal Federal (CPF) 301 y penas específicas ajenas al ordenamiento costarricense y no derivadas de la declaración."
+      ],
+      "omissions": [],
+      "narrative_quality": {
+        "status": "minor_issues",
+        "findings": [
+          "Narrativa principal comprensible y mayoritariamente objetiva.",
+          "Incluyó comentarios meta innecesarios sobre información no proporcionada.",
+          "El cierre es de carácter administrativo y no derivado de los hechos.",
+          "La justificación de la clasificación introduce referencias legales incorrectas para el contexto de Costa Rica."
+        ]
+      },
+      "crime_classification": {
+        "model_category": "Incendio Arsonista",
+        "assessment": "partially_correct",
+        "proposed_category_cr": "Incendio (doloso)",
+        "justification": "La orientación general hacia incendio intencional es correcta porque la declaración establece provocación deliberada. Sin embargo, la denominación 'Incendio Arsonista' y la referencia al Código Penal Federal (CPF) 301 no corresponden al marco penal costarricense y restan precisión a la clasificación orientativa."
+      },
+      "useful_elements": [
+        "Conservación correcta de fecha, hora, ubicación y carácter intencional del hecho.",
+        "Reconocimiento de que el incendio fue provocado intencionalmente."
+      ]
+    }
+  ],
+  "proposed_ideal_report": {
+    "narrative": "La persona denunciante relató que el 07/07/2020, cerca de las 13:40 horas, constató que se había provocado intencionalmente un incendio que afectó bienes ubicados en el sitio en la vía pública, en JAMES M WOOD, dentro del área de Rampart.",
+    "closing": "Se recibe la denuncia conforme a lo declarado.",
+    "crime_classification": {
+      "category": "Incendio (doloso)",
+      "justification": "Los hechos descritos establecen de manera expresa la provocación intencional de un incendio que afectó bienes en la vía pública. Con base exclusivamente en la declaración y en el contexto penal costarricense, la clasificación orientativa corresponde a incendio doloso."
+    }
+  }
+}

@@ -1,0 +1,112 @@
+{
+  "reviewer": "chatgpt",
+  "model_reviews": [
+    {
+      "model_name": "gemma",
+      "factuality": {
+        "status": "minor_issues",
+        "findings": [
+          "Conservó correctamente la fecha, hora, ubicación, sustracción de la bicicleta y el empujón previo al apoderamiento.",
+          "Agregó que la denuncia se encuentra en proceso de investigación, circunstancia no indicada en la declaración."
+        ]
+      },
+      "hallucinations": [
+        "Indicó que el caso se encuentra en proceso de investigación sin respaldo en la declaración."
+      ],
+      "omissions": [],
+      "narrative_quality": {
+        "status": "minor_issues",
+        "findings": [
+          "La narrativa es institucional, breve y cronológica.",
+          "Presenta errores menores de espaciado.",
+          "La justificación de la clasificación minimiza indebidamente la relevancia jurídica del empujón."
+        ]
+      },
+      "crime_classification": {
+        "model_category": "robo simple",
+        "assessment": "partially_correct",
+        "proposed_category_cr": "Robo simple",
+        "justification": "La categoría propuesta es correcta, pero la justificación es deficiente. La declaración describe que una persona empujó a la víctima y le arrebató la bicicleta, por lo que existe violencia sobre la persona vinculada directamente con el apoderamiento. Ese elemento orienta el hecho hacia robo simple y no hacia una mera apropiación ilícita sin elementos adicionales."
+      },
+      "useful_elements": [
+        "Conservó el empujón y el arrebato de la bicicleta.",
+        "Propuso la categoría general correcta de robo simple."
+      ]
+    },
+    {
+      "model_name": "mistral",
+      "factuality": {
+        "status": "minor_issues",
+        "findings": [
+          "Conservó correctamente la fecha, hora, ubicación, empujón, arrebato de la bicicleta y retiro inmediato con el bien.",
+          "Agregó solicitudes dirigidas a vecinos y testigos y futuras medidas policiales que no aparecen en la declaración."
+        ]
+      },
+      "hallucinations": [
+        "Solicitó a vecinos y testigos proporcionar información pese a que la declaración no menciona dicha actuación.",
+        "Indicó que se tomarán medidas para investigar el caso sin respaldo en la declaración."
+      ],
+      "omissions": [],
+      "narrative_quality": {
+        "status": "minor_issues",
+        "findings": [
+          "La narrativa principal es clara, cronológica e institucional.",
+          "El cierre incorpora contenido administrativo y policial no derivado de los hechos.",
+          "Presenta errores menores de espaciado."
+        ]
+      },
+      "crime_classification": {
+        "model_category": "Robo (Artículo 283 del Código Penal)",
+        "assessment": "partially_correct",
+        "proposed_category_cr": "Robo simple",
+        "justification": "Reconoció correctamente que el empujón constituye violencia física vinculada con el apoderamiento de la bicicleta y, por tanto, orienta el hecho hacia robo. Sin embargo, la referencia al artículo 283 no corresponde a la tipificación costarricense aplicable; orientativamente, los hechos encajan en robo simple."
+      },
+      "useful_elements": [
+        "Identificó correctamente la relevancia del empujón para diferenciar el hecho de un hurto.",
+        "Conservó adecuadamente la secuencia entre violencia, arrebato y retiro con la bicicleta."
+      ]
+    },
+    {
+      "model_name": "llama",
+      "factuality": {
+        "status": "minor_issues",
+        "findings": [
+          "Conservó la fecha, hora, ubicación, empujón y sustracción de la bicicleta.",
+          "Agregó que no hubo testigos directos, circunstancia que no aparece en la declaración."
+        ]
+      },
+      "hallucinations": [
+        "Afirmó que no hubo testigos directos sin respaldo en la declaración."
+      ],
+      "omissions": [
+        "No expresó con la misma precisión que la bicicleta fue arrebatada inmediatamente después del empujón."
+      ],
+      "narrative_quality": {
+        "status": "minor_issues",
+        "findings": [
+          "La narrativa es comprensible y mayoritariamente objetiva.",
+          "La justificación contiene una contradicción al reconocer el empujón y posteriormente afirmar que no se menciona violencia física directa contra la víctima.",
+          "Presenta errores menores de espaciado y redacción."
+        ]
+      },
+      "crime_classification": {
+        "model_category": "Robo con violencia o intimidación",
+        "assessment": "partially_correct",
+        "proposed_category_cr": "Robo simple",
+        "justification": "Identificó correctamente la existencia de violencia física y orientó el hecho hacia robo. Sin embargo, utilizó una denominación descriptiva en lugar de la categoría orientativa de robo simple y posteriormente introdujo una reserva contradictoria sobre la existencia de violencia física, pese a que la declaración describe expresamente un empujón utilizado antes del arrebato."
+      },
+      "useful_elements": [
+        "Reconoció que el empujón es jurídicamente relevante para la clasificación.",
+        "Orientó correctamente el hecho hacia una modalidad de robo con violencia."
+      ]
+    }
+  ],
+  "proposed_ideal_report": {
+    "narrative": "El 04/11/2020, aproximadamente a las 17:00 horas, en un inmueble de apartamentos o varias unidades habitacionales ubicado en 1400 W 37TH ST, dentro del área de Southwest, una persona se disponía a retirarse con una bicicleta cuando otra persona la empujó y le arrebató dicho bien, retirándose inmediatamente con este.",
+    "closing": "Se deja constancia de los hechos descritos en la declaración.",
+    "crime_classification": {
+      "category": "Robo simple",
+      "justification": "La declaración describe un apoderamiento de una bicicleta mediante violencia sobre la persona, concretamente un empujón inmediatamente vinculado con el arrebato del bien. Este elemento permite orientar la clasificación hacia robo simple."
+    }
+  }
+}

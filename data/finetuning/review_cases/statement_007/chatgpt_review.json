@@ -1,0 +1,114 @@
+{
+  "reviewer": "chatgpt",
+  "model_reviews": [
+    {
+      "model_name": "gemma",
+      "factuality": {
+        "status": "minor_issues",
+        "findings": [
+          "Conservó correctamente la fecha, hora, ubicación y el hecho central de la sustracción del vehículo.",
+          "Añadió que la persona afectada no detectó indicios de acceso o tentativa de acceso, circunstancia que no aparece en la declaración.",
+          "Agregó que la denuncia se encuentra en proceso de investigación sin respaldo en la declaración."
+        ]
+      },
+      "hallucinations": [
+        "Afirmó que la persona afectada no detectó indicios de acceso o tentativa de acceso.",
+        "Indicó que la denuncia se encuentra en proceso de investigación."
+      ],
+      "omissions": [],
+      "narrative_quality": {
+        "status": "minor_issues",
+        "findings": [
+          "La narrativa mantiene un tono institucional y comprensible.",
+          "Introduce información innecesaria y no respaldada sobre la inexistencia de indicios de acceso o tentativa de acceso."
+        ]
+      },
+      "crime_classification": {
+        "model_category": "robo de vehículo",
+        "assessment": "incorrect",
+        "proposed_category_cr": "Hurto agravado",
+        "justification": "La declaración describe la sustracción de un vehículo que había sido dejado en la vía pública. No se describen violencia, intimidación ni fuerza sobre las cosas que permitan orientar el hecho hacia robo. La circunstancia de tratarse de un vehículo dejado en vía pública orienta la clasificación hacia hurto agravado."
+      },
+      "useful_elements": [
+        "Conservó los principales datos temporales y espaciales.",
+        "Expresó claramente que el vehículo fue sustraído del lugar donde había sido dejado."
+      ]
+    },
+    {
+      "model_name": "mistral",
+      "factuality": {
+        "status": "minor_issues",
+        "findings": [
+          "Conservó correctamente la fecha, hora, ubicación y el hecho central de la desaparición del vehículo.",
+          "Identificó a la persona denunciante como dueño del vehículo sin que la declaración establezca expresamente esa condición.",
+          "Agregó acciones investigativas futuras relacionadas con localizar el vehículo e identificar al posible autor.",
+          "Atribuyó una finalidad de apropiación permanente que no está expresamente descrita en la declaración."
+        ]
+      },
+      "hallucinations": [
+        "Identificó a la persona denunciante como dueño del vehículo sin respaldo explícito.",
+        "Solicitó investigar el hecho, localizar el vehículo e identificar al posible autor.",
+        "Introdujo una finalidad de apropiación permanente no expresada en la declaración."
+      ],
+      "omissions": [],
+      "narrative_quality": {
+        "status": "minor_issues",
+        "findings": [
+          "La narrativa principal es breve, comprensible e institucional.",
+          "El cierre introduce instrucciones policiales que exceden los hechos declarados."
+        ]
+      },
+      "crime_classification": {
+        "model_category": "Hurto",
+        "assessment": "partially_correct",
+        "proposed_category_cr": "Hurto agravado",
+        "justification": "El modelo acierta al orientar el hecho hacia hurto y no hacia robo, dado que no se describen violencia, intimidación ni fuerza sobre las cosas. Sin embargo, no reconoce la circunstancia relevante de que el objeto sustraído es un vehículo dejado en la vía pública, por lo que la clasificación orientativa más específica es hurto agravado. La referencia al artículo 275 no resulta adecuada para fundamentar esta clasificación en el contexto costarricense."
+      },
+      "useful_elements": [
+        "Diferenció correctamente el hecho de un robo al orientarlo hacia hurto.",
+        "Conservó los principales datos temporales, espaciales y el hecho de la sustracción."
+      ]
+    },
+    {
+      "model_name": "llama",
+      "factuality": {
+        "status": "minor_issues",
+        "findings": [
+          "Conservó correctamente la fecha, hora, ubicación y la sustracción del vehículo desde la vía pública.",
+          "No inventó un mecanismo específico utilizado para sustraer el vehículo.",
+          "Incluyó comentarios meta sobre la ausencia de detalles adicionales y de circunstancias relacionadas con la sustracción.",
+          "Agregó un cierre administrativo sobre el registro del caso que no se desprende de la declaración."
+        ]
+      },
+      "hallucinations": [
+        "Agregó un cierre administrativo indicando que se ha registrado el caso."
+      ],
+      "omissions": [],
+      "narrative_quality": {
+        "status": "minor_issues",
+        "findings": [
+          "La narrativa principal es comprensible y conserva la secuencia esencial del hecho.",
+          "Incluye comentarios meta innecesarios sobre información no proporcionada y circunstancias no conocidas."
+        ]
+      },
+      "crime_classification": {
+        "model_category": "Sustracción de vehículo",
+        "assessment": "incorrect",
+        "proposed_category_cr": "Hurto agravado",
+        "justification": "La denominación utilizada es descriptiva y no resuelve adecuadamente la tipificación orientativa. La declaración describe la sustracción de un vehículo dejado en vía pública, sin violencia, intimidación ni fuerza sobre las cosas descritas, lo que orienta hacia hurto agravado. La posibilidad planteada por el modelo de que se trate de una simple pérdida no está respaldada, pues la declaración expresa que el vehículo fue sustraído."
+      },
+      "useful_elements": [
+        "Conservó los principales hechos y datos temporales y espaciales.",
+        "Evitó inventar un mecanismo concreto de sustracción."
+      ]
+    }
+  ],
+  "proposed_ideal_report": {
+    "narrative": "El 09/09/2020, aproximadamente a las 06:30 horas, la persona afectada se percató de que su vehículo había sido sustraído del sitio donde lo había dejado en la vía pública, en 200 E AVENUE 28, dentro del área de Hollenbeck.",
+    "closing": "Se deja constancia de los hechos descritos por la persona afectada.",
+    "crime_classification": {
+      "category": "Hurto agravado",
+      "justification": "La declaración describe la sustracción de un vehículo dejado en la vía pública y no refiere violencia, intimidación ni fuerza sobre las cosas. La circunstancia de tratarse de un vehículo dejado en vía pública orienta el hecho hacia hurto agravado."
+    }
+  }
+}

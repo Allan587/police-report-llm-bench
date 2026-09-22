@@ -1,0 +1,72 @@
+{
+"statement_index": 9,
+"reviewers": [
+"chatgpt",
+"gemini",
+"grok"
+],
+"classification_consensus": {
+"reviewer_classifications": {
+"chatgpt": "Indeterminada entre incendio y daños",
+"gemini": "Incendio",
+"grok": "Incendio (doloso)"
+},
+"final_category": "Indefinida",
+"consensus": "disagreement",
+"final_justification": "La revisión humana determina que la declaración no contiene suficientes detalles para vincular de manera confiable los hechos con una clasificación orientativa específica. Aunque se establece que se provocó intencionalmente un incendio que afectó bienes, no se describen con suficiente precisión las circunstancias del incendio, la naturaleza de los bienes afectados ni las condiciones necesarias para determinar una tipificación concreta. En consecuencia, la clasificación final se establece como Indefinida."
+},
+"selected_elements": {
+"factuality": [
+"Se conserva la fecha 07/07/2020.",
+"Se conserva la hora aproximada de las 13:40 horas.",
+"Se conserva la referencia a JAMES M WOOD, dentro del área de Rampart.",
+"Se conserva que la persona denunciante constató que se había provocado intencionalmente un incendio.",
+"Se conserva que el incendio afectó bienes ubicados en el sitio."
+],
+"narrative_structure": [
+"Se utiliza tercera persona y lenguaje institucional, formal y objetivo.",
+"Se mantiene una narrativa limitada a los hechos expresamente disponibles.",
+"Se conserva el verbo 'constató' para no transformar la declaración en una afirmación de observación directa del incidente."
+],
+"classification": [
+"La revisión humana establece la clasificación final como Indefinida.",
+"La intencionalidad del incendio y la afectación de bienes no son suficientes por sí solas para establecer una clasificación orientativa específica.",
+"La insuficiencia de detalles relevantes impide producir de manera confiable una referencia de clasificación para entrenamiento."
+],
+"discarded_elements": [
+"Se descarta la clasificación definitiva como Incendio o Incendio doloso.",
+"Se descarta una clasificación específica por daños debido a la insuficiencia de información.",
+"Se descarta que se haya iniciado o procedido a una investigación, por no estar indicado en la declaración.",
+"Se descarta que la persona denunciante haya observado directamente el incidente.",
+"Se descartan las caracterizaciones de la conducta como premeditada o deliberada más allá de la intencionalidad expresamente indicada.",
+"Se descartan comentarios sobre información adicional no proporcionada.",
+"Se descartan referencias al Código Penal Federal, al artículo 301 y a penas específicas ajenas al contexto costarricense.",
+"Se descarta la denominación 'Incendio Arsonista'.",
+"Se descartan cierres que indiquen remisión a autoridades, apertura de investigaciones u otras actuaciones no contenidas en la declaración."
+]
+},
+"final_report": {
+"narrative": "El 07/07/2020, cerca de las 13:40 horas, una persona denunciante constató que se había provocado intencionalmente un incendio que afectó bienes ubicados en el sitio, en JAMES M WOOD, dentro del área de Rampart.",
+"closing": "Se deja constancia de los hechos conforme a la información proporcionada por la persona denunciante.",
+"crime_classification": {
+"category": "Indefinida",
+"justification": "La declaración establece la provocación intencional de un incendio y la afectación de bienes, pero no aporta suficientes detalles sobre las circunstancias del hecho y los bienes afectados para vincularlo de manera confiable con una clasificación orientativa específica."
+}
+},
+"quality_control": {
+"factual_consistency": "pass",
+"unsupported_information": "pass",
+"relevant_information_preserved": "pass",
+"temporal_consistency": "pass",
+"spatial_consistency": "pass",
+"third_person": "pass",
+"institutional_language": "pass",
+"classification_supported": "fail",
+"narrative_classification_consistency": "pass",
+"format_valid": "pass"
+},
+"decision": {
+"status": "rejected",
+"reason": "La revisión humana determina que la información fuente es insuficiente para establecer una clasificación orientativa confiable. Aunque puede construirse una narrativa factual del hecho, la falta de detalles relevantes impide producir una referencia completa y suficientemente sustentada para el objetivo de entrenamiento, por lo que el caso se rechaza."
+}
+}

@@ -1,0 +1,111 @@
+{
+  "statement_index": 3,
+  "reviewer": "chatgpt",
+  "model_reviews": [
+    {
+      "model_name": "gemma",
+      "factuality": {
+        "status": "minor_issues",
+        "findings": [
+          "Conservó la fecha, hora aproximada, ubicación, ventana quebrada, ingreso al vehículo y finalidad de sustraer pertenencias.",
+          "Reformuló el hallazgo de la ventana quebrada como daños que permitieron constatar el ingreso, interpretación compatible en términos generales con la secuencia declarada.",
+          "El cierre afirma que se procede a una investigación correspondiente, acción no indicada en la declaración."
+        ]
+      },
+      "hallucinations": [
+        "Agregó que se procede a una investigación correspondiente sin respaldo en la declaración."
+      ],
+      "omissions": [],
+      "narrative_quality": {
+        "status": "minor_issues",
+        "findings": [
+          "Mantiene una narrativa institucional y comprensible.",
+          "Presenta errores de espaciado que reducen la calidad formal del texto."
+        ]
+      },
+      "crime_classification": {
+        "model_category": "Robo",
+        "assessment": "correct",
+        "proposed_category_cr": "Robo",
+        "justification": "A diferencia del caso anterior, la declaración incorpora una ventana quebrada asociada al ingreso al vehículo para sustraer pertenencias. Este elemento permite orientar el hecho hacia robo por la presencia de fuerza sobre las cosas."
+      },
+      "useful_elements": [
+        "Conservó el elemento de la ventana quebrada, relevante para la clasificación.",
+        "Relacionó correctamente el ingreso al vehículo con la finalidad de sustraer pertenencias."
+      ]
+    },
+    {
+      "model_name": "mistral",
+      "factuality": {
+        "status": "minor_issues",
+        "findings": [
+          "Conservó correctamente fecha, hora, ubicación, ventana rota, ingreso al vehículo y finalidad de sustraer pertenencias.",
+          "Afirmó que personas desconocidas ingresaron al vehículo, aunque la declaración no determina cantidad ni características de los responsables.",
+          "El cierre introduce investigación, identificación y detención de responsables no mencionadas en la declaración."
+        ]
+      },
+      "hallucinations": [
+        "Convirtió al autor no determinado en 'personas desconocidas'.",
+        "Agregó acciones futuras de investigación, identificación y detención de responsables."
+      ],
+      "omissions": [],
+      "narrative_quality": {
+        "status": "minor_issues",
+        "findings": [
+          "La narrativa principal es clara, cronológica e institucional.",
+          "El cierre incorpora instrucciones policiales no derivadas de la declaración."
+        ]
+      },
+      "crime_classification": {
+        "model_category": "Robo",
+        "assessment": "correct",
+        "proposed_category_cr": "Robo",
+        "justification": "La ventana quebrada constituye un elemento de fuerza sobre las cosas asociado al ingreso al vehículo para sustraer pertenencias, por lo que la orientación hacia robo resulta adecuada. Sin embargo, la referencia específica al artículo 307 no está sustentada por la declaración y no debe incorporarse sin una base jurídica independiente."
+      },
+      "useful_elements": [
+        "Conservó claramente la ventana quebrada y el ingreso al vehículo.",
+        "Relacionó correctamente esos elementos con la clasificación general de robo."
+      ]
+    },
+    {
+      "model_name": "llama",
+      "factuality": {
+        "status": "minor_issues",
+        "findings": [
+          "Conservó la fecha, hora aproximada, ubicación, ventana quebrada, ingreso al vehículo y sustracción de pertenencias.",
+          "El cierre afirma que existe una investigación en trámite, circunstancia no mencionada en la declaración."
+        ]
+      },
+      "hallucinations": [
+        "Agregó que se encuentra en trámite la investigación del caso."
+      ],
+      "omissions": [],
+      "narrative_quality": {
+        "status": "minor_issues",
+        "findings": [
+          "Utilizó el verbo 'saquear', que resulta menos preciso y más cargado que la formulación objetiva de sustraer pertenencias.",
+          "Agregó un comentario meta sobre la ausencia de motivos o intenciones de los autores que no aporta a la narrativa.",
+          "Mantiene una cautela innecesaria sobre la clasificación pese a la presencia de fuerza sobre las cosas."
+        ]
+      },
+      "crime_classification": {
+        "model_category": "Robo (posiblemente)",
+        "assessment": "correct",
+        "proposed_category_cr": "Robo",
+        "justification": "La orientación general hacia robo es adecuada porque la declaración describe una ventana quebrada y el ingreso al vehículo para sustraer pertenencias, proporcionando un elemento de fuerza sobre las cosas. La reserva expresada por el modelo es mayor de la necesaria para una clasificación orientativa."
+      },
+      "useful_elements": [
+        "Conservó el elemento de entrada forzada representado por la ventana quebrada.",
+        "Orientó correctamente la clasificación general hacia robo."
+      ]
+    }
+  ],
+  "proposed_ideal_report": {
+    "narrative": "El 08/02/2020, cerca de las 18:00 horas, en una parada o terminal de autobús ubicada en 1000 S FLOWER ST, dentro del área de Central, la persona denunciante manifestó que, al regresar al vehículo, encontró una de las ventanas quebrada y constató que habían ingresado a su interior para sustraer pertenencias.",
+    "closing": "Se deja constancia de los hechos relatados por la persona denunciante.",
+    "crime_classification": {
+      "category": "Robo",
+      "justification": "La declaración describe una ventana quebrada asociada al ingreso al vehículo para sustraer pertenencias. La presencia de fuerza sobre las cosas permite orientar el hecho hacia la categoría de robo."
+    }
+  }
+}

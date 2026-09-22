@@ -1,0 +1,96 @@
+{
+  "statement_index": 2,
+  "reviewer": "Gemini",
+  "model_reviews": [
+    {
+      "model_name": "gemma",
+      "factuality": {
+        "status": "pass",
+        "findings": [
+          "Conserva con precisión la fecha, hora, ubicación, características de la víctima (47 años, masculino) y el hecho central."
+        ]
+      },
+      "hallucinations": [],
+      "omissions": [],
+      "narrative_quality": {
+        "status": "minor_issues",
+        "findings": [
+          "Presenta un error tipográfico de espaciado en la palabra 'áreade'."
+        ]
+      },
+      "crime_classification": {
+        "model_category": "Robo",
+        "assessment": "partially_correct",
+        "proposed_category_cr": "Hurto / Hurto de equipaje o bienes en vehículo",
+        "justification": "Clasifica el delito de manera genérica como Robo sin considerar que no se describe violencia ni fuerza sobre las cosas en la declaración."
+      },
+      "useful_elements": [
+        "Sintetiza de forma clara y objetiva los datos demográficos y la secuencia del incidente en la narrativa."
+      ]
+    },
+    {
+      "model_name": "mistral",
+      "factuality": {
+        "status": "minor_issues",
+        "findings": [
+          "Preserva los datos esenciales del hecho, pero introduce acciones policiales e investigativas no contenidas en la declaración."
+        ]
+      },
+      "hallucinations": [
+        "Infiere que el hecho fue cometido por 'al menos una persona desconocida' y agrega en el cierre un pedido explícito a la policía para investigar, identificar responsables y solicitar testigos."
+      ],
+      "omissions": [],
+      "narrative_quality": {
+        "status": "pass",
+        "findings": [
+          "Buena redacción y fluidez narrativa."
+        ]
+      },
+      "crime_classification": {
+        "model_category": "Robo (artículo 309 del Código Penal)",
+        "assessment": "incorrect",
+        "proposed_category_cr": "Hurto / Hurto de equipaje o bienes en vehículo",
+        "justification": "Cita legislación inapropiada y clasifica como robo sin evidencia de fuerza o violencia en las personas o cosas."
+      },
+      "useful_elements": [
+        "Estructura narrativa fluida y comprensible."
+      ]
+    },
+    {
+      "model_name": "llama",
+      "factuality": {
+        "status": "minor_issues",
+        "findings": [
+          "Preserva los datos cuantitativos y de ubicación, pero añade especulaciones meta sobre la falta de detalles."
+        ]
+      },
+      "hallucinations": [
+        "Agrega un párrafo meta sobre la ausencia de detalles específicos del vehículo o bienes sustraídos y una justificación especulativa sobre cómo fueron adquiridos los bienes."
+      ],
+      "omissions": [],
+      "narrative_quality": {
+        "status": "minor_issues",
+        "findings": [
+          "Incluye comentarios explicativos innecesarios que restan objetividad a la narrativa policial."
+        ]
+      },
+      "crime_classification": {
+        "model_category": "Robo o hurto",
+        "assessment": "partially_correct",
+        "proposed_category_cr": "Hurto / Hurto de equipaje o bienes en vehículo",
+        "justification": "Identifica la duda entre robo y hurto, pero justifica erróneamente la duda en si los bienes fueron adquiridos con dinero u otra forma de compensación."
+      },
+      "useful_elements": [
+        "Reconoce explícitamente la ambigüedad entre las figuras penales de robo y hurto."
+      ]
+    }
+  ],
+  "proposed_ideal_report": {
+    "narrative": "El día 08/02/2020, aproximadamente a las 18:00 horas, en una parada o terminal de autobús situada en 1000 S FLOWER ST, dentro del área de Central, se registró la sustracción de bienes del interior de un vehículo. La persona denunciante, un hombre de 47 años, manifestó haber descubierto el ingreso no autorizado a su automóvil y la posterior falta de sus pertenencias.",
+    "closing": "Se realiza la recepción del reporte para el trámite correspondiente.",
+    "crime_classification": {
+      "category": "Hurto",
+      "justification": "De acuerdo con los hechos declarados, se constató la sustracción de bienes del interior del vehículo mediante un ingreso sin autorización, sin que se describa el uso de violencia sobre las personas ni el empleo de fuerza sobre las cosas."
+    }
+  }
+}

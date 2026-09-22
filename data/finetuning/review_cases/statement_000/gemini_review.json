@@ -1,0 +1,85 @@
+{
+  "reviewer": "Gemini",
+  "model_reviews": [
+    {
+      "model_name": "gemma",
+      "factuality": {
+        "status": "pass",
+        "findings": []
+      },
+      "hallucinations": [],
+      "omissions": [],
+      "narrative_quality": {
+        "status": "pass",
+        "findings": []
+      },
+      "crime_classification": {
+        "model_category": "Robo vehicular",
+        "assessment": "partially_correct",
+        "proposed_category_cr": "Hurtocontra la propiedad (Hurtode vehículo)",
+        "justification": "En el contexto costarricense, al no haber mediado violencia sobre las personas ni fuerza sobre las cosas para la sustracción descrita, la conducta encuadra en la figura de hurto (art. 208 del Código Penal) y no de robo."
+      },
+      "useful_elements": [
+        "Estructura narrativa concisa y apego factual exacto a la declaración original."
+      ]
+    },
+    {
+      "model_name": "mistral",
+      "factuality": {
+        "status": "minor_issues",
+        "findings": [
+          "Falta de espacio tipográfico en 'las21:30' y 'SLONGWOOD'."
+        ]
+      },
+      "hallucinations": [],
+      "omissions": [],
+      "narrative_quality": {
+        "status": "minor_issues",
+        "findings": [
+          "Errores de formato/espaciado en el texto."
+        ]
+      },
+      "crime_classification": {
+        "model_category": "Robo de Vehículo - RV",
+        "assessment": "partially_correct",
+        "proposed_category_cr": "Hurtocontra la propiedad (Hurtode vehículo)",
+        "justification": "Se tipifica técnicamente como hurto al no registrarse fuerza ni violencia en la sustracción del vehículo estacionado."
+      },
+      "useful_elements": [
+        "Síntesis directa de los hechos."
+      ]
+    },
+    {
+      "model_name": "llama",
+      "factuality": {
+        "status": "pass",
+        "findings": []
+      },
+      "hallucinations": [],
+      "omissions": [],
+      "narrative_quality": {
+        "status": "minor_issues",
+        "findings": [
+          "Indica que el informe se considera concluido de forma apresurada en la sección de cierre."
+        ]
+      },
+      "crime_classification": {
+        "model_category": "Robo de Vehículo",
+        "assessment": "partially_correct",
+        "proposed_category_cr": "Hurtocontra la propiedad (Hurtode vehículo)",
+        "justification": "Si bien reconoce adecuadamente la falta de detalles sobre el método de sustracción o violencia, mantiene el término 'Robo' en lugar de 'Hurto'."
+      },
+      "useful_elements": [
+        "Correcta identificación de la falta de violencia o uso de fuerza como elemento diferenciador."
+      ]
+    }
+  ],
+  "proposed_ideal_report": {
+    "narrative": "El 01/03/2020, aproximadamente a las 21:30 horas, un ciudadano de sexo masculino reportó que su vehículo fue sustraído del lugar donde lo había dejado estacionado en la vía pública, específicamente en 1900 S LONGWOOD AV, dentro del área de Wilshire. El denunciante indicó percatarse de la ausencia del automóvil sin que conste en su declaración el uso de fuerza o violencia en el hecho.",
+    "closing": "Se recibe la denuncia para el trámite correspondiente y se remite el informe a la sección de investigación competente.",
+    "crime_classification": {
+      "category": "Hurto de vehículo",
+      "justification": "De acuerdo con la legislación costarricense (Código Penal, Art. 208), la apoderación ilegítima de una cosa mueble ajena sin el empleo de fuerza en las cosas ni violencia o intimidación en las personas se clasifica como Hurto."
+    }
+  }
+}

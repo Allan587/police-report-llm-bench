@@ -1,0 +1,110 @@
+{
+  "statement_index": 2,
+  "reviewer": "chatgpt",
+  "model_reviews": [
+    {
+      "model_name": "gemma",
+      "factuality": {
+        "status": "minor_issues",
+        "findings": [
+          "Conservó correctamente la edad y sexo de la persona denunciante, la fecha, la hora aproximada, la ubicación y la sustracción de bienes del interior del vehículo.",
+          "El cierre afirma que se procede a una investigación correspondiente, acción posterior no indicada en la declaración."
+        ]
+      },
+      "hallucinations": [
+        "Agregó que se procede a una investigación correspondiente sin respaldo en la declaración."
+      ],
+      "omissions": [],
+      "narrative_quality": {
+        "status": "minor_issues",
+        "findings": [
+          "La narrativa mantiene un tono institucional y una secuencia comprensible.",
+          "Presenta un error menor de espaciado en la expresión 'áreade Central'."
+        ]
+      },
+      "crime_classification": {
+        "model_category": "Robo",
+        "assessment": "incorrect",
+        "proposed_category_cr": "Hurto",
+        "justification": "La declaración describe el ingreso no autorizado a un vehículo y la sustracción de bienes de su interior, pero no menciona violencia, amenazas ni fuerza sobre las cosas. Con los hechos disponibles, la clasificación orientativa más adecuada es hurto."
+      },
+      "useful_elements": [
+        "Conservó los hechos esenciales sin inventar un mecanismo específico de ingreso al vehículo.",
+        "Mantuvo fecha, hora y ubicación."
+      ]
+    },
+    {
+      "model_name": "mistral",
+      "factuality": {
+        "status": "minor_issues",
+        "findings": [
+          "Conservó correctamente la fecha, hora aproximada, ubicación y naturaleza general de la sustracción.",
+          "Introdujo la existencia de al menos una persona desconocida como autora, aunque la declaración no identifica ni caracteriza al responsable.",
+          "El cierre incorpora solicitudes de investigación, identificación de responsables y búsqueda de testigos que no aparecen en la declaración."
+        ]
+      },
+      "hallucinations": [
+        "Agregó solicitudes para investigar e identificar a los responsables.",
+        "Solicitó que posibles testigos proporcionen información pese a que la declaración no menciona testigos.",
+        "Presentó al autor como al menos una persona desconocida sin que esa caracterización figure en la declaración."
+      ],
+      "omissions": [],
+      "narrative_quality": {
+        "status": "minor_issues",
+        "findings": [
+          "La narrativa es comprensible, institucional y sigue una secuencia lógica.",
+          "Las acciones investigativas del cierre exceden la función de reconstruir objetivamente la declaración."
+        ]
+      },
+      "crime_classification": {
+        "model_category": "Robo",
+        "assessment": "incorrect",
+        "proposed_category_cr": "Hurto",
+        "justification": "La declaración únicamente establece el ingreso no autorizado al vehículo y la sustracción de bienes. No describe violencia, intimidación ni fuerza sobre las cosas que permita fundamentar robo. Además, la referencia al artículo 309 no está sustentada por la declaración y no debe utilizarse para sustituir el análisis de los hechos."
+      },
+      "useful_elements": [
+        "Preservó adecuadamente los principales datos temporales y espaciales.",
+        "Expresó claramente que los bienes fueron sustraídos del interior del vehículo."
+      ]
+    },
+    {
+      "model_name": "llama",
+      "factuality": {
+        "status": "minor_issues",
+        "findings": [
+          "Conservó correctamente la fecha, hora, ubicación y la sustracción de bienes del interior de un vehículo.",
+          "El cierre afirma que el incidente se encuentra en trámite de investigación, circunstancia no indicada en la declaración."
+        ]
+      },
+      "hallucinations": [
+        "Agregó que se encuentra en trámite una investigación para determinar los hechos y responsables."
+      ],
+      "omissions": [],
+      "narrative_quality": {
+        "status": "minor_issues",
+        "findings": [
+          "Incluyó un comentario meta sobre la ausencia de detalles del vehículo, los bienes y la identidad de las personas involucradas que no resulta necesario para la narrativa policial.",
+          "La explicación final sobre bienes adquiridos con dinero u otra forma de compensación es conceptualmente ajena a la distinción entre robo y hurto."
+        ]
+      },
+      "crime_classification": {
+        "model_category": "Robo o hurto",
+        "assessment": "partially_correct",
+        "proposed_category_cr": "Hurto",
+        "justification": "El modelo contempla el hurto como posibilidad, pero mantiene una ambigüedad que los hechos disponibles no justifican. La declaración no describe violencia, intimidación ni fuerza sobre las cosas, por lo que la orientación más fundada es hurto. El criterio relativo a si los bienes fueron adquiridos mediante dinero o compensación no es pertinente para esta distinción."
+      },
+      "useful_elements": [
+        "Reconoció que la información disponible no describe un mecanismo específico de ingreso.",
+        "Incluyó el hurto entre las categorías consideradas."
+      ]
+    }
+  ],
+  "proposed_ideal_report": {
+    "narrative": "El 08/02/2020, cerca de las 18:00 horas, en una parada o terminal de autobús ubicada en 1000 S FLOWER ST, dentro del área de Central, una persona denunciante de 47 años y sexo masculino manifestó que descubrió que habían ingresado sin autorización a un vehículo y sustraído bienes de su interior.",
+    "closing": "Se deja constancia de los hechos relatados por la persona denunciante.",
+    "crime_classification": {
+      "category": "Hurto",
+      "justification": "La declaración describe la sustracción de bienes del interior de un vehículo sin mencionar violencia, amenazas, intimidación ni fuerza sobre las cosas. Con los hechos disponibles, la clasificación orientativa corresponde a hurto."
+    }
+  }
+}

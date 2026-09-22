@@ -1,0 +1,99 @@
+{
+  "reviewer": "Grok",
+  "model_reviews": [
+    {
+      "model_name": "gemma",
+      "factuality": {
+        "status": "pass",
+        "findings": [
+          "Conservó correctamente fecha, hora aproximada, lugar, sexo del afectado, la aproximación de la persona, la exigencia de las llaves, la amenaza de golpearlo y la entrega bajo intimidación seguida del apoderamiento del vehículo."
+        ]
+      },
+      "hallucinations": [],
+      "omissions": [],
+      "narrative_quality": {
+        "status": "pass",
+        "findings": [
+          "Narrativa institucional, objetiva, en tercera persona, fluida y bien organizada."
+        ]
+      },
+      "crime_classification": {
+        "model_category": "robo simple",
+        "assessment": "partially_correct",
+        "proposed_category_cr": "Robo (con intimidación sobre las personas)",
+        "justification": "La declaración describe exigencia de las llaves bajo amenaza de agresión física (intimidación), seguida del apoderamiento del vehículo. Corresponde a robo conforme al artículo 212 inciso 3 del Código Penal de Costa Rica (violencia o intimidación sobre las personas). La etiqueta 'robo simple' es aceptable orientativamente, aunque la precisión mayor es 'robo con intimidación'."
+      },
+      "useful_elements": [
+        "Excelente fidelidad factual y narrativa clara que captura la intimidación.",
+        "Preservación completa de los elementos de amenaza y entrega bajo coacción."
+      ]
+    },
+    {
+      "model_name": "mistral",
+      "factuality": {
+        "status": "pass",
+        "findings": [
+          "Conservó fecha, hora, lugar, la exigencia de las llaves, la amenaza de golpearlo, la entrega bajo intimidación y el apoderamiento del vehículo."
+        ]
+      },
+      "hallucinations": [
+        "Solicitud a los agentes de policía de investigar e identificar al responsable (acción futura no indicada)."
+      ],
+      "omissions": [],
+      "narrative_quality": {
+        "status": "pass",
+        "findings": [
+          "Lenguaje institucional y coherente; presenta los hechos de forma objetiva."
+        ]
+      },
+      "crime_classification": {
+        "model_category": "robo aggravado debido a la presencia de intimidación",
+        "assessment": "partially_correct",
+        "proposed_category_cr": "Robo (con intimidación sobre las personas)",
+        "justification": "Existe intimidación (amenaza de golpear), por lo que se configura robo (art. 212.3 Código Penal). No se describen circunstancias de agravación específicas del art. 213 (armas, fractura de lugar habitado, etc.), por lo que 'agravado' resulta excesivo; la calificación correcta orientativa es robo con intimidación."
+      },
+      "useful_elements": [
+        "Captura correcta de la intimidación y de la secuencia de hechos."
+      ]
+    },
+    {
+      "model_name": "llama",
+      "factuality": {
+        "status": "minor_issues",
+        "findings": [
+          "Conservó fecha, hora, lugar, la aproximación, la exigencia de las llaves, la intimidación y el apoderamiento del vehículo.",
+          "Agrega que no se han identificado nombres ni la naturaleza de la relación entre las personas (comentario no derivado de la declaración)."
+        ]
+      },
+      "hallucinations": [
+        "Observaciones sobre ausencia de identificación de nombres y de relación entre las personas.",
+        "Cierre que indica que se ha concluido la recopilación de información relevante."
+      ],
+      "omissions": [],
+      "narrative_quality": {
+        "status": "minor_issues",
+        "findings": [
+          "Narrativa mayoritariamente objetiva, pero incluye comentarios meta que reducen la pureza institucional."
+        ]
+      },
+      "crime_classification": {
+        "model_category": "Robo con amenaza",
+        "assessment": "correct",
+        "proposed_category_cr": "Robo (con intimidación sobre las personas)",
+        "justification": "La declaración contiene exigencia de entrega de las llaves bajo amenaza de agresión física, lo que configura intimidación sobre la persona y, por tanto, robo conforme al artículo 212 inciso 3 del Código Penal de Costa Rica. La calificación 'Robo con amenaza' es orientativamente adecuada."
+      },
+      "useful_elements": [
+        "Identificación correcta de los elementos de coacción e intimidación.",
+        "Justificación que reconoce la presencia de intimidación."
+      ]
+    }
+  ],
+  "proposed_ideal_report": {
+    "narrative": "La persona afectada, de sexo masculino, indicó que el 01/03/2020, cerca de las 21:30 horas, en la vía pública, en 1900 S LONGWOOD AV, dentro del área de Wilshire, cuando se encontraba junto al vehículo, una persona se le acercó, le exigió entregar las llaves y le advirtió que lo golpearía si se negaba. Ante la intimidación entregó las llaves y la persona se llevó el vehículo.",
+    "closing": "Se recibe la denuncia correspondiente.",
+    "crime_classification": {
+      "category": "Robo (con intimidación sobre las personas)",
+      "justification": "Los hechos describen el apoderamiento del vehículo mediante exigencia de las llaves bajo amenaza expresa de agresión física (intimidación). Conforme al artículo 212 inciso 3 del Código Penal de Costa Rica, el hecho se tipifica como robo cuando se comete con violencia o intimidación sobre las personas. No se describen circunstancias agravantes del artículo 213."
+    }
+  }
+}

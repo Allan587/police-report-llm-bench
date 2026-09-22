@@ -1,0 +1,68 @@
+{
+"statement_index": 3,
+"reviewers": [
+"chatgpt",
+"gemini",
+"grok"
+],
+"classification_consensus": {
+"reviewer_classifications": {
+"chatgpt": "Robo",
+"gemini": "Robo con fuerza sobre las cosas",
+"grok": "Robo (con fuerza en las cosas)"
+},
+"final_category": "Robo",
+"consensus": "unanimous",
+"final_justification": "Los tres revisores coinciden en orientar el hecho hacia robo. Esta conclusión puede reconstruirse desde la declaración, que establece que al regresar al vehículo se encontró una ventana quebrada y se constató el ingreso al interior para sustraer pertenencias. La ventana quebrada constituye el hecho positivo que permite distinguir este caso del statement_index 2 y sustenta orientativamente la presencia de fuerza sobre las cosas."
+},
+"selected_elements": {
+"factuality": [
+"El hecho ocurrió el 08/02/2020 cerca de las 18:00 horas.",
+"El incidente tuvo lugar en una parada o terminal de autobús ubicada en 1000 S FLOWER ST, dentro del área de Central.",
+"Al regresar al vehículo se encontró una de las ventanas quebrada.",
+"Se constató que habían ingresado al interior del vehículo para sustraer pertenencias."
+],
+"narrative_structure": [
+"Se conserva la secuencia temporal del regreso al vehículo, hallazgo de la ventana quebrada y constatación del ingreso.",
+"Se utiliza lenguaje institucional, objetivo y en tercera persona.",
+"El cierre se limita a dejar constancia del relato sin introducir acciones investigativas posteriores."
+],
+"classification": [
+"La ventana quebrada constituye el elemento factual relevante para orientar la clasificación hacia robo.",
+"El ingreso al vehículo está relacionado en la declaración con la finalidad de sustraer pertenencias.",
+"La clasificación se mantiene en la categoría general de robo sin incorporar artículos legales específicos no contenidos en la declaración."
+],
+"discarded_elements": [
+"Las afirmaciones de Gemma y Llama sobre investigaciones futuras o en trámite.",
+"Las referencias de Mistral a personas desconocidas y a investigación, identificación o detención de responsables.",
+"Las referencias a artículos específicos del Código Penal introducidas por algunos outputs o revisores.",
+"El término 'saquear' empleado por Llama por ser menos preciso que la formulación de sustraer pertenencias.",
+"Los comentarios meta de Llama sobre motivos o intenciones no detallados.",
+"La cautela residual expresada por Llama mediante la categoría 'Robo (posiblemente)', dado que la declaración aporta expresamente el hecho de la ventana quebrada."
+]
+},
+"final_report": {
+"narrative": "El 08/02/2020, cerca de las 18:00 horas, en una parada o terminal de autobús ubicada en 1000 S FLOWER ST, dentro del área de Central, la persona denunciante manifestó que, al regresar al vehículo, encontró una de las ventanas quebrada y constató que habían ingresado a su interior para sustraer pertenencias.",
+"closing": "Se deja constancia de los hechos relatados por la persona denunciante.",
+"crime_classification": {
+"category": "Robo",
+"justification": "La declaración establece que, al regresar al vehículo, la persona denunciante encontró una de las ventanas quebrada y constató el ingreso al interior para sustraer pertenencias. La presencia de una ventana quebrada asociada al acceso al vehículo constituye el elemento factual que sustenta orientativamente la clasificación como robo."
+}
+},
+"quality_control": {
+"factual_consistency": "pass",
+"unsupported_information": "pass",
+"relevant_information_preserved": "pass",
+"temporal_consistency": "pass",
+"spatial_consistency": "pass",
+"third_person": "pass",
+"institutional_language": "pass",
+"classification_supported": "pass",
+"narrative_classification_consistency": "pass",
+"format_valid": "pass"
+},
+"decision": {
+"status": "approved",
+"reason": "La declaración contiene hechos suficientes para construir un reporte fiable y sustentar orientativamente la clasificación de robo mediante el hallazgo de una ventana quebrada asociado al ingreso al vehículo para sustraer pertenencias."
+}
+}

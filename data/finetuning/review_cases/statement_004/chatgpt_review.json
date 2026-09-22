@@ -1,0 +1,110 @@
+{
+  "reviewer": "chatgpt",
+  "model_reviews": [
+    {
+      "model_name": "gemma",
+      "factuality": {
+        "status": "minor_issues",
+        "findings": [
+          "Conservó correctamente la fecha, hora, ubicación, tipo general de inmueble y sustracción de la bicicleta.",
+          "Transformó el hecho de que la persona denunciante se dio cuenta de que la bicicleta ya no estaba en una 'inspección del lugar', acción específica que no aparece en la declaración."
+        ]
+      },
+      "hallucinations": [],
+      "omissions": [],
+      "narrative_quality": {
+        "status": "minor_issues",
+        "findings": [
+          "La narrativa mantiene un tono institucional y comprensible.",
+          "La expresión 'al realizar una inspección del lugar' introduce una formalización innecesaria del modo en que se descubrió la sustracción.",
+          "Presenta errores menores de espaciado y redacción."
+        ]
+      },
+      "crime_classification": {
+        "model_category": "robo de vehículo",
+        "assessment": "incorrect",
+        "proposed_category_cr": "Hurto",
+        "justification": "La declaración únicamente establece la sustracción de una bicicleta que había sido dejada en el sitio. No describe violencia o intimidación contra personas ni fuerza sobre las cosas que permita orientar el hecho hacia robo. Tampoco corresponde tratar la bicicleta como un vehículo para aplicar una categoría de robo vehicular."
+      },
+      "useful_elements": [
+        "Conserva los principales datos temporales y espaciales.",
+        "Describe claramente que la bicicleta había sido dejada en el lugar y posteriormente fue encontrada ausente."
+      ]
+    },
+    {
+      "model_name": "mistral",
+      "factuality": {
+        "status": "minor_issues",
+        "findings": [
+          "Conservó la fecha, hora aproximada, ubicación y desaparición de la bicicleta.",
+          "Caracterizó la desaparición como 'forzosa', aunque la declaración no describe fuerza, violencia ni el mecanismo concreto de sustracción.",
+          "Indicó que la persona denunciante confirmó que la bicicleta estaba previamente aparcada y que la encontró ausente al regresar, introduciendo circunstancias no expresadas de esa manera en la declaración."
+        ]
+      },
+      "hallucinations": [
+        "Agregó una solicitud a agentes de policía para investigar, localizar la bicicleta e identificar al responsable, acciones futuras no contenidas en la declaración."
+      ],
+      "omissions": [],
+      "narrative_quality": {
+        "status": "minor_issues",
+        "findings": [
+          "La narrativa es breve y mantiene una estructura institucional.",
+          "El término 'desaparición forzosa' es impreciso y puede sugerir un mecanismo de ejecución no establecido.",
+          "Presenta errores menores de espaciado."
+        ]
+      },
+      "crime_classification": {
+        "model_category": "hurto",
+        "assessment": "correct",
+        "proposed_category_cr": "Hurto",
+        "justification": "La conclusión hacia hurto es compatible con los hechos descritos, dado que existe una sustracción y no se describen violencia, intimidación ni fuerza sobre las cosas. Sin embargo, la explicación del modelo debe separarse de su caracterización previa de la desaparición como 'forzosa', que no está respaldada por la declaración."
+      },
+      "useful_elements": [
+        "Orientó correctamente la clasificación hacia hurto.",
+        "Reconoció en la justificación la naturaleza de la sustracción de un bien sin consentimiento."
+      ]
+    },
+    {
+      "model_name": "llama",
+      "factuality": {
+        "status": "minor_issues",
+        "findings": [
+          "Conservó correctamente la fecha, hora, ubicación y sustracción de la bicicleta.",
+          "Transformó el descubrimiento de la ausencia de la bicicleta en que la persona denunciante regresó al lugar, circunstancia que no aparece expresamente en la declaración."
+        ]
+      },
+      "hallucinations": [
+        "Agregó que no se identificaron testigos, aunque la declaración no aporta información sobre la existencia o inexistencia de testigos.",
+        "Agregó que no se obtuvo información sobre posibles motivos o circunstancias del incidente.",
+        "Indicó que se concluyó la recopilación de información y que el caso se remite a una unidad correspondiente para realizar acciones necesarias, actuaciones administrativas o investigativas no contenidas en la declaración."
+      ],
+      "omissions": [],
+      "narrative_quality": {
+        "status": "minor_issues",
+        "findings": [
+          "La narrativa principal es comprensible y mantiene un tono mayoritariamente institucional.",
+          "Incluye comentarios meta sobre información ausente que no aportan a la exposición objetiva de los hechos.",
+          "La expresión 'quién o qué entidad podría haberse llevado la bicicleta' resulta poco natural e innecesariamente especulativa."
+        ]
+      },
+      "crime_classification": {
+        "model_category": "Robo de bienes muebles",
+        "assessment": "incorrect",
+        "proposed_category_cr": "Hurto",
+        "justification": "La declaración describe la sustracción de una bicicleta, pero no contiene violencia, intimidación ni fuerza sobre las cosas. La ausencia de información sobre el mecanismo concreto no permite agregar esos elementos, por lo que la orientación adecuada con los hechos disponibles es hurto."
+      },
+      "useful_elements": [
+        "Conserva los principales hechos y datos temporales y espaciales.",
+        "No inventa un mecanismo específico utilizado para sustraer la bicicleta."
+      ]
+    }
+  ],
+  "proposed_ideal_report": {
+    "narrative": "Según lo indicado, el hecho ocurrió el 04/11/2020 alrededor de las 17:00 horas, en un inmueble de apartamentos o varias unidades habitacionales ubicado en 1400 W 37TH ST, dentro del área de Southwest. La persona denunciante manifestó que había dejado una bicicleta en el sitio y posteriormente se dio cuenta de que esta ya no se encontraba allí, por lo que había sido sustraída.",
+    "closing": "Se deja constancia de los hechos reportados.",
+    "crime_classification": {
+      "category": "Hurto",
+      "justification": "La declaración describe la sustracción de una bicicleta sin mencionar violencia o intimidación contra personas ni fuerza sobre las cosas. Con los hechos disponibles, la clasificación orientativa corresponde a hurto."
+    }
+  }
+}
