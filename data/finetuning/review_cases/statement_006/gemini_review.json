@@ -1,0 +1,97 @@
+{
+  "reviewer": "Gemini",
+  "model_reviews": [
+    {
+      "model_name": "gemma",
+      "factuality": {
+        "status": "pass",
+        "findings": [
+          "Conserva fecha, hora, ubicación y las características de la víctima/denunciante (19 años, masculino)."
+        ]
+      },
+      "hallucinations": [
+        "Incluye en el cierre que el caso se encuentra en proceso de investigación sin fundamento en la declaración."
+      ],
+      "omissions": [],
+      "narrative_quality": {
+        "status": "pass",
+        "findings": [
+          "Redacción clara y fluida."
+        ]
+      },
+      "crime_classification": {
+        "model_category": "robo simple",
+        "assessment": "incorrect",
+        "proposed_category_cr": "Hurto simple",
+        "justification": "Clasifica el hecho como robo simple a pesar de que no se describe violencia sobre las personas ni fuerza sobre las cosas (apropiación de mercadería en una tienda sin pagar)."
+      },
+      "useful_elements": [
+        "Conservación precisa de datos demográficos y espacio-temporales."
+      ]
+    },
+    {
+      "model_name": "mistral",
+      "factuality": {
+        "status": "pass",
+        "findings": [
+          "Conserva correctamente los datos esenciales expresados en la declaración."
+        ]
+      },
+      "hallucinations": [
+        "Asigna un número de expediente ficticio (XXXX) e inventa una solicitud policial a testigos potenciales."
+      ],
+      "omissions": [],
+      "narrative_quality": {
+        "status": "pass",
+        "findings": [
+          "Lenguaje formal y bien estructurado."
+        ]
+      },
+      "crime_classification": {
+        "model_category": "hurto",
+        "assessment": "correct",
+        "proposed_category_cr": "Hurto simple",
+        "justification": "Identifica adecuadamente el delito como hurto al notar la ausencia de fuerza o violencia en el apoderamiento de la mercadería."
+      },
+      "useful_elements": [
+        "Orientación correcta hacia la figura de hurto."
+      ]
+    },
+    {
+      "model_name": "llama",
+      "factuality": {
+        "status": "minor_issues",
+        "findings": [
+          "Refiere al denunciante de 19 años como 'un menor', lo cual es un error fáctico y conceptual."
+        ]
+      },
+      "hallucinations": [
+        "Añade comentarios meta sobre el destino del sospechoso y la falta de detalles."
+      ],
+      "omissions": [],
+      "narrative_quality": {
+        "status": "minor_issues",
+        "findings": [
+          "Incluye frases meta innecesarias e inconsistencias de lenguaje al calificar de 'menor' a un adulto de 19 años. Errores de espaciado ('20:37horas')."
+        ]
+      },
+      "crime_classification": {
+        "model_category": "Robo",
+        "assessment": "incorrect",
+        "proposed_category_cr": "Hurto simple",
+        "justification": "Clasifica erróneamente como robo en lugar de hurto, omitiendo analizar la ausencia de violencia o fuerza."
+      },
+      "useful_elements": [
+        "Mención objetiva de la observación de la mercadería retirada."
+      ]
+    }
+  ],
+  "proposed_ideal_report": {
+    "narrative": "El 10 de marzo de 2020, a las 20:37 horas aproximadamente, en un establecimiento comercial de venta de ropa ubicado en 14000 RIVERSIDE DR, área de Van Nuys, un hombre de 19 años que se encontraba en el lugar observó a una persona sustraer mercadería del establecimiento y retirarse con ella sin efectuar el pago correspondiente.",
+    "closing": "El presente informe deja constancia de los hechos expuestos por el denunciante.",
+    "crime_classification": {
+      "category": "Hurto simple",
+      "justification": "De acuerdo con la legislación costarricense, la conducta constituye Hurto simple, en virtud de que existió el apoderamiento ilegítimo de una cosa mueble ajena sin que mediara violencia sobre las personas ni fuerza sobre las cosas."
+    }
+  }
+}

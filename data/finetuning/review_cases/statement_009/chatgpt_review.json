@@ -1,0 +1,118 @@
+{
+  "reviewer": "chatgpt",
+  "model_reviews": [
+    {
+      "model_name": "gemma",
+      "factuality": {
+        "status": "minor_issues",
+        "findings": [
+          "Conservó correctamente la fecha, hora, ubicación y el carácter intencional del incendio.",
+          "Conservó que el incendio afectó bienes ubicados en el lugar.",
+          "Agregó que se procede a una investigación correspondiente, acción posterior no indicada en la declaración."
+        ]
+      },
+      "hallucinations": [
+        "Indicó que se procede a una investigación correspondiente sin respaldo en la declaración."
+      ],
+      "omissions": [],
+      "narrative_quality": {
+        "status": "minor_issues",
+        "findings": [
+          "La narrativa es institucional, clara y comprensible.",
+          "Incluye una referencia innecesaria a que no se proporcionó información adicional sobre el tipo de incendio o los daños.",
+          "Presenta errores menores de espaciado."
+        ]
+      },
+      "crime_classification": {
+        "model_category": "incendio doloso",
+        "assessment": "partially_correct",
+        "proposed_category_cr": "Indeterminada entre incendio y daños",
+        "justification": "La declaración permite establecer que el fuego fue provocado intencionalmente y afectó bienes, por lo que Gemma identifica correctamente la relevancia del carácter doloso. Sin embargo, para orientar el hecho al delito de incendio en el contexto costarricense debe poder establecerse la creación de un peligro común para personas o bienes, elemento que la declaración no describe con suficiente precisión. Tampoco existe información suficiente sobre las características de los bienes y del daño para resolver definitivamente otra tipificación."
+      },
+      "useful_elements": [
+        "Conservación de la fecha, hora y ubicación.",
+        "Reconocimiento del carácter intencional del incendio.",
+        "Conservación de la afectación de bienes."
+      ]
+    },
+    {
+      "model_name": "mistral",
+      "factuality": {
+        "status": "minor_issues",
+        "findings": [
+          "Conservó correctamente la fecha, hora, ubicación, carácter intencional del incendio y afectación de bienes.",
+          "Agregó la apertura de una investigación para determinar los hechos y responsables, circunstancia no indicada en la declaración."
+        ]
+      },
+      "hallucinations": [
+        "Afirmó que se ha abierto una investigación para determinar los hechos y responsables sin respaldo en la declaración."
+      ],
+      "omissions": [],
+      "narrative_quality": {
+        "status": "minor_issues",
+        "findings": [
+          "La narrativa principal es breve, institucional y coherente.",
+          "El cierre introduce una actuación investigativa inexistente en la fuente.",
+          "Presenta errores menores de espaciado."
+        ]
+      },
+      "crime_classification": {
+        "model_category": "posible delito de incendio intencional",
+        "assessment": "partially_correct",
+        "proposed_category_cr": "Indeterminada entre incendio y daños",
+        "justification": "Mistral reconoce correctamente que el incendio fue intencional y produjo afectación de bienes, pero esos elementos por sí solos no permiten establecer que se configuró el peligro común requerido para orientar suficientemente el caso al delito de incendio en Costa Rica. La declaración tampoco aporta información suficiente para resolver con seguridad una tipificación alternativa."
+      },
+      "useful_elements": [
+        "Conservación de la secuencia factual esencial.",
+        "Reconocimiento del carácter intencional del incendio.",
+        "Conservación de la afectación de bienes.",
+        "Uso de una formulación clasificatoria prudente al hablar de un posible delito."
+      ]
+    },
+    {
+      "model_name": "llama",
+      "factuality": {
+        "status": "minor_issues",
+        "findings": [
+          "Conservó correctamente la fecha, hora, ubicación, carácter intencional del incendio y afectación de bienes.",
+          "Afirmó que la persona denunciante observó el incidente, mientras que la declaración únicamente establece que constató que se había provocado el incendio.",
+          "Caracterizó la conducta como premeditada y deliberada, aunque la declaración únicamente permite establecer su carácter intencional."
+        ]
+      },
+      "hallucinations": [
+        "Transformó la constatación posterior del incendio en una observación directa del incidente.",
+        "Introdujo premeditación sin respaldo en la declaración.",
+        "Introdujo una referencia al supuesto Código Penal Federal y a un artículo 301 que no se deriva de la declaración y no corresponde al marco jurídico solicitado."
+      ],
+      "omissions": [],
+      "narrative_quality": {
+        "status": "minor_issues",
+        "findings": [
+          "La narrativa principal es comprensible y mantiene una estructura institucional.",
+          "Incluye comentarios meta sobre la ausencia de información adicional.",
+          "La clasificación incorpora una referencia jurídica ajena e innecesaria que reduce la precisión técnica.",
+          "Presenta errores menores de espaciado."
+        ]
+      },
+      "crime_classification": {
+        "model_category": "Incendio Arsonista",
+        "assessment": "partially_correct",
+        "proposed_category_cr": "Indeterminada entre incendio y daños",
+        "justification": "Llama reconoce correctamente la intencionalidad del incendio, pero utiliza una denominación que no corresponde con precisión a la tipificación costarricense y no verifica el elemento de peligro común necesario para orientar suficientemente el hecho al delito de incendio. Además, la referencia al Código Penal Federal y al supuesto artículo 301 es ajena al contexto jurídico costarricense."
+      },
+      "useful_elements": [
+        "Conservación de la fecha, hora y ubicación.",
+        "Reconocimiento del carácter intencional del incendio.",
+        "Conservación de la afectación de bienes."
+      ]
+    }
+  ],
+  "proposed_ideal_report": {
+    "narrative": "El 07/07/2020, cerca de las 13:40 horas, una persona denunciante constató que se había provocado intencionalmente un incendio que afectó bienes ubicados en la vía pública, en JAMES M WOOD, dentro del área de Rampart.",
+    "closing": "Se deja constancia de los hechos conforme a la información proporcionada por la persona denunciante.",
+    "crime_classification": {
+      "category": "Indeterminada entre incendio y daños",
+      "justification": "La declaración establece que se provocó intencionalmente un incendio y que este afectó bienes. Sin embargo, no describe con suficiente precisión que el fuego generara un peligro común para personas o bienes indeterminados, elemento relevante para orientar el hecho al delito de incendio en el contexto costarricense. Con la información disponible tampoco es posible determinar con suficiente fundamento una tipificación alternativa específica por daños."
+    }
+  }
+}

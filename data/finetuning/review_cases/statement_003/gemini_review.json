@@ -1,0 +1,96 @@
+{
+  "statement_index": 3,
+  "reviewer": "Gemini",
+  "model_reviews": [
+    {
+      "model_name": "gemma",
+      "factuality": {
+        "status": "pass",
+        "findings": [
+          "Conserva adecuadamente los hechos principales, la rotura de la ventana y los datos de ubicación y hora."
+        ]
+      },
+      "hallucinations": [],
+      "omissions": [],
+      "narrative_quality": {
+        "status": "minor_issues",
+        "findings": [
+          "Errores menores de espaciado ('delhallazgode', 'desustraer', 'aproximadamentea', 'eldelito')."
+        ]
+      },
+      "crime_classification": {
+        "model_category": "Robo",
+        "assessment": "correct",
+        "proposed_category_cr": "Robo con fuerza sobre las cosas",
+        "justification": "Identifica correctamente la figura de robo basándose en la fuerza ejercida sobre la ventana del vehículo para lograr el ingreso."
+      },
+      "useful_elements": [
+        "Correcta interpretación del daño físico en la ventana como elemento determinante del delito."
+      ]
+    },
+    {
+      "model_name": "mistral",
+      "factuality": {
+        "status": "minor_issues",
+        "findings": [
+          "Conserva los hechos principales, pero vuelve a incluir solicitudes de acción policial no declaradas."
+        ]
+      },
+      "hallucinations": [
+        "Atribuye el hecho a 'personas desconocidas' e incluye en el cierre un pedido a la policía para investigar, tomar medidas, identificar y detener a los responsables."
+      ],
+      "omissions": [],
+      "narrative_quality": {
+        "status": "minor_issues",
+        "findings": [
+          "Errores de espaciado ('regresara', 'conel')."
+        ]
+      },
+      "crime_classification": {
+        "model_category": "Robo (Artículo 307 del Código Penal)",
+        "assessment": "partially_correct",
+        "proposed_category_cr": "Robo con fuerza sobre las cosas",
+        "justification": "La categorización general es correcta por existir fuerza sobre las cosas, aunque cita un artículo específico del código penal inapropiado."
+      },
+      "useful_elements": [
+        "Narrativa bien hilvanada en el cuerpo del reporte."
+      ]
+    },
+    {
+      "model_name": "llama",
+      "factuality": {
+        "status": "minor_issues",
+        "findings": [
+          "Incorpora afirmaciones meta sobre los motivos o intenciones de los autores."
+        ]
+      },
+      "hallucinations": [
+        "Agrega un enunciado indicando que 'No se detallaron los motivos o intenciones de los autores del hecho'."
+      ],
+      "omissions": [],
+      "narrative_quality": {
+        "status": "minor_issues",
+        "findings": [
+          "Uso de términos como 'saquear' que resulta poco institucional."
+        ]
+      },
+      "crime_classification": {
+        "model_category": "Robo (posiblemente)",
+        "assessment": "partially_correct",
+        "proposed_category_cr": "Robo con fuerza sobre las cosas",
+        "justification": "Identifica el posible robo por la entrada forzada, pero muestra indecisión injustificada ante la presencia clara de la ventana quebrada."
+      },
+      "useful_elements": [
+        "Reconoce el elemento de entrada forzada a través de la ventana quebrada."
+      ]
+    }
+  ],
+  "proposed_ideal_report": {
+    "narrative": "Cerca de las 18:00 horas del día 08/02/2020, en la parada o terminal de autobús ubicada en 1000 S FLOWER ST, dentro del área de Central, la persona denunciante reportó un incidente en su vehículo. Según manifestaciones de la víctima, al regresar al automóvil observó una de las ventanas quebradas y constató que se había ingresado al interior para sustraer sus pertenencias.",
+    "closing": "Se toma nota de la denuncia presentada para los trámites correspondientes.",
+    "crime_classification": {
+      "category": "Robo con fuerza sobre las cosas",
+      "justification": "El hecho se configura como robo debido a que medió fuerza sobre las cosas (rotura de una de las ventanas del vehículo) para lograr el acceso al interior y concretar el apoderamiento de las pertenencias."
+    }
+  }
+}

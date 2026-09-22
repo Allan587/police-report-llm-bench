@@ -1,0 +1,105 @@
+{
+  "reviewer": "Grok",
+  "model_reviews": [
+    {
+      "model_name": "gemma",
+      "factuality": {
+        "status": "minor_issues",
+        "findings": [
+          "Conservó correctamente la fecha, hora, lugar, sexo del denunciante y el hecho de la sustracción del vehículo dejado en vía pública.",
+          "El cierre agrega que 'se encuentra en proceso de investigación', lo cual no se deriva de la declaración."
+        ]
+      },
+      "hallucinations": [
+        "Mención de que la denuncia se encuentra en proceso de investigación."
+      ],
+      "omissions": [],
+      "narrative_quality": {
+        "status": "pass",
+        "findings": [
+          "Lenguaje institucional, tercera persona, coherente y natural.",
+          "Organización lógica de los hechos."
+        ]
+      },
+      "crime_classification": {
+        "model_category": "robo vehicular",
+        "assessment": "incorrect",
+        "proposed_category_cr": "Hurto agravado (vehículo dejado en vía pública)",
+        "justification": "La declaración describe únicamente el descubrimiento de la sustracción de un vehículo dejado en la vía pública, sin violencia, intimidación ni fuerza sobre las personas. En el Código Penal de Costa Rica corresponde a hurto agravado (art. 209 inciso 5)."
+      },
+      "useful_elements": [
+        "Narrativa clara y fiel a los hechos centrales.",
+        "Preservación correcta de fecha, hora y ubicación."
+      ]
+    },
+    {
+      "model_name": "mistral",
+      "factuality": {
+        "status": "minor_issues",
+        "findings": [
+          "Conservó fecha, hora aproximada, lugar y el hecho de la ausencia del vehículo.",
+          "Presenta el hecho como 'robo' desde el inicio de la narrativa."
+        ]
+      },
+      "hallucinations": [
+        "Solicitud expresa a los agentes de policía de investigar y tomar medidas para localizar el vehículo e identificar al autor (acciones futuras no indicadas en la declaración)."
+      ],
+      "omissions": [],
+      "narrative_quality": {
+        "status": "minor_issues",
+        "findings": [
+          "Lenguaje relativamente institucional, pero introduce la calificación de 'robo' de forma prematura.",
+          "Fluidez aceptable."
+        ]
+      },
+      "crime_classification": {
+        "model_category": "robo de vehículo (Robo de Vehículo - RV)",
+        "assessment": "incorrect",
+        "proposed_category_cr": "Hurto agravado (vehículo dejado en vía pública)",
+        "justification": "No hay elementos de violencia o intimidación. Se trata de apoderamiento de vehículo dejado en vía pública, tipificado como hurto agravado conforme al art. 209 inciso 5 del Código Penal costarricense."
+      },
+      "useful_elements": [
+        "Preservación de los datos temporales y espaciales básicos."
+      ]
+    },
+    {
+      "model_name": "llama",
+      "factuality": {
+        "status": "minor_issues",
+        "findings": [
+          "Conservó fecha, hora, lugar y el hecho de la sustracción desde el lugar donde se dejó estacionado.",
+          "Presenta el hecho desde el inicio como 'denuncia de robo de vehículo'."
+        ]
+      },
+      "hallucinations": [
+        "Afirmación de que 'este informe se considera concluido'.",
+        "Adición de que no se han proporcionado detalles adicionales sobre el vehículo ni el procedimiento (comentario meta no necesario)."
+      ],
+      "omissions": [],
+      "narrative_quality": {
+        "status": "minor_issues",
+        "findings": [
+          "Estructura aceptable, pero introduce calificación y comentarios sobre ausencia de detalles que restan objetividad narrativa.",
+          "Lenguaje mayoritariamente institucional."
+        ]
+      },
+      "crime_classification": {
+        "model_category": "Robo de Vehículo",
+        "assessment": "incorrect",
+        "proposed_category_cr": "Hurto agravado (vehículo dejado en vía pública)",
+        "justification": "La declaración no describe violencia, intimidación ni fuerza sobre personas. Corresponde a hurto agravado por tratarse de vehículo dejado en vía pública (art. 209 inciso 5 Código Penal)."
+      },
+      "useful_elements": [
+        "Reconocimiento de la ausencia de detalles sobre el método de sustracción."
+      ]
+    }
+  ],
+  "proposed_ideal_report": {
+    "narrative": "El 01/03/2020, aproximadamente a las 21:30 horas, una persona denunciante de sexo masculino se percató de que su vehículo había sido sustraído del sitio donde lo había dejado en la vía pública, en 1900 S LONGWOOD AV, dentro del área de Wilshire.",
+    "closing": "Se recibe la denuncia correspondiente.",
+    "crime_classification": {
+      "category": "Hurto agravado (vehículo dejado en vía pública)",
+      "justification": "Los hechos descritos consisten en el apoderamiento ilegítimo de un vehículo automotor dejado en la vía pública, sin que se mencione violencia, intimidación ni fuerza sobre las personas. Conforme al artículo 209 inciso 5 del Código Penal de Costa Rica, se configura hurto agravado."
+    }
+  }
+}

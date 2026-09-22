@@ -1,0 +1,77 @@
+{
+"statement_index": 4,
+"reviewers": [
+"chatgpt",
+"gemini",
+"grok"
+],
+"classification_consensus": {
+"reviewer_classifications": {
+"chatgpt": "Hurto",
+"gemini": "Hurto simple",
+"grok": "hurto"
+},
+"final_category": "Hurto",
+"consensus": "unanimous",
+"final_justification": "Los tres revisores orientan el hecho hacia hurto. Esta conclusión puede reconstruirse directamente desde la declaración: la persona denunciante se dio cuenta de que la bicicleta que había dejado en el sitio ya no se encontraba allí y había sido sustraída. La declaración no describe violencia o intimidación contra personas ni fuerza sobre las cosas, por lo que los hechos disponibles sustentan orientativamente la categoría de Hurto."
+},
+"selected_elements": {
+"factuality": [
+"Fecha del hecho: 04/11/2020.",
+"Hora aproximada: 17:00 horas.",
+"Ubicación: inmueble de apartamentos o varias unidades habitacionales en 1400 W 37TH ST, dentro del área de Southwest.",
+"La persona denunciante había dejado una bicicleta en el sitio.",
+"Posteriormente se dio cuenta de que la bicicleta ya no se encontraba allí y había sido sustraída."
+],
+"narrative_structure": [
+"Narración en tercera persona.",
+"Exposición cronológica y objetiva de los hechos.",
+"Lenguaje institucional sin agregar actuaciones policiales o investigativas no contenidas en la declaración.",
+"Cierre breve limitado a dejar constancia del hecho reportado."
+],
+"classification": [
+"La sustracción de la bicicleta constituye el hecho positivo que sustenta la orientación hacia Hurto.",
+"No se incorporan violencia, intimidación, fuerza sobre las cosas ni mecanismos de sustracción que no aparecen en la declaración.",
+"Se descarta la clasificación como robo de vehículo o robo de bienes muebles al no estar sustentados en la declaración los elementos necesarios para orientar el hecho hacia robo."
+],
+"discarded_elements": [
+"La afirmación de Gemma de que la persona denunciante realizó una 'inspección del lugar'.",
+"La clasificación de Gemma como 'robo de vehículo'.",
+"La expresión de Mistral 'desaparición forzosa'.",
+"La afirmación de Mistral de que la persona denunciante regresó al lugar o confirmó circunstancias adicionales sobre cómo encontró ausente la bicicleta.",
+"La solicitud de Mistral de investigar, localizar la bicicleta e identificar al responsable.",
+"La afirmación de Llama de que la persona denunciante regresó al lugar.",
+"Los comentarios de Llama sobre inexistencia o falta de identificación de testigos.",
+"Los comentarios de Llama sobre ausencia de información relativa a motivos o circunstancias del incidente.",
+"El cierre de Llama relativo a concluir la recopilación de información y remitir el caso a una unidad correspondiente.",
+"La clasificación de Llama como 'Robo de bienes muebles'.",
+"La formulación de Gemini según la cual la bicicleta estaba 'aparcada' y posteriormente se realizó una inspección del sitio.",
+"El cierre propuesto por Gemini relativo a remitir el informe para trámites administrativos.",
+"La referencia de Gemini al artículo 208 del Código Penal, al no provenir de la declaración original y no ser necesaria para construir la clasificación orientativa."
+]
+},
+"final_report": {
+"narrative": "Según lo indicado, el hecho ocurrió el 04/11/2020 alrededor de las 17:00 horas, en un inmueble de apartamentos o varias unidades habitacionales ubicado en 1400 W 37TH ST, dentro del área de Southwest. La persona denunciante se dio cuenta de que la bicicleta que había dejado en el sitio ya no se encontraba allí y había sido sustraída.",
+"closing": "Se deja constancia de los hechos reportados.",
+"crime_classification": {
+"category": "Hurto",
+"justification": "La declaración establece que la bicicleta que la persona denunciante había dejado en el sitio posteriormente ya no se encontraba allí y había sido sustraída. No se describen violencia o intimidación contra personas ni fuerza sobre las cosas, por lo que los hechos disponibles sustentan orientativamente la clasificación como Hurto."
+}
+},
+"quality_control": {
+"factual_consistency": "pass",
+"unsupported_information": "pass",
+"relevant_information_preserved": "pass",
+"temporal_consistency": "pass",
+"spatial_consistency": "pass",
+"third_person": "pass",
+"institutional_language": "pass",
+"classification_supported": "pass",
+"narrative_classification_consistency": "pass",
+"format_valid": "pass"
+},
+"decision": {
+"status": "approved",
+"reason": "La declaración permite construir una referencia de entrenamiento coherente y suficientemente respaldada. El reporte final conserva los hechos relevantes de la declaración, elimina las circunstancias añadidas por modelos y revisores, mantiene correctamente fecha, hora y ubicación y presenta una clasificación orientativa consistente con los hechos descritos."
+}
+}

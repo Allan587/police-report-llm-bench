@@ -1,0 +1,100 @@
+{
+  "reviewer": "Gemini",
+  "model_reviews": [
+    {
+      "model_name": "gemma",
+      "factuality": {
+        "status": "minor_issues",
+        "findings": [
+          "Omitió mencionar explícitamente en la narrativa que el incendio afectó bienes ubicados en el sitio."
+        ]
+      },
+      "hallucinations": [
+        "Agregó en la sección de Cierre que 'se procede a la investigación correspondiente', acción investigativa no respaldada por la declaración."
+      ],
+      "omissions": [
+        "Omitió la afectación directa a los bienes presentes en el sitio dentro del cuerpo de la narrativa."
+      ],
+      "narrative_quality": {
+        "status": "minor_issues",
+        "findings": [
+          "Presenta errores menores de espaciado en el texto generado ('Eldenunciante', 'esun').",
+          "Mantiene un tono institucional adecuado."
+        ]
+      },
+      "crime_classification": {
+        "model_category": "Incendio doloso",
+        "assessment": "correct",
+        "proposed_category_cr": "Incendio",
+        "justification": "La categorización propuesta identifica de manera acertada el carácter intencional de la provocación del fuego sobre bienes, lo que se adecua a la tipificación de Incendio."
+      },
+      "useful_elements": [
+        "Conservó adecuadamente los datos temporales (07/07/2020, 13:40 horas) y de ubicación (JAMES M WOOD, Rampart)."
+      ]
+    },
+    {
+      "model_name": "mistral",
+      "factuality": {
+        "status": "pass",
+        "findings": []
+      },
+      "hallucinations": [
+        "Agregó en el cierre que 'Se ha abierto una investigación para determinar los hechos y responsables', estado procesal no derivado de la declaración."
+      ],
+      "omissions": [],
+      "narrative_quality": {
+        "status": "minor_issues",
+        "findings": [
+          "Presenta un error menor de espaciado ('sedenunció').",
+          "La narrativa es clara, fluida y estructurada cronológicamente."
+        ]
+      },
+      "crime_classification": {
+        "model_category": "Incendio intencional",
+        "assessment": "correct",
+        "proposed_category_cr": "Incendio",
+        "justification": "Identifica correctamente la naturaleza intencional de la provocación del fuego y los daños a bienes."
+      },
+      "useful_elements": [
+        "Conserva todos los hechos sustanciales de la declaración, incluyendo la afectación a los bienes."
+      ]
+    },
+    {
+      "model_name": "llama",
+      "factuality": {
+        "status": "minor_issues",
+        "findings": [
+          "Afirma que la persona denunciante informó haber 'observado' el incidente, cuando la declaración establece que 'constató' la provocación del hecho."
+        ]
+      },
+      "hallucinations": [
+        "Cita legislación extranjera no aplicable al contexto costarricense ('Código Penal Federal (CPF) 301')."
+      ],
+      "omissions": [],
+      "narrative_quality": {
+        "status": "minor_issues",
+        "findings": [
+          "Incluye comentarios meta sobre la ausencia de detalles o causa del fuego.",
+          "Incluye un cierre administrativo que no aporta a la narrativa policial de los hechos."
+        ]
+      },
+      "crime_classification": {
+        "model_category": "Incendio Arsonista",
+        "assessment": "partially_correct",
+        "proposed_category_cr": "Incendio",
+        "justification": "Aunque reconoce la provocación deliberada de fuego, recurre a un término no técnico en Costa Rica ('Incendio Arsonista') y fundamenta erróneamente con articulado de código penal extranjero."
+      },
+      "useful_elements": [
+        "Conserva adecuadamente los datos espacio-temporales e indica que hubo bienes afectados."
+      ]
+    }
+  ],
+  "proposed_ideal_report": {
+    "narrative": "El 07/07/2020, cerca de las 13:40 horas, en la vía pública ubicada en JAMES M WOOD, dentro del área de Rampart, la persona denunciante constató que se había provocado intencionalmente un incendio que causó daños a los bienes ubicados en el lugar.",
+    "closing": "El presente informe se remite a la autoridad competente para los trámites correspondientes.",
+    "crime_classification": {
+      "category": "Incendio",
+      "justification": "Los hechos descritos refieren la provocación deliberada e intencional de fuego afectando bienes en la vía pública, lo cual configura el delito de incendio previsto en la legislación penal costarricense contra la seguridad pública y la propiedad."
+    }
+  }
+}

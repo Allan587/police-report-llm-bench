@@ -1,0 +1,72 @@
+{
+"statement_index": 7,
+"reviewers": [
+"chatgpt",
+"gemini",
+"grok"
+],
+"classification_consensus": {
+"reviewer_classifications": {
+"chatgpt": "Hurto agravado",
+"gemini": "Hurto de vehículo",
+"grok": "hurto de vehículo"
+},
+"final_category": "Hurto agravado",
+"consensus": "majority",
+"final_justification": "Los revisores coinciden en que el hecho corresponde a una sustracción y no presenta elementos declarados que sustenten una clasificación como robo. Aunque Gemini y Grok utilizan la denominación descriptiva 'hurto de vehículo', la circunstancia relevante reconstruida del caso es que el vehículo había sido dejado en la vía pública y posteriormente fue sustraído. Esa circunstancia permite adoptar como categoría orientativa más específica 'Hurto agravado'."
+},
+"selected_elements": {
+"factuality": [
+"El hecho ocurrió el 09/09/2020, aproximadamente a las 06:30 horas.",
+"La ubicación indicada es 200 E AVENUE 28, dentro del área de Hollenbeck.",
+"La persona afectada había dejado el vehículo en la vía pública.",
+"Posteriormente, la persona afectada se percató de que el vehículo había sido sustraído."
+],
+"narrative_structure": [
+"Relato en tercera persona.",
+"Presentación cronológica del hecho, indicando primero la ubicación del vehículo y posteriormente la constatación de su sustracción.",
+"Lenguaje institucional, breve y objetivo."
+],
+"classification": [
+"La sustracción recae sobre un vehículo dejado en la vía pública.",
+"No se describen violencia, intimidación ni fuerza sobre las cosas.",
+"La circunstancia del vehículo dejado en vía pública sustenta la clasificación orientativa como Hurto agravado."
+],
+"discarded_elements": [
+"La afirmación de Gemma de que no existían indicios de acceso o tentativa de acceso, por no estar respaldada por la declaración.",
+"La afirmación de Gemma de que el caso se encontraba en proceso de investigación.",
+"La identificación de la persona afectada como dueño o propietario legal del vehículo sin respaldo expreso.",
+"Las solicitudes de investigación, localización del vehículo e identificación del posible autor agregadas por Mistral.",
+"La finalidad de apropiación permanente añadida por Mistral.",
+"La referencia de Mistral al artículo 275.",
+"Los comentarios meta de Llama sobre información no proporcionada.",
+"El cierre administrativo de Llama indicando que el caso fue registrado.",
+"La posibilidad planteada por Llama de que el hecho pudiera tratarse de una pérdida.",
+"Las denominaciones 'Robo de vehículo' y 'Sustracción de vehículo' como clasificación final."
+]
+},
+"final_report": {
+"narrative": "El 09/09/2020, aproximadamente a las 06:30 horas, la persona afectada se percató de que su vehículo había sido sustraído del sitio donde lo había dejado en la vía pública, en 200 E AVENUE 28, dentro del área de Hollenbeck.",
+"closing": "Se deja constancia de los hechos descritos por la persona afectada.",
+"crime_classification": {
+"category": "Hurto agravado",
+"justification": "El hecho descrito consiste en la sustracción de un vehículo que había sido dejado en la vía pública. Esta circunstancia sustenta la clasificación orientativa como Hurto agravado. La declaración no describe violencia, intimidación ni fuerza sobre las cosas que sustenten una clasificación como robo."
+}
+},
+"quality_control": {
+"factual_consistency": "pass",
+"unsupported_information": "pass",
+"relevant_information_preserved": "pass",
+"temporal_consistency": "pass",
+"spatial_consistency": "pass",
+"third_person": "pass",
+"institutional_language": "pass",
+"classification_supported": "pass",
+"narrative_classification_consistency": "pass",
+"format_valid": "pass"
+},
+"decision": {
+"status": "approved",
+"reason": "Los hechos relevantes son consistentes entre las revisiones y permiten construir una narrativa sin incorporar información material no respaldada. La discrepancia entre 'Hurto de vehículo' y 'Hurto agravado' puede resolverse a partir de la circunstancia específica de que el vehículo había sido dejado en la vía pública, por lo que se adopta Hurto agravado como categoría orientativa final."
+}
+}

@@ -1,0 +1,70 @@
+{
+"statement_index": 8,
+"reviewers": [
+"chatgpt",
+"gemini",
+"grok"
+],
+"classification_consensus": {
+"reviewer_classifications": {
+"chatgpt": "Hurto agravado",
+"gemini": "Hurto de vehículo",
+"grok": "hurto de vehículo"
+},
+"final_category": "Hurto agravado",
+"consensus": "majority",
+"final_justification": "Los tres revisores coinciden en que la clasificación como robo de vehículo no está sustentada por los hechos descritos. Aunque Gemini y Grok utilizan la denominación descriptiva 'hurto de vehículo', el hecho relevante es la sustracción de un vehículo que había sido dejado en la vía pública. Esa circunstancia permite adoptar como clasificación orientativa más específica 'Hurto agravado'."
+},
+"selected_elements": {
+"factuality": [
+"El hecho ocurrió el 02/05/2020, aproximadamente a las 18:00 horas.",
+"La ubicación indicada es 2500 W 4TH ST, dentro del área de Rampart.",
+"El vehículo había sido dejado en la vía pública.",
+"Posteriormente, la persona denunciante se percató de que el vehículo había sido sustraído."
+],
+"narrative_structure": [
+"Relato en tercera persona.",
+"Presentación cronológica de la ubicación previa del vehículo y la posterior constatación de su sustracción.",
+"Lenguaje institucional, objetivo y sin incorporar actuaciones investigativas."
+],
+"classification": [
+"La sustracción recae sobre un vehículo dejado en la vía pública.",
+"No se describen violencia, intimidación ni fuerza sobre las cosas.",
+"La circunstancia del vehículo dejado en vía pública sustenta la clasificación orientativa como Hurto agravado."
+],
+"discarded_elements": [
+"El uso del término 'robo' en la narrativa y clasificación de Gemma.",
+"La afirmación de Mistral de que el vehículo fue localizado en 2500 W 4TH ST, por contradecir el hecho central de la sustracción.",
+"La apertura de una investigación añadida por Mistral.",
+"Las solicitudes de información adicional incorporadas por Mistral.",
+"La referencia de Mistral al artículo 316.",
+"Los comentarios meta de Llama sobre la ausencia de detalles del vehículo o de la persona responsable.",
+"El cierre de Llama indicando que el informe se consideraba concluido y se remitía a otra unidad.",
+"Las denominaciones de 'Robo de vehículo' utilizadas por los modelos como clasificación final."
+]
+},
+"final_report": {
+"narrative": "El 02/05/2020, aproximadamente a las 18:00 horas, la persona denunciante se percató de que su vehículo había sido sustraído del sitio donde lo había dejado en la vía pública, en 2500 W 4TH ST, dentro del área de Rampart.",
+"closing": "Se deja constancia de los hechos descritos por la persona denunciante.",
+"crime_classification": {
+"category": "Hurto agravado",
+"justification": "El hecho descrito consiste en la sustracción de un vehículo que había sido dejado en la vía pública. Esta circunstancia sustenta la clasificación orientativa como Hurto agravado. La declaración no describe violencia, intimidación ni fuerza sobre las cosas que sustenten una clasificación como robo."
+}
+},
+"quality_control": {
+"factual_consistency": "pass",
+"unsupported_information": "pass",
+"relevant_information_preserved": "pass",
+"temporal_consistency": "pass",
+"spatial_consistency": "pass",
+"third_person": "pass",
+"institutional_language": "pass",
+"classification_supported": "pass",
+"narrative_classification_consistency": "pass",
+"format_valid": "pass"
+},
+"decision": {
+"status": "approved",
+"reason": "La información relevante permite reconstruir de manera coherente la sustracción del vehículo sin conservar las alteraciones introducidas por los modelos. La discrepancia entre 'Hurto de vehículo' y 'Hurto agravado' puede resolverse mediante la circunstancia específica de que el vehículo había sido dejado en la vía pública, por lo que se adopta Hurto agravado como categoría orientativa final."
+}
+}

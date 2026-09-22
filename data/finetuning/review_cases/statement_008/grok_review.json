@@ -1,0 +1,106 @@
+{
+  "reviewer": "Grok",
+  "model_reviews": [
+    {
+      "model_name": "gemma",
+      "factuality": {
+        "status": "pass",
+        "findings": [
+          "Conservó correctamente fecha, hora, ubicación y el hecho de que la persona denunciante dejó el vehículo estacionado y posteriormente notó su ausencia."
+        ]
+      },
+      "hallucinations": [
+        "Indicó que se ha realizado la recepción de la denuncia correspondiente de forma que introduce un estado procesal no descrito.",
+        "Utilizó el término 'robo' en la narrativa y clasificación sin elementos de violencia o fuerza."
+      ],
+      "omissions": [],
+      "narrative_quality": {
+        "status": "pass",
+        "findings": [
+          "Narrativa en tercera persona, tono institucional y clara.",
+          "Estructura ordenada."
+        ]
+      },
+      "crime_classification": {
+        "model_category": "Robo de vehículo",
+        "assessment": "incorrect",
+        "proposed_category_cr": "hurto de vehículo",
+        "justification": "La declaración describe únicamente el descubrimiento de la sustracción del vehículo dejado en vía pública, sin violencia, intimidación ni fuerza sobre las cosas."
+      },
+      "useful_elements": [
+        "Conservación precisa de fecha, hora, ubicación y secuencia de descubrimiento.",
+        "Formulación institucional de la narrativa."
+      ]
+    },
+    {
+      "model_name": "mistral",
+      "factuality": {
+        "status": "fail",
+        "findings": [
+          "Transformó la sustracción en que el vehículo 'fue localizado' en el sitio, invirtiendo el sentido de los hechos (la declaración indica que fue sustraído del sitio).",
+          "Conservó fecha y ubicación aproximadas."
+        ]
+      },
+      "hallucinations": [
+        "Indicó que el vehículo fue localizado en el sitio, hecho contrario a la declaración.",
+        "Agregó apertura de investigación y solicitud de información adicional no respaldadas.",
+        "Referencia a Artículo 316 del Código Penal no derivada de la declaración."
+      ],
+      "omissions": [],
+      "narrative_quality": {
+        "status": "minor_issues",
+        "findings": [
+          "Narrativa institucional en lo formal.",
+          "Error factual grave que afecta la coherencia del relato."
+        ]
+      },
+      "crime_classification": {
+        "model_category": "robo de vehículo (Artículo 316 del Código Penal)",
+        "assessment": "incorrect",
+        "proposed_category_cr": "hurto de vehículo",
+        "justification": "Los hechos descritos no incluyen violencia, intimidación ni fuerza sobre las cosas; además el modelo invirtió el sentido de la sustracción."
+      },
+      "useful_elements": [
+        "Conservación de los datos temporales y de ubicación."
+      ]
+    },
+    {
+      "model_name": "llama",
+      "factuality": {
+        "status": "pass",
+        "findings": [
+          "Conservó correctamente fecha, hora, ubicación y el hecho de la sustracción del vehículo estacionado en vía pública."
+        ]
+      },
+      "hallucinations": [
+        "Incluyó comentarios meta sobre la ausencia de detalles del vehículo y de la persona responsable.",
+        "Cierre administrativo que indica que el informe se considera concluido y se remite a otra unidad."
+      ],
+      "omissions": [],
+      "narrative_quality": {
+        "status": "minor_issues",
+        "findings": [
+          "Narrativa comprensible y mayoritariamente objetiva.",
+          "Comentarios meta y cierre administrativo innecesarios."
+        ]
+      },
+      "crime_classification": {
+        "model_category": "Robo de Vehículo",
+        "assessment": "incorrect",
+        "proposed_category_cr": "hurto de vehículo",
+        "justification": "La declaración solo describe la sustracción sin violencia, intimidación ni fuerza sobre las cosas; la categoría de robo no se sostiene."
+      },
+      "useful_elements": [
+        "Conservación precisa de los hechos principales de la declaración."
+      ]
+    }
+  ],
+  "proposed_ideal_report": {
+    "narrative": "El 02/05/2020, aproximadamente a las 18:00 horas, la persona denunciante se percató de que su vehículo había sido sustraído del sitio donde lo había dejado en la vía pública, en 2500 W 4TH ST, dentro del área de Rampart.",
+    "closing": "Se recibe la denuncia correspondiente.",
+    "crime_classification": {
+      "category": "hurto de vehículo",
+      "justification": "Los hechos describen la sustracción de un vehículo dejado en vía pública sin mención de violencia, intimidación ni fuerza sobre las cosas, lo que orienta a hurto en el contexto penal costarricense."
+    }
+  }
+}

@@ -1,0 +1,69 @@
+{
+"statement_index": 0,
+"reviewers": [
+"chatgpt",
+"gemini",
+"grok"
+],
+"classification_consensus": {
+"reviewer_classifications": {
+"chatgpt": "Hurto agravado",
+"gemini": "Hurto contra la propiedad (Hurto de vehículo)",
+"grok": "Hurto agravado (vehículo dejado en vía pública)"
+},
+"final_category": "Hurto agravado",
+"consensus": "majority",
+"final_justification": "La declaración describe que un vehículo fue sustraído del lugar donde había sido dejado en la vía pública. No se describen violencia o intimidación contra una persona ni otras circunstancias propias del robo. La circunstancia positiva de tratarse de un vehículo dejado en la vía pública permite sustentar orientativamente la categoría de hurto agravado."
+},
+"selected_elements": {
+"factuality": [
+"Se conservan la fecha 01/03/2020 y la hora aproximada de las 21:30 horas.",
+"Se conserva que la persona denunciante es de sexo masculino.",
+"Se conserva que el vehículo había sido dejado en la vía pública y posteriormente se constató su sustracción.",
+"Se conserva la ubicación 1900 S LONGWOOD AV, dentro del área de Wilshire."
+],
+"narrative_structure": [
+"Narrativa breve, objetiva, institucional y en tercera persona.",
+"Presentación cronológica del momento en que la persona denunciante se percata de la sustracción.",
+"Se evita incorporar actuaciones policiales posteriores o información administrativa no contenida en la declaración."
+],
+"classification": [
+"Se descarta la clasificación de robo vehicular utilizada por los tres modelos evaluados.",
+"La ausencia de violencia o intimidación descrita impide sustentar una clasificación de robo.",
+"La sustracción del vehículo dejado en la vía pública sustenta orientativamente la clasificación de hurto agravado."
+],
+"discarded_elements": [
+"La afirmación de Gemma de que el caso se encuentra en proceso de investigación.",
+"La identificación realizada por Mistral de la persona denunciante como propietario del vehículo.",
+"Las solicitudes o acciones futuras de investigación, localización del vehículo e identificación del autor agregadas por Mistral.",
+"La transformación realizada por Llama del momento del hecho en fecha de la denuncia.",
+"La afirmación de Llama de que concluyó la recopilación de información relevante.",
+"Las referencias a trámites, remisiones o investigaciones propuestas en algunos reportes ideales de los revisores.",
+"La categoría de robo vehicular presente en los outputs originales."
+]
+},
+"final_report": {
+"narrative": "El 01/03/2020, aproximadamente a las 21:30 horas, una persona denunciante de sexo masculino se percató de que su vehículo había sido sustraído del lugar donde lo había dejado en la vía pública, en 1900 S LONGWOOD AV, dentro del área de Wilshire.",
+"closing": "No se aportaron más detalles sobre las circunstancias de la sustracción.",
+"crime_classification": {
+"category": "Hurto agravado",
+"justification": "La declaración describe la sustracción de un vehículo dejado en la vía pública, sin violencia o intimidación contra una persona. La circunstancia de tratarse de un vehículo dejado en la vía pública permite sustentar orientativamente la clasificación como hurto agravado."
+}
+},
+"quality_control": {
+"factual_consistency": "pass",
+"unsupported_information": "pass",
+"relevant_information_preserved": "pass",
+"temporal_consistency": "pass",
+"spatial_consistency": "pass",
+"third_person": "pass",
+"institutional_language": "pass",
+"classification_supported": "pass",
+"narrative_classification_consistency": "pass",
+"format_valid": "pass"
+},
+"decision": {
+"status": "approved",
+"reason": "La declaración permite construir una referencia de entrenamiento factual y coherente. Las discrepancias entre revisores sobre la denominación de la categoría pueden resolverse a partir de los hechos descritos, que sustentan orientativamente hurto agravado por la sustracción de un vehículo dejado en la vía pública."
+}
+}

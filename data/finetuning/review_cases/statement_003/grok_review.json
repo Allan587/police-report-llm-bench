@@ -1,0 +1,105 @@
+{
+  "reviewer": "grok",
+  "model_reviews": [
+    {
+      "model_name": "gemma",
+      "factuality": {
+        "status": "pass",
+        "findings": [
+          "Conservó fecha (08/02/2020), hora aproximada (18:00), ubicación, hallazgo de ventana quebrada, ingreso al interior y sustracción de pertenencias."
+        ]
+      },
+      "hallucinations": [
+        "Cierre agrega que se procede a la investigación correspondiente.",
+        "Formulación 'un individuo o individuos' introduce pluralidad no determinada."
+      ],
+      "omissions": [],
+      "narrative_quality": {
+        "status": "minor_issues",
+        "findings": [
+          "Lenguaje institucional.",
+          "Errores menores de espaciado y redacción ('hallazgode', 'propósito desustraer', 'Orientacionalmente')."
+        ]
+      },
+      "crime_classification": {
+        "model_category": "robo",
+        "assessment": "correct",
+        "proposed_category_cr": "Robo (con fuerza en las cosas)",
+        "justification": "La ventana quebrada constituye fuerza en las cosas para acceder al interior y sustraer pertenencias, tipificando robo según el art. 212 del Código Penal de Costa Rica."
+      },
+      "useful_elements": [
+        "Narrativa fiel a los hechos esenciales, incluyendo el daño en la ventana.",
+        "Clasificación orientativa correcta."
+      ]
+    },
+    {
+      "model_name": "mistral",
+      "factuality": {
+        "status": "minor_issues",
+        "findings": [
+          "Conservó fecha, hora, ubicación, ventana rota e ingreso para sustraer pertenencias.",
+          "Introdujo 'personas desconocidas' (plural) y 'su vehículo' sin respaldo explícito de pluralidad o propiedad."
+        ]
+      },
+      "hallucinations": [
+        "Cierre solicita investigar, identificar y detener a los responsables; acciones no presentes en la declaración.",
+        "Cita Artículo 307 (incorrecto)."
+      ],
+      "omissions": [],
+      "narrative_quality": {
+        "status": "minor_issues",
+        "findings": [
+          "Narrativa clara en lo sustancial.",
+          "Problemas menores de espaciado."
+        ]
+      },
+      "crime_classification": {
+        "model_category": "Robo (Artículo 307 del Código Penal)",
+        "assessment": "correct",
+        "proposed_category_cr": "Robo (con fuerza en las cosas)",
+        "justification": "La rotura de la ventana implica fuerza en las cosas, por lo que la clasificación orientativa de robo es correcta; el artículo citado es erróneo."
+      },
+      "useful_elements": [
+        "Conservación del elemento de la ventana rota como mecanismo de ingreso."
+      ]
+    },
+    {
+      "model_name": "llama",
+      "factuality": {
+        "status": "pass",
+        "findings": [
+          "Conservó fecha, hora aproximada, ubicación, ventana quebrada e ingreso para sustraer pertenencias."
+        ]
+      },
+      "hallucinations": [
+        "Agregó comentario meta: 'No se detallaron los motivos o intenciones de los autores del hecho.'",
+        "Cierre indica que se está en trámite la investigación y califica el incidente como 'robo' dentro del cierre."
+      ],
+      "omissions": [],
+      "narrative_quality": {
+        "status": "minor_issues",
+        "findings": [
+          "Incluye comentarios meta sobre datos ausentes.",
+          "Lenguaje mayoritariamente objetivo."
+        ]
+      },
+      "crime_classification": {
+        "model_category": "Robo (posiblemente)",
+        "assessment": "correct",
+        "proposed_category_cr": "Robo (con fuerza en las cosas)",
+        "justification": "Reconoce la entrada forzada (ventana quebrada) como elemento que orienta hacia robo; la incertidumbre residual es excesiva dado el hecho descrito."
+      },
+      "useful_elements": [
+        "Reconocimiento de la entrada forzada mediante la ventana quebrada."
+      ]
+    }
+  ],
+  "proposed_ideal_report": {
+    "narrative": "Cerca de las 18:00 horas del 08/02/2020, en una parada o terminal de autobús ubicada en 1000 S FLOWER ST, dentro del área de Central, la persona denunciante relató que al regresar al vehículo encontró una de las ventanas quebrada y constató que habían ingresado al interior para sustraer pertenencias.",
+    "closing": "Se recibe la denuncia correspondiente.",
+    "crime_classification": {
+      "category": "Robo (con fuerza en las cosas)",
+      "justification": "La declaración indica expresamente que una ventana del vehículo fue quebrada para permitir el ingreso y la sustracción de pertenencias. El uso de fuerza en las cosas tipifica el delito de robo conforme al artículo 212 del Código Penal de Costa Rica."
+    }
+  }
+}

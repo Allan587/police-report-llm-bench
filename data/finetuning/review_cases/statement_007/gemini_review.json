@@ -1,0 +1,94 @@
+{
+  "reviewer": "Gemini",
+  "model_reviews": [
+    {
+      "model_name": "gemma",
+      "factuality": {
+        "status": "pass",
+        "findings": []
+      },
+      "hallucinations": [
+        "Agregó en el cierre que la denuncia se encuentra en proceso de investigación, lo cual no está contenido en la declaración original."
+      ],
+      "omissions": [],
+      "narrative_quality": {
+        "status": "minor_issues",
+        "findings": [
+          "Presentó un error menor de espaciado ('deHollenbeck')."
+        ]
+      },
+      "crime_classification": {
+        "model_category": "Robo de vehículo",
+        "assessment": "incorrect",
+        "proposed_category_cr": "Hurto de vehículo",
+        "justification": "La declaración indica que el vehículo fue sustraído de la vía pública sin señalar uso de violencia sobre las personas, intimidación ni fuerza sobre las cosas (daño a llantas, ventanas o cerrojos), por lo que según el marco legal de Costa Rica califica orientativamente como hurto."
+      },
+      "useful_elements": [
+        "Conservación precisa de la fecha, hora y ubicación."
+      ]
+    },
+    {
+      "model_name": "mistral",
+      "factuality": {
+        "status": "minor_issues",
+        "findings": [
+          "Atribuyó la propiedad del vehículo ('propiedad particular', 'El dueño') sin respaldo explícito en la declaración (solo se indica 'su vehículo' / persona afectada)."
+        ]
+      },
+      "hallucinations": [
+        "Agregó una solicitud de investigación activa y localización de autores en el cierre no respaldada por la declaración."
+      ],
+      "omissions": [],
+      "narrative_quality": {
+        "status": "minor_issues",
+        "findings": [
+          "Presentó falta de espacios antes de palabras ('declaróhaberlo', 'esimportante')."
+        ]
+      },
+      "crime_classification": {
+        "model_category": "Hurto (Artículo 275 del Código Penal)",
+        "assessment": "correct",
+        "proposed_category_cr": "Hurto de vehículo",
+        "justification": "Clasificó correctamente como hurto al notar la ausencia de violencia o consentimiento, aunque citó un artículo penal específico que no es necesario ni directamente extrapolable."
+      },
+      "useful_elements": [
+        "Correcta orientación hacia la figura de hurto debido a la ausencia de fuerza o violencia."
+      ]
+    },
+    {
+      "model_name": "llama",
+      "factuality": {
+        "status": "pass",
+        "findings": []
+      },
+      "hallucinations": [
+        "Incluyó comentarios meta sobre información no proporcionada en la declaración.",
+        "Agregó un cierre administrativo sin respaldo respaldando que se registró el caso sin más detalles."
+      ],
+      "omissions": [],
+      "narrative_quality": {
+        "status": "minor_issues",
+        "findings": [
+          "Incluye comentarios explicativos no requeridos en la narrativa policial objetiva."
+        ]
+      },
+      "crime_classification": {
+        "model_category": "Sustracción de vehículo",
+        "assessment": "partially_correct",
+        "proposed_category_cr": "Hurto de vehículo",
+        "justification": "Utilizó una denominación descriptiva ('Sustracción de vehículo') y planteó duda razonable entre robo y pérdida, aunque jurídicamente la figura aplicable al hecho descrito es hurto."
+      },
+      "useful_elements": [
+        "Mención explícita a la falta de detalles sobre violencia o mecanismos de fuerza."
+      ]
+    }
+  ],
+  "proposed_ideal_report": {
+    "narrative": "La persona afectada denunció que el 09/09/2020, a las 06:30 horas aproximadamente, se percató de la sustracción de su vehículo, el cual había dejado estacionado en la vía pública, en 200 E Avenue 28, dentro del área de Hollenbeck. La declaración no describe violencia contra las personas ni uso de fuerza sobre las cosas al momento del apoderamiento.",
+    "closing": "Se registra la manifestación de la persona afectada sobre la sustracción de su vehículo en la vía pública.",
+    "crime_classification": {
+      "category": "Hurto de vehículo",
+      "justification": "El hecho se orienta a la categoría de hurto de vehículo, ya que consistió en el apoderamiento ilegítimo de una cosa mueble ajena dejada en la vía pública, sin que se refiera violencia sobre la víctima, intimidación ni fuerza sobre las cosas."
+    }
+  }
+}

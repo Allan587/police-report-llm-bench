@@ -1,0 +1,79 @@
+{
+  "reviewer": "Gemini",
+  "model_reviews": [
+    {
+      "model_name": "gemma",
+      "factuality": {
+        "status": "pass",
+        "findings": []
+      },
+      "hallucinations": [],
+      "omissions": [],
+      "narrative_quality": {
+        "status": "pass",
+        "findings": []
+      },
+      "crime_classification": {
+        "model_category": "Robo simple",
+        "assessment": "incorrect",
+        "proposed_category_cr": "Robo agravado",
+        "justification": "Al existir una amenaza expresa de agresión física (intimidación directa sobre la víctima) para obligarle a entregar las llaves del vehículo en la vía pública, el hecho configura Robo Agravado según el Código Penal de Costa Rica (Art. 213, incisos referentes a la intimidación/vía pública)."
+      },
+      "useful_elements": [
+        "Buena síntesis de la dinámica de la amenaza en la narrativa."
+      ]
+    },
+    {
+      "model_name": "mistral",
+      "factuality": {
+        "status": "pass",
+        "findings": []
+      },
+      "hallucinations": [],
+      "omissions": [],
+      "narrative_quality": {
+        "status": "pass",
+        "findings": []
+      },
+      "crime_classification": {
+        "model_category": "Robo aggravado",
+        "assessment": "correct",
+        "proposed_category_cr": "Robo agravado",
+        "justification": "Clasificación correcta para el marco legal de Costa Rica, ya que medió intimidación/amenaza de violencia física inmediata para lograr la sustracción."
+      },
+      "useful_elements": [
+        "Identificación correcta de la categoría de delito (Robo Agravado)."
+      ]
+    },
+    {
+      "model_name": "llama",
+      "factuality": {
+        "status": "pass",
+        "findings": []
+      },
+      "hallucinations": [],
+      "omissions": [],
+      "narrative_quality": {
+        "status": "pass",
+        "findings": []
+      },
+      "crime_classification": {
+        "model_category": "Robo con amenaza",
+        "assessment": "partially_correct",
+        "proposed_category_cr": "Robo agravado",
+        "justification": "Aunque conceptualmente es adecuado, el término 'Robo con amenaza' no constituye una tipificación formal en Costa Rica, correspondiendo a 'Robo Agravado'."
+      },
+      "useful_elements": [
+        "Detalle preciso sobre la secuencia de intimidación en la narrativa."
+      ]
+    }
+  ],
+  "proposed_ideal_report": {
+    "narrative": "El 01/03/2020, a las 21:30 horas aproximadamente, una persona de sexo masculino se encontraba junto a su vehículo en la vía pública, en 1900 S LONGWOOD AV, área de Wilshire, cuando fue abordada por un desconocido. El sujeto le exigió la entrega de las llaves del automóvil bajo la amenaza explícita de golpearlo si se negaba. Ante la intimidación sufrida, la víctima hizo entrega de las llaves, momento en que el sospechoso se apoderó del vehículo y se dio a la fuga.",
+    "closing": "Se toma el reporte de la víctima y se remiten las actuaciones a la sección policial correspondiente para la investigación del hecho.",
+    "crime_classification": {
+      "category": "Robo agravado",
+      "justification": "El hecho se enmarca en la figura de Robo Agravado (Art. 213 del Código Penal de Costa Rica), al haberse perpetrado el apoderamiento mediante el uso de intimidación y la amenaza directa de violencia física contra la víctima en la vía pública."
+    }
+  }
+}
