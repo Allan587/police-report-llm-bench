@@ -1,0 +1,77 @@
+{
+  "model_name": "gemma",
+  "strengths": [],
+  "weaknesses": [
+    {
+      "pattern": "Tiende a incorporar en el cierre referencias a investigaciones futuras o en curso que no están respaldadas por la declaración.",
+      "evidence_count": 5,
+      "last_observed_output": 9
+    },
+    {
+      "pattern": "Puede sustituir casi completamente los hechos de la declaración evaluada por información correspondiente a otro incidente, alterando simultáneamente datos y circunstancias centrales del caso.",
+      "evidence_count": 2,
+      "last_observed_output": 8
+    }
+  ],
+  "common_hallucinations": [
+    {
+      "pattern": "Agrega que se procede a una investigación correspondiente aunque la declaración no indique ninguna acción investigativa posterior.",
+      "evidence_count": 5,
+      "last_observed_output": 9
+    }
+  ],
+  "classification_behavior": {
+    "strengths": [],
+    "weaknesses": [
+      {
+        "pattern": "Tiende a aplicar categorías de robo de forma imprecisa, sin discriminar adecuadamente la tipificación jurídica según los elementos concretos presentes en los hechos.",
+        "evidence_count": 3,
+        "last_observed_output": 6
+      },
+      {
+        "pattern": "Tiende a clasificar la sustracción de bicicletas bajo la categoría de 'robo de vehículo', sin considerar la diferenciación tipológica ni la ausencia de violencia o fuerza.",
+        "evidence_count": 1,
+        "last_observed_output": 4
+      }
+    ]
+  },
+  "narrative_behavior": {
+    "strengths": [],
+    "weaknesses": []
+  },
+  "factuality_behavior": {
+    "strengths": [
+      {
+        "pattern": "Conserva con precisión los hechos relevantes de la declaración, incluidos elementos como fecha, hora, ubicación y circunstancias esenciales del incidente.",
+        "evidence_count": 3,
+        "last_observed_output": 9
+      }
+    ],
+    "weaknesses": [
+      {
+        "pattern": "Puede sustituir casi completamente los hechos de la declaración evaluada por información correspondiente a otro incidente, modificando fecha, hora, ubicación, bienes involucrados y otras circunstancias centrales.",
+        "evidence_count": 2,
+        "last_observed_output": 8 
+      }
+    ]
+  },
+  "fine_tuning_priorities": [
+    {
+      "priority": "Mejorar la aplicación de criterios de clasificación jurídica para distinguir correctamente las categorías de robo y hurto según los elementos concretos del caso y el contexto penal costarricense.",
+      "priority_level": "high"
+    },
+    {
+      "priority": "Evitar incorporar investigaciones futuras, estados procesales o acciones posteriores que no estén expresamente contenidas en la declaración.",
+      "priority_level": "high"
+    },
+    {
+      "priority": "Reforzar la correspondencia estricta entre la declaración de entrada y el reporte generado para evitar contaminación entre casos o utilización de hechos pertenecientes a otros registros.",
+      "priority_level": "high"
+    }
+  ],
+  "profile_metadata": {
+    "outputs_reviewed": 10,
+    "last_updated": "15/09/2026",
+    "version": 1
+  }
+}

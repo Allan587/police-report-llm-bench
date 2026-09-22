@@ -1,0 +1,81 @@
+{
+  "model_name": "mistral",
+  "strengths": [],
+  "weaknesses": [
+    {
+      "pattern": "Tiende a introducir solicitudes o acciones policiales futuras que no están respaldadas por la declaración.",
+      "evidence_count": 3,
+      "last_observed_output": 9
+    },
+    {
+      "pattern": "Puede generar un reporte basado casi íntegramente en un incidente diferente al proporcionado, reemplazando los datos y circunstancias centrales de la declaración.",
+      "evidence_count": 2,
+      "last_observed_output": 8
+    }
+  ],
+  "common_hallucinations": [
+    {
+      "pattern": "Agrega pedidos de investigación, identificación o localización relacionados con el hecho denunciado sin que hayan sido mencionados en la declaración.",
+      "evidence_count": 2,
+      "last_observed_output": 1
+    },
+    {
+      "pattern": "Invierte el sentido de los hechos al afirmar la localización o recuperación de un bien sustraído cuando la declaración indica que fue sustraído del lugar.",
+      "evidence_count": 1,
+      "last_observed_output": 8
+    }
+  ],
+  "classification_behavior": {
+    "strengths": [],
+    "weaknesses": [
+      {
+        "pattern": "Tiende a clasificar como robo sustracciones en las que la declaración no describe violencia, intimidación ni fuerza sobre las cosas.",
+        "evidence_count": 2,
+        "last_observed_output": 2
+      }
+    ]
+  },
+  "narrative_behavior": {
+    "strengths": [],
+    "weaknesses": [
+      {
+        "pattern": "Uso inapropiado de terminología jurídica grave (ej. 'desaparición forzosa') para describir delitos contra la propiedad.",
+        "evidence_count": 1,
+        "last_observed_output": 4
+      }
+    ]
+  },
+  "factuality_behavior": {
+    "strengths": [],
+    "weaknesses": [
+      {
+        "pattern": "Puede generar un reporte basado casi íntegramente en un incidente diferente al proporcionado, reemplazando datos temporales, espaciales, bienes involucrados y circunstancias centrales de la declaración.",
+        "evidence_count": 2,
+        "last_observed_output": 8
+      }
+    ]
+  },
+  "fine_tuning_priorities": [
+    {
+      "priority": "Evitar introducir solicitudes, instrucciones o acciones policiales futuras que no estén contenidas en la declaración.",
+      "priority_level": "high"
+    },
+    {
+      "priority": "Distinguir entre hurto y robo verificando explícitamente la presencia de violencia, intimidación o fuerza sobre las cosas antes de asignar la categoría de robo.",
+      "priority_level": "high"
+    },
+    {
+      "priority": "Corregir la terminología técnico-jurídica para garantizar precisión técnica en la descripción de delitos contra la propiedad sin recurrir a conceptos de distinta naturaleza jurídica.",
+      "priority_level": "medium"
+    },
+    {
+      "priority": "Reforzar la vinculación estricta entre cada declaración y su output para impedir que hechos pertenecientes a otros registros sean utilizados como base de la narrativa y clasificación actuales.",
+      "priority_level": "high"
+    }
+  ],
+  "profile_metadata": {
+    "outputs_reviewed": 10,
+    "last_updated": "15/09/2026",
+    "version": 1
+  }
+}

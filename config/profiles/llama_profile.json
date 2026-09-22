@@ -1,0 +1,71 @@
+{
+  "model_name": "llama",
+  "strengths": [],
+  "weaknesses": [
+    {
+      "pattern": "Tiende a incorporar comentarios meta o cierres administrativos sobre la información disponible o el estado del reporte que no forman parte de los hechos declarados.",
+      "evidence_count": 3,
+      "last_observed_output": 9
+    },
+    {
+      "pattern": "Puede sustituir la declaración actual por un incidente diferente y construir sobre este una narrativa completa, conservando poco o ningún dato factual del caso realmente proporcionado.",
+      "evidence_count": 2,
+      "last_observed_output": 9
+    }
+  ],
+  "common_hallucinations": [],
+  "classification_behavior": {
+    "strengths": [],
+    "weaknesses": [
+      {
+        "pattern": "Tiende a utilizar categorías o denominaciones de robo que no se corresponden con precisión con la tipificación penal aplicable a los hechos descritos.",
+        "evidence_count": 3,
+        "last_observed_output": 6
+      },
+      {
+        "pattern": "Utiliza denominaciones o referencias legales ajenas al ordenamiento costarricense al clasificar los hechos.",
+        "evidence_count": 1,
+        "last_observed_output": 9
+      }
+    ]
+  },
+  "narrative_behavior": {
+    "strengths": [],
+    "weaknesses": [
+      {
+        "pattern": "Incluye comentarios explicativos o meta sobre datos ausentes o no proporcionados que no aportan a una narrativa policial objetiva.",
+        "evidence_count": 3,
+        "last_observed_output": 9
+      }
+    ]
+  },
+  "factuality_behavior": {
+    "strengths": [],
+    "weaknesses": [
+      {
+        "pattern": "Puede sustituir la declaración actual por un incidente diferente y construir sobre este una narrativa completa, alterando fecha, hora, ubicación, bienes involucrados y otras circunstancias esenciales.",
+        "evidence_count": 2,
+        "last_observed_output": 9
+      }
+    ]
+  },
+  "fine_tuning_priorities": [
+    {
+      "priority": "Eliminar comentarios meta, referencias a información ausente y cierres administrativos no derivados de la declaración, manteniendo una narrativa estrictamente objetiva.",
+      "priority_level": "high"
+    },
+    {
+      "priority": "Alinear la clasificación con las categorías penales correspondientes y con los elementos concretos descritos en los hechos.",
+      "priority_level": "high"
+    },
+    {
+      "priority": "Mejorar el aislamiento entre registros y la fidelidad a la declaración actual para evitar contaminación factual entre casos consecutivos o utilización de información perteneciente a otros ejemplos.",
+      "priority_level": "high"
+    }
+  ],
+  "profile_metadata": {
+    "outputs_reviewed": 10,
+    "last_updated": "15/09/2026",
+    "version": 1
+  }
+}
