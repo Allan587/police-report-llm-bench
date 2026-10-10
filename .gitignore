@@ -1,3 +1,6 @@
+# MacOS
+.DS_Store
+
 # Benchmark outputs
 outputs/*
 !outputs/.gitkeep
@@ -20,4 +23,14 @@ data/raw/
 # Python
 __pycache__/
 .venv/
+.venv*/
+.pytest_cache/
 .env
+
+# Browser automation state (local and potentially sensitive)
+.browser_profiles/
+playwright/.auth/
+storage_state*.json
+*.sqlite
+*.sqlite-shm
+*.sqlite-wal
