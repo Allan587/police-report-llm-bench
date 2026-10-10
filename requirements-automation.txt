@@ -1,0 +1,2 @@
+# Browser automation runtime (kept separate from model inference dependencies)
+playwright==1.60.0
