@@ -2,7 +2,21 @@
 
 ## Objective
 
-Deploy and execute the Playwright-based automation pipeline on the remote machine while keeping macOS as the development environment.
+Deploy and execute the Playwright-based automation pipeline on the remote machine only after its applicable implementation and initial end-to-end behavior have been validated on the local macOS development environment.
+
+## Entry Gate — Local Workflow Validation
+
+Remote access and infrastructure configuration are a later activity. Before starting Step 1, `context/advances.md` must contain `LOCAL_TESTED` evidence for the applicable workflow components:
+
+- Selection and alignment of the current statement, declaration and Gemma/Mistral/Llama outputs.
+- Loading current profiles and histories without modifying production data.
+- Complete preparation of reviewer inputs.
+- Independent identification and validation of ChatGPT, Gemini and Grok results.
+- Detection and full replacement of an incomplete reviewer execution.
+- Enforcement of adjudication dependencies and recovery-safe persistence.
+- Local Playwright/browser behavior required by the workflow, using synthetic fixtures or expressly authorized interactions.
+
+Items not executed must remain `LOCAL_PENDING` or `NOT_RUN`. Local acceptance authorizes neither access to external platforms nor changes to the remote machine.
 
 ## Deployment Principles
 
@@ -14,8 +28,11 @@ Deploy and execute the Playwright-based automation pipeline on the remote machin
 6. Existing inference services and dependencies must not be disrupted.
 7. The automation must support graceful shutdown and restart.
 8. Production experiments must be resumable and auditable.
+9. Local and remote evidence are recorded independently; local success never counts as remote validation.
 
 ## Step 1 — Remote Audit
+
+**Initial status:** `REMOTE_NOT_CONFIGURED`.
 
 Collect and document:
 
@@ -33,6 +50,8 @@ Collect and document:
 No system-level changes are authorized during this audit.
 
 ## Step 2 — Runtime Preparation
+
+**Initial status:** `REMOTE_NOT_CONFIGURED`.
 
 After compatibility verification:
 
@@ -60,6 +79,8 @@ directory. Select `headless=True` unless the audit confirms a usable display.
 
 ## Step 3 — Browser Validation
 
+**Initial status:** `REMOTE_NOT_CONFIGURED`.
+
 Run synthetic tests that:
 
 - Launch Chromium.
@@ -78,6 +99,8 @@ available.
 
 ## Step 4 — Pipeline Deployment
 
+**Initial status:** `REMOTE_NOT_CONFIGURED`.
+
 - Pull reviewed changes from Git.
 - Verify configuration.
 - Initialize storage without deleting existing data.
@@ -87,6 +110,8 @@ available.
 - Confirm that external operations comply with provider permissions.
 
 ## Step 5 — Production Readiness
+
+The checklist records remote evidence only. Do not check an item solely because its local equivalent passed.
 
 - [ ] Automation environment is isolated.
 - [ ] Remote Chromium launches successfully.

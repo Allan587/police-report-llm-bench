@@ -2,11 +2,11 @@
 
 ## Architectural Decision
 
-The project follows a local-development and remote-execution architecture.
+The project follows a local-development, local-first-validation and remote-execution architecture.
 
-The local MacBook Air is responsible for development, unit testing, synthetic browser testing, and source control.
+The local MacBook Air is responsible for every implementation and initial test of the Playwright workflow, including the complete review and adjudication data flow described below.
 
-The remote machine is responsible for production execution of Playwright, Chromium, agents, orchestration, evaluation, feedback processing, and dataset generation.
+The remote machine is the final execution environment for Playwright, Chromium, agents, orchestration, evaluation, feedback processing and dataset generation. Its configuration begins only after the applicable local workflow has been validated; the same workflow must then pass independent remote validation.
 
 ## Local Environment
 
@@ -21,6 +21,61 @@ The remote machine is responsible for production execution of Playwright, Chromi
 - Remote inference dependencies are not required locally.
 
 Local tests must not require access to external model platforms or production authentication credentials.
+
+## Local Execution Strategy for Workflow Validation
+
+### Required local validation before remote configuration
+
+The Playwright automation pipeline is developed and initially tested on macOS. This is a deployment gate, not merely a convenience for unit testing.
+
+This includes:
+
+- Reading statements and benchmark outputs.
+- Resolving the current `statement_index`.
+- Reading model profiles and accumulated histories.
+- Preparing reviewer inputs.
+- Testing browser session management.
+- Testing browser behavior and any expressly authorized reviewer interactions separately from deterministic data preparation.
+- Parsing and validating reviewer results.
+- Detecting incomplete reviews.
+- Re-executing complete reviews for affected reviewers.
+- Verifying adjudication prerequisites.
+- Testing persistence and recovery using isolated test data.
+
+Local validation must use synthetic fixtures, temporary directories or controlled copies and must not overwrite existing review cases, profiles, histories or production browser state.
+
+Passing this gate is reported as `LOCAL_TESTED`; pending items remain `LOCAL_PENDING` or `NOT_RUN`.
+
+### Final remote environment
+
+The remote machine will eventually execute the same automation pipeline.
+
+Before deployment, the operator must configure and validate:
+
+- Remote Python environment.
+- Playwright and Chromium compatibility.
+- Browser runtime configuration.
+- Platform authentication and session handling.
+- Filesystem paths and permissions.
+- Persistent storage.
+- Network connectivity.
+- Coexistence with existing inference workloads.
+
+These requirements remain `REMOTE_NOT_CONFIGURED` until the remote deployment stage is expressly authorized. After configuration, each remotely executed check is reported as `REMOTE_TESTED` only when evidence exists.
+
+### Portability requirement
+
+Business logic must remain independent of the execution environment.
+
+The same statement validation, reviewer input preparation, output validation and recovery rules must operate on macOS and the remote machine.
+
+Environment-specific settings must be configurable rather than hardcoded.
+
+### Testing policy
+
+Real-platform testing may be conducted only for interactions permitted by the applicable services.
+
+Successful local testing demonstrates local functionality only, not remote readiness.
 
 ## Remote Environment
 
