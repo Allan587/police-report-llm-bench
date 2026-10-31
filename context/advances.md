@@ -2,17 +2,28 @@
 
 > **Regla:** registrar únicamente implementación y pruebas observadas en el repositorio real.
 
-**Fase activa:** fase 3 `IN_PROGRESS` únicamente para OLBM-40 local; fase 2 cerrada dentro del alcance local, sintético y documental. OLBM-41 no iniciado.
-**Última actualización:** 2026-10-30 (OLBM-49: bloqueo WebSocket local y regresión sintética).
+**Fase activa:** fase 3 `IN_PROGRESS`; OLBM-41 `READY_FOR_QA` local, sin QA independiente. Fase 2 cerrada dentro del alcance local, sintético y documental.
+**Última actualización:** 2026-10-30 (OLBM-41: contrato web y páginas simuladas).
 
 | Fase | Estado | Entregable principal | Evidencia de pruebas |
 |---|---|---|---|
 | 1. Base técnica y navegador | DONE | `BrowserManager`, `SessionManager`, portabilidad, dependencias y documentación remota aceptados en macOS local | 17/17 pruebas pasan con Python 3.11.17 y Chromium; Linux, Windows y remoto `NOT_RUN` |
 | 2. Revisión, adjudicación y persistencia por archivos | DONE (alcance local, sintético y de diseño documental) | OLBM-29–35 y remediaciones OLBM-36/37 con cierre QA aprobado; adaptadores reales ChatGPT/Gemini/Grok solo diseñados | `LOCAL_TESTED` en flujo local con datos sintéticos; integración real `NOT_RUN`; remoto `REMOTE_NOT_CONFIGURED`, validaciones remotas `NOT_RUN` |
-| 3. Conectores y generación | IN_PROGRESS | OLBM-40 infraestructura Playwright local; OLBM-49 corrección WebSocket; adaptadores y generación pendientes | 31 pruebas focalizadas con Chromium: LOCAL_TESTED; remoto REMOTE_NOT_CONFIGURED |
+| 3. Conectores y generación | IN_PROGRESS | OLBM-40/49 en commit local; OLBM-41 contrato y fakes local; adaptadores reales pendientes | 46 pruebas focalizadas con Chromium: LOCAL_TESTED; remoto REMOTE_NOT_CONFIGURED |
 | 4. Evaluación, feedback y perfiles | TODO | Rúbricas, feedback, aprobación y perfiles versionados | Pendiente |
 
 ## Bitácora
+### 2026-10-30 — Fase 3 / OLBM-41 — Contrato web y páginas simuladas
+- **Estado:** `READY_FOR_QA` local; QA independiente `NOT_RUN`; fase 3 `IN_PROGRESS`.
+- **Git:** commit local F3-01 `0b20bd2` (`feat(browser): add secure local Playwright runtime (OLBM-40, OLBM-49)`); rama actual `feature/f3-02-web-interaction-fakes` creada desde ese commit con índice limpio. Sin push, PR ni cambios en Jira.
+- **Archivos:** `automation/browser/web_interaction.py`, `automation/review/fake_site_adapter.py`, `tests/helpers/fake_reviewer_sites.py`, `tests/test_web_interaction_fakes.py`, `docs/olbm-41-web-interaction-fakes.md`, `context/architecture.md`, `context/decisions.md` (D-042) y este registro.
+- **Implementación:** contrato `WebInteraction`, estados y `ObservedResponse`; tres variantes DOM servidas en `127.0.0.1`; siete interacciones independientes para main/historiales/perfiles; validación estricta de identidad y de `CompleteReviewResult`; publicación exclusivamente mediante `run_synthetic_reviewer_once()` y `publish_complete_review()`. Timeout, cierre y cancelación posteriores al posible envío impiden retransmisión. No se cambió O-01/O-02 ni adjudicación.
+- **Pruebas (LOCAL_TESTED):** `TMPDIR=/private/tmp PYTHONPYCACHEPREFIX=/private/tmp/olbm41-pycache PYTHONDONTWRITEBYTECODE=1 RUN_BROWSER_SMOKE=1 RUN_BROWSER_SESSION_TESTS=1 ../police-report-llm-bench/.venv311/bin/python -m pytest -q -p no:cacheprovider tests/test_web_interaction_fakes.py tests/test_local_browser_runtime.py tests/test_browser_manager.py tests/test_session_manager.py` → **46 PASS, 0 FAIL, 0 SKIP en 45.60 s**, Python 3.11.17, Playwright 1.60.0 y Chromium local. Incluye guardas HTTP/WebSocket OLBM-40/49. Una corrida previa dio 45 PASS/1 FAIL por visibilidad Playwright de un nodo parcial vacío; se ajustó la prueba para observar `attached`, la prueba aislada pasó y la corrida consolidada final quedó verde. Cobertura `NOT_MEASURED`.
+- **Validaciones adicionales (LOCAL_TESTED):** `PYTHONPYCACHEPREFIX=/private/tmp/olbm41-pycache ../police-report-llm-bench/.venv311/bin/python -m py_compile automation/browser/web_interaction.py automation/review/fake_site_adapter.py tests/helpers/fake_reviewer_sites.py tests/test_web_interaction_fakes.py` → PASS; `git diff --check` → PASS; inspección de espacios finales en los cinco archivos nuevos → sin hallazgos. `git diff --name-only -- data config/feedback config/profiles` → sin rutas.
+- **Integridad:** mapa SHA-256 de 62 archivos de `data/`, `config/feedback/` y `config/profiles/` antes/después idéntico: `b46c17f2483237c4a5c73e41c5d1d8a6a215014a87ca8f84287ea3dbc48c17ec`. Todas las escrituras funcionales fueron en fixtures `tmp_path`; ningún proveedor real, API, servicio remoto ni credencial se utilizó.
+- **Límites:** fakes y selectores no representan interfaces comerciales verificadas; prompt sintético y contenido suministrado por fixture. Reconciliación durable, permisos/capacidades, parser y autenticación reales quedan para OLBM-42/43/44 y decisión futura. Remoto `REMOTE_NOT_CONFIGURED`, validación remota `NOT_RUN`. Suite ajena al alcance `NOT_RUN`.
+- **Próximo paso:** QA independiente focalizada con el checklist de `docs/olbm-41-web-interaction-fakes.md`. No declarar PASS independiente ni iniciar OLBM-42/43/44 automáticamente.
+
 ### 2026-10-30 — Fase 3 / OLBM-49 — Bloqueo de WebSocket en runtime local
 - **Estado:** `READY_FOR_QA` de OLBM-49; QA independiente `NOT_RUN`. OLBM-40 sigue en revisión tras el FAIL de QA-02; OLBM-41 `TODO`; fase 3 `IN_PROGRESS`.
 - **Causa:** la guarda `context.route("**/*", ...)` solo cubría HTTP. La reproducción independiente previa observó una conexión WebSocket entre dos servidores locales y el runtime en `READY`; no comprobó Internet. Un intento de desactivar temporalmente la nueva guarda para repetir el estado anterior fue rechazado por la revisión automática; esa repetición quedó `NOT_RUN`.

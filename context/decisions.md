@@ -340,3 +340,21 @@ una instalación fallida cierra la sesión y hace fallar `open()`.
 **Consecuencias:** pruebas con Chromium y páginas sintéticas; no se habilita
 autenticación, envío, extracción ni adaptadores específicos. La compatibilidad
 remota y las capacidades por proveedor siguen sin validar.
+
+## D-042 — OLBM-41 separa observación web de validación y publicación
+
+**Fecha:** 2026-10-30.
+**Motivación:** probar localmente los estados de interacción de tres revisores
+sin atribuir comportamiento a interfaces reales ni inventar los siete outputs.
+**Decisión:** `WebInteraction` y `FakePageInteraction` permanecen en `browser`;
+`FakeSiteReviewerAdapter`, exclusivamente de prueba, exige siete respuestas
+JSON independientes del servidor loopback y las convierte con los contratos
+existentes. Solo un `CompleteReviewResult` completo puede llegar al escritor
+v2 mediante el vertical vigente. Timeout, cancelación o cierre después del
+posible envío requieren conciliación; no hay reenvío automático. Se conservan
+las guardas HTTP/WebSocket de D-041.
+**Consecuencias:** el fake permite validar integración local y errores; sus
+selectores, autorización y contenido no acreditan capacidades de ChatGPT,
+Gemini o Grok. OLBM-42/43/44 dependen de verificación por plataforma y de
+una solución durable para envíos inciertos. No cambia O-01/O-02, adjudicación,
+JSON/JSONL ni operación remota.

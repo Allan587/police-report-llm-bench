@@ -1,5 +1,16 @@
 # Arquitectura técnica propuesta
 
+## Interacción web simulada OLBM-41
+
+`automation/browser/web_interaction.py` observa estado y contenido de páginas
+loopback mediante `LocalBrowserRuntime`. Los tres fakes de
+`tests/helpers/fake_reviewer_sites.py` usan un contrato DOM controlado, no
+selectores de proveedores. `automation/review/fake_site_adapter.py` traduce
+siete respuestas independientes y validadas a `CompleteReviewResult`;
+`run_synthetic_reviewer_once()` conserva la publicación v2 y las barreras
+existentes. Ver [OLBM-41](../docs/olbm-41-web-interaction-fakes.md) y D-042.
+
+
 ## Infraestructura local Playwright OLBM-40
 
 `automation/browser/local_runtime.py` reutiliza `BrowserManager` y
