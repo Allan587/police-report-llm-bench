@@ -2,17 +2,45 @@
 
 > **Regla:** registrar únicamente implementación y pruebas observadas en el repositorio real.
 
-**Fase activa:** fase 3 `IN_PROGRESS`; OLBM-41 `READY_FOR_QA` local, sin QA independiente. Fase 2 cerrada dentro del alcance local, sintético y documental.
-**Última actualización:** 2026-10-30 (OLBM-41: contrato web y páginas simuladas).
+**Fase activa:** fase 3 `IN_PROGRESS`; F3-02 preservado en `5f53403`, OLBM-51 `READY_FOR_QA` de integración. Fase 2 cerrada dentro del alcance local, sintético y documental.
+**Última actualización:** 2026-10-30 (OLBM-51: integración documental D-043).
 
 | Fase | Estado | Entregable principal | Evidencia de pruebas |
 |---|---|---|---|
 | 1. Base técnica y navegador | DONE | `BrowserManager`, `SessionManager`, portabilidad, dependencias y documentación remota aceptados en macOS local | 17/17 pruebas pasan con Python 3.11.17 y Chromium; Linux, Windows y remoto `NOT_RUN` |
 | 2. Revisión, adjudicación y persistencia por archivos | DONE (alcance local, sintético y de diseño documental) | OLBM-29–35 y remediaciones OLBM-36/37 con cierre QA aprobado; adaptadores reales ChatGPT/Gemini/Grok solo diseñados | `LOCAL_TESTED` en flujo local con datos sintéticos; integración real `NOT_RUN`; remoto `REMOTE_NOT_CONFIGURED`, validaciones remotas `NOT_RUN` |
-| 3. Conectores y generación | IN_PROGRESS | OLBM-40/49 en commit local; OLBM-41 contrato y fakes local; adaptadores reales pendientes | 46 pruebas focalizadas con Chromium: LOCAL_TESTED; remoto REMOTE_NOT_CONFIGURED |
+| 3. Conectores y generación | IN_PROGRESS | OLBM-40/49 y OLBM-41 en commits locales; OLBM-48 documental integrado; adaptadores reales pendientes | 46 pruebas focalizadas previas con Chromium: LOCAL_TESTED; integración documental: LOCAL_TESTED; remoto REMOTE_NOT_CONFIGURED |
 | 4. Evaluación, feedback y perfiles | TODO | Rúbricas, feedback, aprobación y perfiles versionados | Pendiente |
 
 ## Bitácora
+### 2026-10-30 — Fase 3 — OLBM-51 integración F3-02 y D-043
+- **Estado:** `READY_FOR_QA` de integración; QA independiente de esta integración `NOT_RUN`. OLBM-41 y OLBM-50 tienen QA independiente PASS informado en la solicitud OLBM-51, sin repetirlo; OLBM-48 continúa `In Review` según esa misma solicitud. Fase 3 `IN_PROGRESS`.
+- **Archivos modificados:** `docs/olbm-48-web-provider-permissions.md`, `context/decisions.md` y `context/advances.md` en `feature/f3-10-doc-gate-integration`; ningún archivo ejecutable, operacional, de datos o configuración modificado en esta integración.
+- **Integración:** F3-02 comprometido localmente como `5f534039a85ff3c9943f105ed976425849a0e121` desde `0b20bd2`; rama y worktree F3-02 preservados. Rama de integración creada exactamente desde `5f53403`. Informe OLBM-48 copiado byte por byte (SHA-256 `02aa5e60c27b5f058ea783aee65f784e2bb74008a1d52da9887598f6e14025b5`); D-043 y entradas OLBM-48/50 incorporadas desde el worktree documental por entrada. D-041/D-042 y toda la bitácora previa permanecen intactas. Los estados `UNCOMMITTED` y QA pendiente de las entradas anteriores describen sus momentos históricos, no el estado posterior de esta integración.
+- **Validación (LOCAL_TESTED):** `git diff --check` → PASS; comprobación Python de igualdad byte a byte del informe, D-043 exacta, D-041/D-042 intactas, mapeo de D-041→OLBM-40/D-042→OLBM-41/D-043→OLBM-48 sin identificadores duplicados y preservación íntegra de avances anteriores → PASS; aserciones de G2 histórica, G1/G5/G6 actuales, clasificación doble, siete artefactos y bloqueo de proveedores reales → PASS. Búsqueda `rg -n -i` de patrones de credenciales en los tres documentos → sin coincidencias. `git diff --name-only -- automation tests config data requirements.txt` → vacío. Pruebas Playwright, proveedores externos, API y remoto para esta integración → `NOT_RUN`; remoto `REMOTE_NOT_CONFIGURED`.
+- **Problemas:** los permisos efectivos por cuenta y jurisdicción, la autorización institucional y los datos reales siguen pendientes; OLBM-48 no se cierra. El informe y D-043 conservan referencias históricas a su worktree de origen anterior a esta integración.
+- **Próximo paso:** QA independiente de la integración y revisión humana de OLBM-48; OLBM-52 permanece separado y sin implementar. Sin push, PR, merge a `main` ni cambios en Jira.
+- **Commit/PR:** commit documental local de esta rama (SHA verificable en Git); sin PR.
+
+### 2026-10-30 — Fase 3 — OLBM-50 corrección de QA documental OLBM-48
+- **Estado:** `READY_FOR_QA` documental, sujeto a validación focalizada; OLBM-48 sigue en revisión. Fase 3 `IN_PROGRESS`; OLBM-42/43/44 sin interacción real autorizada.
+- **Archivos modificados:** `docs/olbm-48-web-provider-permissions.md`, `context/decisions.md`, `context/advances.md`, solo en `feature/f3-09-web-permission-gate`. Sin código, datos operacionales, commit, push, PR, fusión ni cambios Jira.
+- **Implementado:** G2 reclasificada como fuente histórica no vigente para Gemini Apps general desde 2024-05-22; términos generales, lista de servicios y política de uso actual de Google identificados por producto, fecha y límite. D-043 reemplaza el identificador conflictivo D-041 de OLBM-48: F3-02 conserva D-041 de OLBM-40 y D-042 de OLBM-41. Disponibilidad manual `AVAILABLE_CONDITIONALLY` separada de autorización del proyecto `UNKNOWN`. Dos opciones futuras para obtener siete artefactos, con procedencia y contrato/fixtures pendientes; ninguna importación implementada.
+- **Pruebas:** revisión focalizada de fuentes oficiales públicas y numeración de decisiones `LOCAL_TESTED`. `git diff --check` → PASS. Script local `python3 - <<'PY'` con aserciones de D-041/D-042/D-043, G2 histórica, doble clasificación, siete artefactos y Playwright `UNKNOWN` → PASS. `git diff --no-index --check /dev/null docs/olbm-48-web-provider-permissions.md` → sin hallazgos de whitespace (código 1 esperado por archivo nuevo); `python3 -c` con aserciones de ausencia de espacios finales y salto final en el documento nuevo → PASS. `rg -n -i 'api[_-]?key|secret[_-]?key|password\s*[:=]|token\s*[:=]|BEGIN (RSA|OPENSSH|PRIVATE) KEY'` sobre los tres documentos → sin coincidencias (código 1 esperado). Pruebas de importación, servicios externos y ejecución remota → `NOT_RUN`; remoto `REMOTE_NOT_CONFIGURED`. Cobertura `NOT_MEASURED`.
+- **Problemas:** cuenta/jurisdicción, permisos de proveedor, instrucciones de Gemini, procedencia de exportaciones y aprobación institucional aún sin verificar. G1 mostró versión de país Suiza al consultar; confirmar condiciones de la cuenta antes de usar. QA independiente focalizado pendiente.
+- **Integración:** incorporar D-043 y entradas OLBM-48/50 por entrada al resolver con F3-02, conservando D-041/D-042 y sus avances; no copiar íntegramente `decisions.md` ni `advances.md` del worktree documental.
+- **Próximo paso:** QA independiente focalizado de OLBM-50. Fixture/contrato de importación manual en ticket separado; no iniciar conectores reales.
+- **Commit/PR:** `UNCOMMITTED`; ninguno.
+
+### 2026-10-30 — Fase 3 — OLBM-48 permisos de proveedores web
+- **Estado:** `READY_FOR_QA` documental; no se autoriza integración real ni se marca fase 3 `DONE`. Esta entrada actualiza el encabezado histórico de fase 3 `TODO` para reflejar solo el ticket autorizado.
+- **Archivos modificados:** `docs/olbm-48-web-provider-permissions.md`, `context/decisions.md`, `context/advances.md`; rama `feature/f3-09-web-permission-gate` desde `main` local `4047600`, worktree aislado. F3-02 y el worktree original conservan sus cambios previos. Sin commit, push ni PR.
+- **Implementado:** investigación pública oficial de términos/ayuda de OpenAI, Google y xAI, consultada el 2026-10-30; matriz por modalidad y puerta de autorización por operación. Esta entrada originalmente asignó D-041 a OLBM-48; OLBM-50 corrigió el identificador a D-043 sin alterar el registro histórico. ChatGPT prohíbe extracción programática de Output, xAI restringe acceso automatizado no autorizado y Gemini queda `UNKNOWN` para Playwright. Exportaciones manuales documentadas solo para cuentas elegibles de ChatGPT y Gemini. Grok carece de vía privada confirmada.
+- **Pruebas:** revisión documental de fuentes y enlaces locales; `git diff --check` → PASS. Pruebas ejecutables y de proveedores externos → `NOT_RUN` por alcance exclusivamente documental. Datos operacionales y navegador → no accedidos. Estado local documental `LOCAL_TESTED`; remoto `REMOTE_NOT_CONFIGURED`, pruebas remotas `NOT_RUN`. Cobertura `NOT_MEASURED`.
+- **Problemas:** términos por cuenta/jurisdicción, instrucciones legibles por máquina en Gemini, autorización escrita para Playwright, privacidad/retención y aprobación institucional para datos policiales sin verificar. Los cambios OLBM-41 del worktree F3-02 no están en `main`; su comportamiento no fue probado aquí. La preferencia web de D-002 sigue subordinada a permisos; menciones antiguas de SQL/datasets no alteran el flujo JSON/JSONL.
+- **Próximo paso:** QA documental independiente con checklist del documento. Después, contrato/fixtures locales de captura manual validada; OLBM-42/43/44 no conectan proveedores sin permiso.
+- **Commit/PR:** `UNCOMMITTED`; ninguno.
+
 ### 2026-10-30 — Fase 3 / OLBM-41 — Contrato web y páginas simuladas
 - **Estado:** `READY_FOR_QA` local; QA independiente `NOT_RUN`; fase 3 `IN_PROGRESS`.
 - **Git:** commit local F3-01 `0b20bd2` (`feat(browser): add secure local Playwright runtime (OLBM-40, OLBM-49)`); rama actual `feature/f3-02-web-interaction-fakes` creada desde ese commit con índice limpio. Sin push, PR ni cambios en Jira.
