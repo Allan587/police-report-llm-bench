@@ -1,5 +1,14 @@
 # Arquitectura técnica propuesta
 
+## Infraestructura local Playwright OLBM-40
+
+`automation/browser/local_runtime.py` reutiliza `BrowserManager` y
+`SessionManager` para páginas locales aisladas por `Reviewer`, timeouts,
+guarda HTTP loopback, cancelación y estados explícitos de sesión/respuesta.
+No modifica el puerto `ReviewerAdapter`, O-01/O-02 ni persistencia. Consulte
+[OLBM-40](../docs/olbm-40-local-playwright.md) y D-041. Las operaciones con
+proveedores reales permanecen deshabilitadas y sin probar.
+
 ## Especificación futura de revisores reales — OLBM-35
 
 Diseño verificable en [OLBM-35](../docs/olbm-35-real-reviewer-adapter-design.md),

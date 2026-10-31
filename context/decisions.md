@@ -319,3 +319,24 @@
 **Decisión:** conservar puerto, resultados, almacenamiento y coordinación aprobados. El diseño en `docs/olbm-35-real-reviewer-adapter-design.md` propone como trabajo futuro mínimo contexto preparado opcional y validado en la solicitud, especialización de `ReviewerAdapterError` con `TaskError` y consumo explícito de errores/cancelación con estados existentes. No se implementan esas extensiones, transportes ni adaptadores ahora; tampoco se retiran guardas del vertical. La identidad de run se verifica separadamente y se conserva en `ReviewAttemptMetadata` v2: no pertenece al resultado ni a la clave lógica de Task. La identidad serializada completa en los siete JSON es obligatoria para el escritor.
 **Consecuencias:** publicación local idempotente no implica envío externo exactamente una vez. Antes de preparar un conjunto no existe evidencia durable de cada envío/fallo; una caída con envío incierto requiere reconciliación/intervención y una decisión futura sobre evidencia compatible con JSON/JSONL antes de operación autónoma. No se introduce otro almacén ni SQL. Las capacidades de proveedores quedan no verificadas salvo hipótesis explícitas; ninguna sesión o posible API acredita permiso de automatizar ni equivalencia con el producto interactivo. D-002 conserva preferencia web y alternativa asistida autorizada. Transmisión, privacidad/retención, permisos institucionales/contractuales y remoto requieren autorización y validación futuras independientes.
 **Evidencia y estado:** pruebas focalizadas de contratos, almacenamiento y fake vertical; comandos/resultados en avances. Solo cambios documentales; OLBM-35 `READY_FOR_QA`, fase 2 `IN_PROGRESS`. La aceptación documental futura no certificará integración operacional, ni autoriza el cuarto generador.
+
+## D-041 — OLBM-40 añade una capa Playwright local sobre las sesiones existentes
+
+**Fecha:** 2026-10-30.
+**Contexto:** Fase 2 fusionada en `main`; OLBM-40 requiere pruebas locales de
+ciclo de vida y errores sin conectar proveedores. `BrowserManager` y
+`SessionManager` ya resuelven lanzamiento, perfiles, bloqueo y aislamiento.
+El prompt histórico de fase 3 menciona BD/generación, en conflicto con
+AGENTS.md y el alcance acotado de OLBM-40.
+**Decisión:** añadir `LocalBrowserRuntime` y `LocalReviewBrowser` como capa
+de UI local con guarda loopback, tiempos máximos, estados de espera,
+cancelación y errores saneados. Conservar el puerto `ReviewerAdapter`, O-01/O-02,
+lease y JSON/JSONL sin cambios. `RESPONSE_UNCERTAIN` exige reconciliación
+humana/futura; no permite reenvío automático.
+**Corrección OLBM-49 (2026-10-30):** `context.route()` no intercepta WebSockets.
+La política local deniega todos los WebSockets mediante
+`context.route_web_socket("**/*", ...)` y cierre 1008 antes de crear páginas;
+una instalación fallida cierra la sesión y hace fallar `open()`.
+**Consecuencias:** pruebas con Chromium y páginas sintéticas; no se habilita
+autenticación, envío, extracción ni adaptadores específicos. La compatibilidad
+remota y las capacidades por proveedor siguen sin validar.
