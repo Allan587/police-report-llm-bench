@@ -4,6 +4,9 @@ Fecha: 2026-11-06. Reconstrucción desde
 `4e89715f60bb99afd5d21050b04f0637c28eea4c` en la rama
 `feature/f3-11-manual-review-rebuild`. No es recuperación del código perdido.
 Las 141 PASS históricas no son evidencia de esta implementación.
+Estado: `READY_FOR_QA` después de verificar el commit local de respaldo
+`3f08d31a16bcc4300abf5b060104958870e69667`, cuyo padre es exactamente el baseline aprobado.
+QA independiente pendiente; fase 3 permanece IN_PROGRESS.
 
 ## Alcance y contrato
 
