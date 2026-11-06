@@ -1,5 +1,19 @@
 # Arquitectura técnica propuesta
 
+## OLBM-55 — configuración portable local (fase 3)
+
+`automation/portable/config.py` carga el esquema JSON v1 y resuelve rutas
+contra el archivo de configuración. `inputs.py` inspecciona el layout
+JSON/JSONL aprobado, produce una copia aislada y entrega el
+`OrchestratorConfig` existente. `browser.py` crea sesiones Chromium de
+`BrowserManager` separadas por operador/revisor. `python -m automation.portable
+doctor` comprueba dependencias y una página `data:` local. El primer caso
+se prepara desde los índices del dataset; O-01 controla el avance posterior.
+El contrato y los límites se documentan en
+`docs/olbm-55-portable-review-environment.md`. Los scripts heredados de
+CSV/generación conservan sus rutas propias y no forman parte del adaptador.
+Esta entrega no conecta proveedores, entrenamiento ni despliegue remoto.
+
 ## Entrega manual supervisada local — OLBM-53
 
 `automation/review/manual_supervisor.py` prepara bajo `WorkflowLease` una

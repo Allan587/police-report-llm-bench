@@ -1,0 +1,17 @@
+{
+  "schema_version": 1,
+  "inputs": {
+    "root": "../local-inputs",
+    "allowed_roots": ["../local-inputs"]
+  },
+  "outputs": {
+    "root": "../local-outputs/operator-a"
+  },
+  "browser": {
+    "engine": "chromium",
+    "headless": true,
+    "locale": "es-CR",
+    "timeout_ms": 30000,
+    "profile_root": "~/.police-bench/browser-profiles"
+  }
+}

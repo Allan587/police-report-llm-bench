@@ -439,3 +439,28 @@ operador debe aportar decisiones y perfiles completos; la CLI no los fabrica.
 Los seis destinos se aplican con recuperación, no con atomicidad conjunta.
 La capacidad permanece confinada a fixtures sintéticos locales; QA independiente,
 proveedores reales y remoto siguen pendientes.
+
+## D-047 — OLBM-55 configura inputs y navegador sin duplicar el flujo
+
+**Fecha:** 2026-11-06.
+**Motivación:** el flujo aprobado recibe rutas explícitas, pero los scripts
+heredados de CSV/generación fijan rutas al checkout y no existe un contrato
+general para generar statements desde datos nuevos sin inferencia. El selector
+O-01 avanza secuencialmente; precrear todos los casos ocultaría el primero.
+**Decisión:** aceptar como entrada portable el layout JSON/JSONL ya consumido
+por `inspect_review_inputs`. Validar todos los índices contiguos desde 010,
+seleccionar un único run inequívoco por índice y copiar los inputs mediante
+staging a una salida aislada. Crear solo el primer directorio de caso y dejar
+el avance a O-01. Registrar huella SHA-256 e identidad en un manifiesto local
+que impide reutilización de salida con otro input. Configuración JSON v1
+anclada al archivo, raíces externas explícitas, sin symlinks ni superposición.
+`BrowserSessionFactory` compone `BrowserManager` por operador/revisor y solo
+admite Chromium, el motor probado; `doctor` comprueba una página local.
+**Consecuencias:** datasets de tamaño variable usan el mismo código. No se
+generan statements, outputs ni decisiones ausentes; un dataset crudo no
+compatible falla. Los scripts de inferencia heredados quedan fuera de este
+adaptador y no acreditan portabilidad de generación. Se conservan O-01/O-02,
+el puerto `ReviewerAdapter`, JSON/JSONL y los escritores existentes. La CLI
+manual mantiene su confinamiento sintético. Sin proveedores reales, entrenamiento,
+QA independiente ni validación remota. El prompt histórico de fase 3 menciona
+BD; prevalecen AGENTS.md y D-012.

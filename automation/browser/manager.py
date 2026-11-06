@@ -50,6 +50,7 @@ class BrowserManager:
         *,
         headless: bool = False,
         launch_timeout_ms: int = 30_000,
+        locale: Optional[str] = None,
     ) -> None:
         if not _PROFILE_NAME.fullmatch(profile_name):
             raise ValueError(
@@ -63,6 +64,9 @@ class BrowserManager:
         self.profile_name = profile_name
         self.headless = headless
         self.launch_timeout_ms = launch_timeout_ms
+        if locale is not None and (not isinstance(locale, str) or not locale.strip()):
+            raise ValueError("locale must be a non-empty string")
+        self.locale = locale
         self.profile_dir = self.profile_root / profile_name
 
         self._playwright: Optional[Playwright] = None
@@ -97,13 +101,11 @@ class BrowserManager:
 
             try:
                 self._playwright = await async_playwright().start()
-                self._context = (
-                    await self._playwright.chromium.launch_persistent_context(
-                        user_data_dir=self.profile_dir,
-                        headless=self.headless,
-                        timeout=self.launch_timeout_ms,
-                    )
-                )
+                options = {"user_data_dir": self.profile_dir, "headless": self.headless,
+                           "timeout": self.launch_timeout_ms}
+                if self.locale is not None:
+                    options["locale"] = self.locale
+                self._context = await self._playwright.chromium.launch_persistent_context(**options)
                 self._context.on("close", self._handle_unexpected_context_close)
             except Exception as error:
                 await self._cleanup_after_failed_launch()
