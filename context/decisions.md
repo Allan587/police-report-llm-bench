@@ -500,3 +500,9 @@ el inventario mínimo y el manifiesto de transferencia sin nuevos almacenes.
 sesiones del desarrollador; no acredita publicación en GitHub, compatibilidad
 de otros sistemas, proveedor real ni autenticidad externa. La cadena Git hasta
 F3-16 sigue local; QA independiente permanece `NOT_RUN`.
+
+## D-051 — OLBM-59 mantiene No-Go por operación y finalidad de Output
+
+**Fecha:** 2026-11-06. **Motivación:** el flujo fake de F3-17 se reproduce desde un commit final independiente, pero la capacidad técnica no demuestra autorización de cuentas, navegador, extracción ni uso de Outputs en entrenamiento. La reconsulta oficial de términos añade la restricción vigente de Google sobre desarrollo de modelos y confirma restricciones de OpenAI y SpaceXSI, detalladas en `docs/olbm-59-provider-readiness.md`.
+**Decisión:** conservar los tres proveedores reales deshabilitados. Evaluar por separado acceso humano, automatización web, extracción, transferencia y uso posterior de Output para cada servicio/cuenta/jurisdicción; `UNKNOWN` bloquea y `NOT_AUTHORIZED` exige una excepción aplicable verificable antes de reconsiderar. Ningún `AUTHORIZED` puede proceder solo de una interpretación de Codex. Un bundle de siete secciones no prueba siete generaciones independientes ni autenticidad externa.
+**Consecuencias:** ChatGPT, Gemini y Grok quedan `BLOCKED_BY_PERMISSIONS` para integración web real. Solo se presenta el expediente para revisión humana; no se añaden adaptadores ni interruptores de bypass. Una futura habilitación requerirá aprobación contractual e institucional documentada, procedencia de siete piezas, recuperación de envío incierto, QA y validación remota separada. D-012, D-043 y D-049 siguen vigentes.
