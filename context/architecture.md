@@ -1,5 +1,17 @@
 # Arquitectura técnica propuesta
 
+## Entrega manual supervisada local — OLBM-53
+
+`automation/review/manual_supervisor.py` prepara bajo `WorkflowLease` una
+identidad durable de solicitud junto al caso sintético. `manual_cli.py`
+presenta los siete slots, importa un paquete local y muestra estado y errores
+saneados. El adaptador OLBM-52 valida el paquete; el vertical existente acepta
+la identidad preparada, vuelve a validar bajo lease y publica mediante el
+escritor v2. O-01 habilita la adjudicación solo tras 3/3 conjuntos completos;
+adjudicación y aplicación incremental usan los módulos de fase 2. La solicitud
+no acredita salida externa: el conjunto activo v2 conserva la autoridad. D-045
+y `docs/olbm-53-manual-supervised-e2e.md` describen recuperación y límites.
+
 ## Importación manual local — OLBM-52 reconstruido
 
 `automation/review/manual_import_adapter.py` implementa el puerto vigente

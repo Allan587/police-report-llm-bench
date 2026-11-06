@@ -428,12 +428,20 @@ def _execute_current_plan(
                 lease_owner=owner,
             )
         if task is not None:
-            if (
-                previous_attempt is None
-                or recovered_attempt.task_id != task.task_id
-                or recovered_attempt.attempt_id != previous_attempt.attempt_id
-                or recovered_attempt.attempt_number != previous_attempt.attempt_number
-            ):
+            prepared_next = (
+                task.status is TaskStatus.RUNNING
+                and previous_attempt is not None
+                and previous_attempt.status is AttemptStatus.RUNNING
+                and recovered_attempt.task_id == task.task_id
+                and previous_attempt.attempt_number == recovered_attempt.attempt_number + 1
+            )
+            matching_failed = (
+                previous_attempt is not None
+                and recovered_attempt.task_id == task.task_id
+                and recovered_attempt.attempt_id == previous_attempt.attempt_id
+                and recovered_attempt.attempt_number == previous_attempt.attempt_number
+            )
+            if not (prepared_next or matching_failed):
                 return VerticalReviewResult(
                     VerticalReviewStatus.BLOCKED,
                     "in-memory retry identity contradicts the persisted attempt",
@@ -655,6 +663,12 @@ def _start_attempt(
         if recovered_attempt is not None:
             raise ValueError("persistent recovery cannot be combined with in-memory retry")
         _validate_task(config, reviewer, task)
+        if task.status is TaskStatus.RUNNING and previous_attempt is not None:
+            if (previous_attempt.task_id != task.task_id
+                    or previous_attempt.status is not AttemptStatus.RUNNING
+                    or previous_attempt.attempt_number < 1):
+                raise ValueError("prepared attempt does not match its running task")
+            return task, previous_attempt
         if task.status is not TaskStatus.RETRY_PENDING:
             raise ValueError("an existing unfinished task must be RETRY_PENDING")
         if (

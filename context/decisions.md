@@ -399,3 +399,25 @@ operación real/remota no se declaran aprobadas.
 focalizadas; comandos y resultados de esta reconstrucción en avances. Las 141
 PASS históricas no se reutilizan. Worktree persistente y commit local de
 respaldo obligatorios antes de READY_FOR_QA; sin push, PR ni cambios en Jira.
+
+## D-045 — OLBM-53 conserva la solicitud manual junto al caso sintético
+
+**Fecha:** 2026-11-06.
+**Motivación:** OLBM-52 exige task/attempt/run previos al paquete, pero el
+vertical creaba esas identidades dentro de la llamada de ejecución. Un operador
+no podía preparar siete respuestas ni reanudar después de reiniciar.
+**Decisión:** persistir un único `manual_request_<revisor>.json` por revisor
+en el caso sintético, con identidad y clave lógica, mediante reemplazo atómico
+bajo `WorkflowLease`. Permitir al vertical recibir el task y attempt
+`RUNNING` ya preparados, verificando su relación y el intento recuperado.
+El JSON de solicitud describe una espera, no un resultado ni un envío externo;
+`active.json` y el manifiesto v2 siguen siendo autoridad de publicación.
+La CLI solo prepara, inspecciona e importa paquetes locales; el importador
+OLBM-52, O-01/O-02, validadores, publicador, adjudicación y aplicación
+incremental se reutilizan. Los fixtures se confinan al temporal del sistema.
+**Consecuencias:** la identidad sobrevive reinicios; un corte antes de activar
+requiere solicitud nueva con el mismo task y un attempt nuevo. Un paquete
+repetido se compara con los siete outputs confirmados. No se añaden SQL, un
+segundo publicador ni respuestas generadas por la CLI. El flujo se valida solo
+con datos sintéticos. Autenticidad del proveedor, QA independiente y remoto
+continúan pendientes; D-041–D-044 y sus límites permanecen vigentes.
