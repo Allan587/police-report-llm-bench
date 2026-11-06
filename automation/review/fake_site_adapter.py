@@ -2,11 +2,17 @@
 from __future__ import annotations
 
 import asyncio
+import hashlib
 import json
 from pathlib import Path
 from typing import Callable
 
-from automation.browser.local_runtime import LocalBrowserRuntime
+from automation.browser.local_runtime import LocalBrowserError, LocalBrowserRuntime
+from automation.browser.manager import BrowserManagerError
+from automation.portable.config import PortableConfigError
+from playwright.async_api import Error as PlaywrightError
+from automation.portable.browser import BrowserSessionFactory
+from automation.portable.fake_session import LocalFakeBrowserSession
 from automation.browser.web_interaction import (
     FAKE_REVIEW_SLOTS, FakePageInteraction, ObservedResponse, WebInteractionError,
 )
@@ -30,13 +36,18 @@ class FakeSiteReviewerAdapter:
     """Test-only synchronous ReviewerAdapter bridge using seven explicit page replies."""
 
     def __init__(self, base_url: str, profile_root: Path, *, prompt: str,
-                 prepare_fixture: Callable[[ReviewerExecutionRequest], None] | None = None):
+                 prepare_fixture: Callable[[ReviewerExecutionRequest], None] | None = None,
+                 session_factory: BrowserSessionFactory | None = None, operator: str | None = None):
         if not isinstance(prompt, str) or not prompt.strip():
             raise ValueError("prompt must be non-empty")
         self.base_url = base_url
         self.profile_root = profile_root
         self.prompt = prompt
         self.prepare_fixture = prepare_fixture
+        if (session_factory is None) != (operator is None):
+            raise ValueError("session_factory and operator must be supplied together")
+        self.session_factory = session_factory
+        self.operator = operator
         self.observations: tuple[ObservedResponse, ...] = ()
 
     def execute(self, request: ReviewerExecutionRequest) -> CompleteReviewResult:
@@ -54,33 +65,53 @@ class FakeSiteReviewerAdapter:
             self.prepare_fixture(request)
         raw: dict[str, dict] = {}
         observed: list[ObservedResponse] = []
-        async with LocalBrowserRuntime(self.profile_root) as runtime:
-            browser = await runtime.open(request.task.reviewer)
-            for slot in FAKE_REVIEW_SLOTS:
-                interaction = FakePageInteraction(browser, self.base_url)
-                prepared_prompt = (
-                    f"{self.prompt}\nslot:{slot}\nreviewer_id:{request.task.reviewer.value}"
-                    f"\nstatement_index:{request.inputs.statement_index}"
-                    f"\nrun_id:{request.inputs.selected_run_id}"
-                    f"\ntask_id:{request.task.task_id}\nattempt_id:{request.attempt.attempt_id}"
-                )
-                await interaction.prepare(slot, prepared_prompt)
-                try:
-                    await interaction.submit()
-                    reply = await interaction.complete()
-                except WebInteractionError as error:
-                    raise ReviewerAdapterError(str(error)) from None
-                raw[slot] = _raw_artifact(reply.content or "", slot)
-                observed.append(reply)
+        try:
+            if self.session_factory is None:
+                async with LocalBrowserRuntime(self.profile_root) as runtime:
+                    browser = await runtime.open(request.task.reviewer)
+                    await self._collect(request, browser, raw, observed)
+            else:
+                async with LocalFakeBrowserSession(
+                    self.session_factory,
+                    f"{self.operator[:48]}-{hashlib.sha256(request.attempt.attempt_id.encode()).hexdigest()[:12]}",
+                    request.task.reviewer, self.base_url
+                ) as browser:
+                    await self._collect(request, browser, raw, observed)
+        except (LocalBrowserError, BrowserManagerError, PortableConfigError, PlaywrightError):
+            raise ReviewerAdapterError("Synthetic browser session failed safely.") from None
         self.observations = tuple(observed)
+        return self._validated_result(request, raw)
+
+    async def _collect(self, request, browser, raw, observed):
+        for slot in FAKE_REVIEW_SLOTS:
+            interaction = FakePageInteraction(browser, self.base_url)
+            prepared_prompt = (
+                f"{self.prompt}\nslot:{slot}\nreviewer_id:{request.task.reviewer.value}"
+                f"\nstatement_index:{request.inputs.statement_index}"
+                f"\nrun_id:{request.inputs.selected_run_id}"
+                f"\ntask_id:{request.task.task_id}\nattempt_id:{request.attempt.attempt_id}"
+            )
+            await interaction.prepare(slot, prepared_prompt)
+            try:
+                await interaction.submit()
+                reply = await interaction.complete()
+            except WebInteractionError as error:
+                raise ReviewerAdapterError(str(error)) from None
+            raw[slot] = _raw_artifact(reply.content or "", slot)
+            observed.append(reply)
+
+    def _validated_result(self, request, raw):
         identity = {
             "task_id": request.task.task_id,
             "attempt_id": request.attempt.attempt_id,
             "statement_index": request.inputs.statement_index,
             "reviewer": request.task.reviewer.value,
         }
+        if request.plan.run_id != request.inputs.selected_run_id:
+            raise ReviewerAdapterError("Synthetic request run identity is inconsistent.")
         for slot, artifact in raw.items():
-            if any(artifact.get(key) != value for key, value in identity.items()):
+            if (any(artifact.get(key) != value for key, value in identity.items())
+                    or ("run_id" in artifact and artifact["run_id"] != request.inputs.selected_run_id)):
                 raise ReviewerAdapterError(f"Fake response for {slot} has wrong identity.")
         reviewer = request.task.reviewer
         index = request.inputs.statement_index

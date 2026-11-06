@@ -599,3 +599,7 @@ Reutiliza el cargador autoritativo, siete artefactos por revisor, identidades y
 recuperación OLBM-32/33. No altera QA33-01 ni el fallback limitado a evidencia v1.
 D-039 e informe `docs/olbm-34-synthetic-range.md` documentan alcance y pruebas.
 OLBM-35 conserva adaptadores reales; fase 2 sigue `IN_PROGRESS`.
+
+### Puente Playwright portable y revisores fake — OLBM-56
+
+`BrowserSessionFactory` de OLBM-55 crea el `BrowserManager` de Chromium para un operador/revisor/intento. `LocalFakeBrowserSession` confina ese contexto nuevo a siete rutas del servidor loopback F3-02; `FakePageInteraction` captura respuestas DOM completas y `FakeSiteReviewerAdapter` entrega `CompleteReviewResult` al flujo vertical. O-01/O-02, validación, publicación v2, barrera, adjudicación y aplicación no se duplican. Es un puente exclusivo de pruebas sintéticas; la matriz documental de `docs/olbm-56-portable-playwright-reviewers.md` mantiene todos los accesos reales bloqueados. D-048 documenta el límite de perfil, origen y reintento.

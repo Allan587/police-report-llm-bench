@@ -79,7 +79,11 @@ class FakePageInteraction:
             raise WebInteractionError(WebResponseState.UNCERTAIN)
         if slot not in FAKE_REVIEW_SLOTS or not isinstance(prompt, str) or not prompt.strip():
             raise ValueError("slot and prompt must be valid")
-        await self.browser.navigate(f"{self.base_url}/{self.browser.reviewer.value}/{slot}")
+        target = f"{self.base_url}/{self.browser.reviewer.value}/{slot}"
+        await self.browser.navigate(target)
+        if (self.browser.page.url != target or
+                await self.browser.page.locator("[data-fake]").get_attribute("data-fake") != self.browser.reviewer.value):
+            raise LocalBrowserError("Unexpected synthetic page identity.")
         await self.browser.page.locator('[data-role="prompt"]').fill(prompt)
         self._fingerprint = hashlib.sha256(prompt.encode("utf-8")).hexdigest()
         self.state = WebResponseState.PREPARED

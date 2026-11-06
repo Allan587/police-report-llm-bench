@@ -24,6 +24,16 @@ class FakeSiteServer:
                 reviewer, slot = parts
                 owner.visits.append((reviewer, slot))
                 scenario = owner.scenarios.get((reviewer, slot), "complete")
+                if scenario == "redirect_external":
+                    self.send_response(302)
+                    self.send_header("Location", "https://example.org/blocked")
+                    self.end_headers()
+                    return
+                if scenario == "redirect_local":
+                    self.send_response(302)
+                    self.send_header("Location", "/unexpected")
+                    self.end_headers()
+                    return
                 artifact = owner.artifacts.get((reviewer, slot))
                 payload = json.dumps(artifact, ensure_ascii=False) if artifact is not None else ""
                 payload_js = json.dumps(payload).replace("<", "\\u003c")

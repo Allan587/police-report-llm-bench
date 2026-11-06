@@ -464,3 +464,10 @@ el puerto `ReviewerAdapter`, JSON/JSONL y los escritores existentes. La CLI
 manual mantiene su confinamiento sintético. Sin proveedores reales, entrenamiento,
 QA independiente ni validación remota. El prompt histórico de fase 3 menciona
 BD; prevalecen AGENTS.md y D-012.
+
+## D-048 — OLBM-56 limita la integración Playwright portable a sitios simulados
+
+**Fecha:** 2026-11-06.
+**Motivación:** OLBM-55 creó configuración y sesiones portables, mientras F3-02 ya ofrecía interacción fake y el puerto de revisión; faltaba conectarlos sin activar proveedores reales.
+**Decisión:** `LocalFakeBrowserSession` usa exclusivamente `BrowserSessionFactory`/`BrowserManager`, exige perfil nuevo por intento y permite solo siete rutas GET del origen fake explícito en `127.0.0.1`. Bloquea otras peticiones y WebSocket; el DOM debe confirmar URL y marcador fake. `FakeSiteReviewerAdapter` conserva el contrato `ReviewerAdapter`; los validadores, O-01/O-02, publicador v2, barrera y adjudicación existentes retienen sus responsabilidades. Las autorizaciones reales no son un flag de configuración.
+**Consecuencias:** el flujo sintético puede probarse desde dos configuraciones sin rutas fijas ni datos reales. Un intento fallido no reutiliza su perfil; reintento exige identidad nueva. La evidencia fake no certifica proveedor real. QA independiente, Linux/Windows, permisos institucionales y validación remota permanecen pendientes. D-043 y D-047 no cambian.
