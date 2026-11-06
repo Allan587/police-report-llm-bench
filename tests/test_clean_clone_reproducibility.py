@@ -7,9 +7,12 @@ import subprocess
 import sys
 from pathlib import Path
 
+import pytest
+
 from automation.orchestrator import PlanAction
+from automation.portable.__main__ import doctor
 from automation.portable.browser import BrowserSessionFactory
-from automation.portable.config import load_config
+from automation.portable.config import PortableConfigError, load_config
 from automation.portable.inputs import InputAdapter
 from automation.review.fake_site_adapter import FakeSiteReviewerAdapter
 from automation.review.manual_adjudication import adjudication_status
@@ -142,3 +145,44 @@ def test_missing_local_configuration_is_reported(tmp_path):
     )
     assert result.returncode == 2
     assert json.loads(result.stderr)["status"] == "FAIL"
+
+
+def test_doctor_rejects_incompatible_playwright(tmp_path, monkeypatch):
+    source = _dataset(tmp_path, "incompatible")
+    config = load_config(configuration(tmp_path, source.statements_path.parent, "incompatible"))
+    monkeypatch.setattr("automation.portable.__main__.importlib.metadata.version", lambda _: "0.0.0")
+    with pytest.raises(PortableConfigError, match="Playwright 1.60.0"):
+        doctor(config)
+
+
+def test_unreadable_input_and_unwritable_output(tmp_path):
+    source = _dataset(tmp_path, "permissions")
+    config = load_config(configuration(tmp_path, source.statements_path.parent, "permissions"))
+    statement = source.statements_path
+    original_mode = statement.stat().st_mode
+    try:
+        statement.chmod(0)
+        with pytest.raises(PortableConfigError):
+            InputAdapter(config).inspect()
+    finally:
+        statement.chmod(original_mode)
+    config.output_root.parent.mkdir(parents=True)
+    parent = config.output_root.parent
+    original_mode = parent.stat().st_mode
+    try:
+        parent.chmod(0o500)
+        with pytest.raises(PortableConfigError, match="not writable"):
+            doctor(config)
+    finally:
+        parent.chmod(original_mode)
+    assert not config.output_root.exists()
+
+
+def test_duplicate_statement_identity_is_rejected(tmp_path):
+    source = _dataset(tmp_path, "duplicate")
+    statement = source.statements_path
+    statement.write_text(statement.read_text() * 2, encoding="utf-8")
+    config = load_config(configuration(tmp_path, source.statements_path.parent, "duplicate"))
+    with pytest.raises(PortableConfigError, match="duplicate statement_index"):
+        InputAdapter(config).inspect()
+    assert not config.output_root.exists()

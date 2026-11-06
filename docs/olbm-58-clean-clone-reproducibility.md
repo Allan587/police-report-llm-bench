@@ -132,3 +132,13 @@ La navegación fake se confina a `127.0.0.1`; una URL externa se rechaza. Los
 servicios ChatGPT, Gemini y Grok reales permanecen sin autorización operativa
 ni pruebas. El ensayo solo acredita macOS Apple Silicon; Linux, Windows,
 otro equipo y la máquina remota son `NOT_RUN`/`REMOTE_NOT_CONFIGURED`.
+
+## Evidencia local de esta entrega
+
+La regresión completa en F3-17 aprobó 731 pruebas y 26 subtests, con los tres
+smokes Chromium opt-in habilitados. La ejecución focal desde la copia Git
+aislada aprobó 56 pruebas de instalación, preparación, navegador y flujo fake;
+las tres pruebas negativas añadidas al cierre aprobaron junto con el E2E
+(5/5) tanto en F3-17 como en el clon. El detalle de comandos, entorno, fallos
+iniciales y límites está en `context/advances.md`. La validación de otro
+equipo, Linux, Windows, remoto y proveedores reales permanece `NOT_RUN`.
