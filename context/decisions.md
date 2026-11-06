@@ -483,3 +483,20 @@ declara sintética y la autenticidad del proveedor permanece `UNVERIFIED`.
 timeout/envío incierto no se confirma ni reenvía dentro del intento. No se deduce
 permiso, autoría ni equivalencia de siete interacciones a partir de un bundle.
 El reintento externo requeriría conciliación durable y una autorización nueva.
+
+## D-050 — OLBM-58 instala y prueba Chromium desde una copia independiente
+
+**Fecha:** 2026-11-06. **Motivación:** la evidencia F3-16 usaba el venv y el
+Chromium del checkout original; no demostraba instalación desde un clon. Una
+prueba inicial de `doctor` reveló que el temporal macOS `/var` apunta a
+`/private/var` y disparaba la guarda de symlinks de perfiles.
+**Decisión:** resolver únicamente el directorio temporal recién creado por
+`doctor` antes de entregarlo a `BrowserSessionFactory`, manteniendo la guarda
+de rutas configuradas por el usuario. Añadir prueba de extremo a extremo
+sintética desde una instalación separada de Python/Playwright/Chromium, con
+configuración y datasets nuevos, procesos CLI y replay tras reinicio. Documentar
+el inventario mínimo y el manifiesto de transferencia sin nuevos almacenes.
+**Consecuencias:** la copia local puede verificar el vertical fake sin rutas ni
+sesiones del desarrollador; no acredita publicación en GitHub, compatibilidad
+de otros sistemas, proveedor real ni autenticidad externa. La cadena Git hasta
+F3-16 sigue local; QA independiente permanece `NOT_RUN`.

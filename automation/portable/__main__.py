@@ -22,7 +22,7 @@ async def _browser_smoke(config) -> None:
         if not executable.is_file():
             raise PortableConfigError("Chromium is missing; run python -m playwright install chromium")
     with tempfile.TemporaryDirectory(prefix="portable-browser-") as temporary:
-        factory = BrowserSessionFactory(config.browser, profile_root=Path(temporary))
+        factory = BrowserSessionFactory(config.browser, profile_root=Path(temporary).resolve())
         manager = factory.create("doctor", "chatgpt")
         try:
             try:

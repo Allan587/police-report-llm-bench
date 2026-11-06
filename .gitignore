@@ -32,6 +32,7 @@ local-outputs/
 
 # Browser automation state (local and potentially sensitive)
 .browser_profiles/
+.playwright-browsers/
 playwright/.auth/
 storage_state*.json
 *.sqlite
