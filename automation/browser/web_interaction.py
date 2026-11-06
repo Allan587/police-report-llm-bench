@@ -55,6 +55,7 @@ class WebInteraction(Protocol):
 
 FAKE_REVIEW_SLOTS = ("main", "history_gemma", "history_mistral", "history_llama",
           "profile_gemma", "profile_mistral", "profile_llama")
+FAKE_CAPTURE_ROUTES = (*FAKE_REVIEW_SLOTS, "bundle")
 _PAGE_STATES = {
     "partial": WebResponseState.PARTIAL,
     "complete": WebResponseState.COMPLETE,
@@ -77,7 +78,7 @@ class FakePageInteraction:
     async def prepare(self, slot: str, prompt: str) -> None:
         if self._sent or self.browser.state is not BrowserOperationState.READY:
             raise WebInteractionError(WebResponseState.UNCERTAIN)
-        if slot not in FAKE_REVIEW_SLOTS or not isinstance(prompt, str) or not prompt.strip():
+        if slot not in FAKE_CAPTURE_ROUTES or not isinstance(prompt, str) or not prompt.strip():
             raise ValueError("slot and prompt must be valid")
         target = f"{self.base_url}/{self.browser.reviewer.value}/{slot}"
         await self.browser.navigate(target)

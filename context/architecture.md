@@ -1,5 +1,14 @@
 # Arquitectura técnica propuesta
 
+## OLBM-57 — protocolo de captura sintética verificable
+
+`automation/review/capture_protocol.py` valida observaciones de siete rutas locales o
+siete secciones explícitas en una respuesta local. Ambos patrones producen el mismo
+`CompleteReviewResult` y pasan por el validador y publicador v2 existentes. Los
+metadatos `web_capture` distinguen origen declarado, contenido observado, integridad
+local y autenticidad externa `UNVERIFIED`; no habilitan proveedores reales. Véase
+[`docs/olbm-57-verifiable-review-capture.md`](../docs/olbm-57-verifiable-review-capture.md).
+
 ## OLBM-55 — configuración portable local (fase 3)
 
 `automation/portable/config.py` carga el esquema JSON v1 y resuelve rutas

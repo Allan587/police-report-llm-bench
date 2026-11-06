@@ -5,7 +5,7 @@ from urllib.parse import urlsplit
 
 from automation.contracts import Reviewer
 from automation.browser.local_runtime import LocalBrowserTimeouts, LocalReviewBrowser
-from automation.browser.web_interaction import FAKE_REVIEW_SLOTS
+from automation.browser.web_interaction import FAKE_CAPTURE_ROUTES
 from .browser import BrowserSessionFactory
 from .config import PortableConfigError
 
@@ -13,7 +13,7 @@ from .config import PortableConfigError
 class LocalFakeBrowserSession:
     """One fresh factory-owned profile confined to one synthetic loopback site.
 
-    This class accepts only the seven fake reviewer routes. It is not a provider
+    This class accepts only the seven fake routes or the synthetic bundle route. It is not a provider
     connector, and intentionally refuses existing profiles/authentication state.
     """
 
@@ -58,7 +58,7 @@ class LocalFakeBrowserSession:
     async def _route(self, route) -> None:
         request = route.request
         parsed = urlsplit(request.url)
-        allowed = {f"/{self.reviewer.value}/{slot}" for slot in FAKE_REVIEW_SLOTS}
+        allowed = {f"/{self.reviewer.value}/{slot}" for slot in FAKE_CAPTURE_ROUTES}
         if (request.method == "GET" and
                 f"{parsed.scheme}://{parsed.netloc}" == self.origin and
                 parsed.path in allowed and not parsed.query and not parsed.fragment):

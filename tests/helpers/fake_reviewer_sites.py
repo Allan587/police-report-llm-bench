@@ -3,6 +3,7 @@ from __future__ import annotations
 
 import html
 import json
+import hashlib
 import threading
 from http.server import BaseHTTPRequestHandler, ThreadingHTTPServer
 from urllib.parse import unquote, urlsplit
@@ -90,3 +91,16 @@ class FakeSiteServer:
         self.server.shutdown()
         self.thread.join()
         self.server.server_close()
+
+
+def structured_bundle(artifacts: dict[str, dict], identity: dict) -> dict:
+    """Fixture grammar, deliberately unrelated to provider DOM structures."""
+    components = []
+    for slot, output in artifacts.items():
+        canonical = json.dumps(output, ensure_ascii=False, sort_keys=True,
+                               separators=(",", ":"), allow_nan=False).encode("utf-8")
+        components.append({
+            "slot": slot, "identity": dict(identity), "output": output,
+            "content_sha256": hashlib.sha256(canonical).hexdigest(),
+        })
+    return {"schema_version": 1, "components": components}

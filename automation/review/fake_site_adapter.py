@@ -3,7 +3,6 @@ from __future__ import annotations
 
 import asyncio
 import hashlib
-import json
 from pathlib import Path
 from typing import Callable
 
@@ -16,39 +15,33 @@ from automation.portable.fake_session import LocalFakeBrowserSession
 from automation.browser.web_interaction import (
     FAKE_REVIEW_SLOTS, FakePageInteraction, ObservedResponse, WebInteractionError,
 )
-from automation.contracts import (
-    BenchmarkModel, CompleteReviewResult, HistoryProposalOutput, MainReviewOutput,
-    ProfileProposalOutput, utc_now,
-)
+from automation.contracts import CompleteReviewResult
+from .capture_protocol import CaptureStatus, capture_separate, capture_structured, result_from_capture
 from .vertical_flow import ReviewerAdapterError, ReviewerExecutionRequest
-
-def _raw_artifact(content: str, slot: str) -> dict:
-    try:
-        raw = json.loads(content)
-    except (TypeError, ValueError):
-        raise ReviewerAdapterError(f"Fake response for {slot} is invalid JSON.") from None
-    if not isinstance(raw, dict):
-        raise ReviewerAdapterError(f"Fake response for {slot} is not an object.")
-    return raw
 
 
 class FakeSiteReviewerAdapter:
-    """Test-only synchronous ReviewerAdapter bridge using seven explicit page replies."""
+    """Test-only ReviewerAdapter bridge for separate or structured fake replies."""
 
     def __init__(self, base_url: str, profile_root: Path, *, prompt: str,
                  prepare_fixture: Callable[[ReviewerExecutionRequest], None] | None = None,
-                 session_factory: BrowserSessionFactory | None = None, operator: str | None = None):
+                 session_factory: BrowserSessionFactory | None = None, operator: str | None = None,
+                 capture_pattern: str = "separate"):
         if not isinstance(prompt, str) or not prompt.strip():
             raise ValueError("prompt must be non-empty")
         self.base_url = base_url
         self.profile_root = profile_root
         self.prompt = prompt
+        if capture_pattern not in {"separate", "structured"}:
+            raise ValueError("unknown synthetic capture pattern")
+        self.capture_pattern = capture_pattern
         self.prepare_fixture = prepare_fixture
         if (session_factory is None) != (operator is None):
             raise ValueError("session_factory and operator must be supplied together")
         self.session_factory = session_factory
         self.operator = operator
         self.observations: tuple[ObservedResponse, ...] = ()
+        self.capture_status = CaptureStatus.PARTIAL
 
     def execute(self, request: ReviewerExecutionRequest) -> CompleteReviewResult:
         if not isinstance(request, ReviewerExecutionRequest):
@@ -61,9 +54,10 @@ class FakeSiteReviewerAdapter:
 
     async def _execute(self, request: ReviewerExecutionRequest) -> CompleteReviewResult:
         self.observations = ()
+        self.capture_status = CaptureStatus.PARTIAL
         if self.prepare_fixture is not None:
             self.prepare_fixture(request)
-        raw: dict[str, dict] = {}
+        raw: dict[str, ObservedResponse] = {}
         observed: list[ObservedResponse] = []
         try:
             if self.session_factory is None:
@@ -77,13 +71,22 @@ class FakeSiteReviewerAdapter:
                     request.task.reviewer, self.base_url
                 ) as browser:
                     await self._collect(request, browser, raw, observed)
+        except ReviewerAdapterError:
+            self.observations = tuple(observed)
+            raise
         except (LocalBrowserError, BrowserManagerError, PortableConfigError, PlaywrightError):
+            self.observations = tuple(observed)
+            self.capture_status = CaptureStatus.UNCERTAIN
             raise ReviewerAdapterError("Synthetic browser session failed safely.") from None
         self.observations = tuple(observed)
-        return self._validated_result(request, raw)
+        components = (capture_separate(request, raw) if self.capture_pattern == "separate"
+                      else capture_structured(request, raw["bundle"]))
+        result = result_from_capture(request, components)
+        self.capture_status = CaptureStatus.COMPLETE
+        return result
 
     async def _collect(self, request, browser, raw, observed):
-        for slot in FAKE_REVIEW_SLOTS:
+        for slot in (FAKE_REVIEW_SLOTS if self.capture_pattern == "separate" else ("bundle",)):
             interaction = FakePageInteraction(browser, self.base_url)
             prepared_prompt = (
                 f"{self.prompt}\nslot:{slot}\nreviewer_id:{request.task.reviewer.value}"
@@ -96,33 +99,8 @@ class FakeSiteReviewerAdapter:
                 await interaction.submit()
                 reply = await interaction.complete()
             except WebInteractionError as error:
+                self.capture_status = (CaptureStatus.UNCERTAIN if error.state.value in
+                                       {"TIMEOUT", "UNCERTAIN"} else CaptureStatus.PARTIAL)
                 raise ReviewerAdapterError(str(error)) from None
-            raw[slot] = _raw_artifact(reply.content or "", slot)
+            raw[slot] = reply
             observed.append(reply)
-
-    def _validated_result(self, request, raw):
-        identity = {
-            "task_id": request.task.task_id,
-            "attempt_id": request.attempt.attempt_id,
-            "statement_index": request.inputs.statement_index,
-            "reviewer": request.task.reviewer.value,
-        }
-        if request.plan.run_id != request.inputs.selected_run_id:
-            raise ReviewerAdapterError("Synthetic request run identity is inconsistent.")
-        for slot, artifact in raw.items():
-            if (any(artifact.get(key) != value for key, value in identity.items())
-                    or ("run_id" in artifact and artifact["run_id"] != request.inputs.selected_run_id)):
-                raise ReviewerAdapterError(f"Fake response for {slot} has wrong identity.")
-        reviewer = request.task.reviewer
-        index = request.inputs.statement_index
-        attempt = request.attempt.attempt_id
-        try:
-            main = MainReviewOutput(index, reviewer, attempt, raw["main"])
-            histories = tuple(HistoryProposalOutput(index, reviewer, attempt, model,
-                raw[f"history_{model.value}"]) for model in BenchmarkModel)
-            proposals = tuple(ProfileProposalOutput(index, reviewer, attempt, model,
-                raw[f"profile_{model.value}"]) for model in BenchmarkModel)
-            return CompleteReviewResult(request.task.task_id, attempt, index, reviewer,
-                                        main, histories, proposals, utc_now())
-        except (KeyError, ValueError):
-            raise ReviewerAdapterError("Fake response set failed review validation.") from None
