@@ -1,0 +1,260 @@
+{
+  "schema_version": 1,
+  "task_id": "synthetic-task",
+  "attempt_id": "synthetic-attempt",
+  "reviewer": "chatgpt",
+  "statement_index": 10,
+  "run_id": "run-a",
+  "components": [
+    {
+      "task_id": "synthetic-task",
+      "attempt_id": "synthetic-attempt",
+      "reviewer": "chatgpt",
+      "statement_index": 10,
+      "run_id": "run-a",
+      "slot": "main",
+      "state": "COMPLETE",
+      "observed_at": "2026-11-06T10:00:00-06:00",
+      "declared_provenance": "Synthetic fixture entered by operator; no provider contacted.",
+      "output": {
+        "task_id": "synthetic-task",
+        "attempt_id": "synthetic-attempt",
+        "statement_index": 10,
+        "reviewer": "chatgpt",
+        "model_reviews": [
+          {
+            "model_name": "gemma",
+            "factuality": {
+              "status": "pass",
+              "findings": [
+                "synthetic operator supplied text"
+              ]
+            },
+            "hallucinations": [],
+            "omissions": [],
+            "narrative_quality": {
+              "status": "pass",
+              "findings": []
+            },
+            "crime_classification": {
+              "model_category": "category",
+              "assessment": "correct",
+              "proposed_category_cr": "category",
+              "justification": "supported"
+            },
+            "useful_elements": []
+          },
+          {
+            "model_name": "mistral",
+            "factuality": {
+              "status": "pass",
+              "findings": [
+                "synthetic operator supplied text"
+              ]
+            },
+            "hallucinations": [],
+            "omissions": [],
+            "narrative_quality": {
+              "status": "pass",
+              "findings": []
+            },
+            "crime_classification": {
+              "model_category": "category",
+              "assessment": "correct",
+              "proposed_category_cr": "category",
+              "justification": "supported"
+            },
+            "useful_elements": []
+          },
+          {
+            "model_name": "llama",
+            "factuality": {
+              "status": "pass",
+              "findings": [
+                "synthetic operator supplied text"
+              ]
+            },
+            "hallucinations": [],
+            "omissions": [],
+            "narrative_quality": {
+              "status": "pass",
+              "findings": []
+            },
+            "crime_classification": {
+              "model_category": "category",
+              "assessment": "correct",
+              "proposed_category_cr": "category",
+              "justification": "supported"
+            },
+            "useful_elements": []
+          }
+        ],
+        "proposed_ideal_report": {
+          "narrative": "synthetic operator supplied text",
+          "closing": "closing",
+          "crime_classification": {
+            "category": "category",
+            "justification": "supported"
+          }
+        }
+      },
+      "content_sha256": "ae186e5b80a1842178a6a9faedc7e6801cff5817be315e341d1cd44da3e61047"
+    },
+    {
+      "task_id": "synthetic-task",
+      "attempt_id": "synthetic-attempt",
+      "reviewer": "chatgpt",
+      "statement_index": 10,
+      "run_id": "run-a",
+      "slot": "history_gemma",
+      "state": "COMPLETE",
+      "observed_at": "2026-11-06T10:00:00-06:00",
+      "declared_provenance": "Synthetic fixture entered by operator; no provider contacted.",
+      "output": {
+        "task_id": "synthetic-task",
+        "attempt_id": "synthetic-attempt",
+        "statement_index": 10,
+        "reviewer": "chatgpt",
+        "model": "gemma",
+        "output": 10,
+        "date": "11/10/2026",
+        "observations": [
+          "synthetic operator supplied text"
+        ]
+      },
+      "content_sha256": "b580f804072fc2896a6fec1141329981e4362a9ec6add796d96a08275246c22b"
+    },
+    {
+      "task_id": "synthetic-task",
+      "attempt_id": "synthetic-attempt",
+      "reviewer": "chatgpt",
+      "statement_index": 10,
+      "run_id": "run-a",
+      "slot": "history_mistral",
+      "state": "COMPLETE",
+      "observed_at": "2026-11-06T10:00:00-06:00",
+      "declared_provenance": "Synthetic fixture entered by operator; no provider contacted.",
+      "output": {
+        "task_id": "synthetic-task",
+        "attempt_id": "synthetic-attempt",
+        "statement_index": 10,
+        "reviewer": "chatgpt",
+        "model": "mistral",
+        "output": 10,
+        "date": "11/10/2026",
+        "observations": [
+          "synthetic operator supplied text"
+        ]
+      },
+      "content_sha256": "e97085e6aae498ffae30248de800a41915d57d59cb760c3420a9fe810d0aaa74"
+    },
+    {
+      "task_id": "synthetic-task",
+      "attempt_id": "synthetic-attempt",
+      "reviewer": "chatgpt",
+      "statement_index": 10,
+      "run_id": "run-a",
+      "slot": "history_llama",
+      "state": "COMPLETE",
+      "observed_at": "2026-11-06T10:00:00-06:00",
+      "declared_provenance": "Synthetic fixture entered by operator; no provider contacted.",
+      "output": {
+        "task_id": "synthetic-task",
+        "attempt_id": "synthetic-attempt",
+        "statement_index": 10,
+        "reviewer": "chatgpt",
+        "model": "llama",
+        "output": 10,
+        "date": "11/10/2026",
+        "observations": [
+          "synthetic operator supplied text"
+        ]
+      },
+      "content_sha256": "71998bdac422b4db342a19c515768638b4c03a8bfeffa3609738635f97a577f4"
+    },
+    {
+      "task_id": "synthetic-task",
+      "attempt_id": "synthetic-attempt",
+      "reviewer": "chatgpt",
+      "statement_index": 10,
+      "run_id": "run-a",
+      "slot": "profile_gemma",
+      "state": "COMPLETE",
+      "observed_at": "2026-11-06T10:00:00-06:00",
+      "declared_provenance": "Synthetic fixture entered by operator; no provider contacted.",
+      "output": {
+        "task_id": "synthetic-task",
+        "attempt_id": "synthetic-attempt",
+        "statement_index": 10,
+        "reviewer": "chatgpt",
+        "model_name": "gemma",
+        "new_strengths": [
+          "synthetic operator supplied text"
+        ],
+        "new_weaknesses": [],
+        "new_hallucination_patterns": [],
+        "new_classification_patterns": [],
+        "new_narrative_patterns": [],
+        "new_factuality_patterns": [],
+        "new_finetuning_priorities": []
+      },
+      "content_sha256": "d1cbcde69c22a71207ab7c824e77869f7f0366b51695ee1d085446f55c15091f"
+    },
+    {
+      "task_id": "synthetic-task",
+      "attempt_id": "synthetic-attempt",
+      "reviewer": "chatgpt",
+      "statement_index": 10,
+      "run_id": "run-a",
+      "slot": "profile_mistral",
+      "state": "COMPLETE",
+      "observed_at": "2026-11-06T10:00:00-06:00",
+      "declared_provenance": "Synthetic fixture entered by operator; no provider contacted.",
+      "output": {
+        "task_id": "synthetic-task",
+        "attempt_id": "synthetic-attempt",
+        "statement_index": 10,
+        "reviewer": "chatgpt",
+        "model_name": "mistral",
+        "new_strengths": [
+          "synthetic operator supplied text"
+        ],
+        "new_weaknesses": [],
+        "new_hallucination_patterns": [],
+        "new_classification_patterns": [],
+        "new_narrative_patterns": [],
+        "new_factuality_patterns": [],
+        "new_finetuning_priorities": []
+      },
+      "content_sha256": "102d6f4ddb79b189adaaf9aad37fe53b91d0cd6e8abd060d288be1b210a5ac1b"
+    },
+    {
+      "task_id": "synthetic-task",
+      "attempt_id": "synthetic-attempt",
+      "reviewer": "chatgpt",
+      "statement_index": 10,
+      "run_id": "run-a",
+      "slot": "profile_llama",
+      "state": "COMPLETE",
+      "observed_at": "2026-11-06T10:00:00-06:00",
+      "declared_provenance": "Synthetic fixture entered by operator; no provider contacted.",
+      "output": {
+        "task_id": "synthetic-task",
+        "attempt_id": "synthetic-attempt",
+        "statement_index": 10,
+        "reviewer": "chatgpt",
+        "model_name": "llama",
+        "new_strengths": [
+          "synthetic operator supplied text"
+        ],
+        "new_weaknesses": [],
+        "new_hallucination_patterns": [],
+        "new_classification_patterns": [],
+        "new_narrative_patterns": [],
+        "new_factuality_patterns": [],
+        "new_finetuning_priorities": []
+      },
+      "content_sha256": "7e281467fab0b8c98b631652abd99b55cb44ab43fd6cf9ab9fb0fe4eade60af0"
+    }
+  ]
+}

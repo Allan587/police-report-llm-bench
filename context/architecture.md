@@ -1,5 +1,23 @@
 # Arquitectura técnica propuesta
 
+## Importación manual local — OLBM-52 reconstruido
+
+`automation/review/manual_import_adapter.py` implementa el puerto vigente
+`ReviewerAdapter.execute(ReviewerExecutionRequest) -> CompleteReviewResult`.
+Lee exclusivamente un paquete JSON inline de siete componentes, con identidad
+de solicitud y run, hashes canónicos, completitud y procedencia declaradas.
+Valida los contratos existentes antes de devolver un resultado; no publica.
+La integración sintética conserva `run_synthetic_reviewer_once()`, el lease,
+`publish_complete_review()`, manifiestos v2 y la barrera de tres revisores.
+Los metadatos `manual_import` quedan dentro de los siete JSON publicados;
+la autenticidad externa siempre permanece `UNVERIFIED`.
+No modifica O-01/O-02 ni introduce almacenes, CLI operacional o pausa durable.
+El operador debe disponer de la identidad exacta de solicitud antes de preparar
+el paquete. Los tests crean paquetes sintéticos al recibir esa identidad.
+Ver [formato, límites y QA](../docs/olbm-52-manual-review-import.md) y D-044.
+Es reconstrucción nueva desde el baseline aprobado, no recuperación del código
+perdido; validación local no acredita proveedor real ni ejecución remota.
+
 ## Interacción web simulada OLBM-41
 
 `automation/browser/web_interaction.py` observa estado y contenido de páginas

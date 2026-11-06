@@ -365,3 +365,37 @@ JSON/JSONL ni operación remota.
 **Decisión:** mantener inhabilitada toda interacción web automatizada real. La extracción programática de Output en ChatGPT individual está expresamente restringida; xAI restringe acceso automatizado no autorizado; Gemini no dispone de evidencia suficiente para autorizar Playwright. Diferenciar disponibilidad manual `AVAILABLE_CONDITIONALLY` de autorización del proyecto `UNKNOWN`: la exportación manual documentada de ChatGPT y Gemini solo permite proponer una captura asistida futura, condicionada a cuenta, datos, contrato de siete artefactos probado y autorización institucional. Para Grok no se confirmó vía privada de exportación. `UNKNOWN` no equivale a permiso.
 **Consecuencias:** OLBM-42/43/44 no pueden conectar proveedores reales con esta evidencia. Un ticket separado deberá probar con fixtures locales la extracción y validación de siete artefactos del mismo intento, ya provengan de siete respuestas distinguibles o de una respuesta estructurada; solo los validadores y manifiestos v2 existentes podrán publicar. Las autorizaciones contractuales, de cuenta, usuario, institución y transferencia de datos policiales se resuelven separadamente. No se modificaron contratos ni código. Al integrar con F3-02, trasladar esta entrada y la bitácora correspondiente por entrada, sin reemplazar los registros que contienen D-041/D-042.
 **Evidencia:** fuentes oficiales consultadas el 2026-10-30; revisión y límites en el documento OLBM-48. QA independiente focalizado de OLBM-50 pendiente.
+
+## D-044 — OLBM-52 reconstruye la importación local sin certificar autoría externa
+
+**Fecha:** 2026-11-06.
+**Motivación:** los cambios originales sin commit de OLBM-52 no son recuperables
+con la evidencia disponible. El baseline aprobado `4e89715` contiene D-041,
+D-042 y D-043; D-044 se confirmó como siguiente identificador libre antes de
+escribir esta decisión. La reconstrucción requiere siete artefactos y el puerto
+vigente, sin habilitar proveedores ni crear un nuevo publicador.
+**Decisión:** añadir un adaptador de solo lectura para un paquete JSON local
+inline, versión de importación 1, con siete slots compatibles con el fake.
+Exigir identidad exacta de tarea, intento, statement, revisor y run, contenido
+estructurado validado por los contratos existentes, SHA-256 canónico,
+procedencia declarada, fecha con zona y estado COMPLETE. Rechazar captura
+incierta, JSON ambiguo, tamaños excesivos y rutas inseguras. Conservar
+procedencia/hash originales en `manual_import` dentro de los siete outputs,
+con integridad local validada y autenticidad externa UNVERIFIED. El adaptador
+no publica: reutilizar vertical, lease, barreras y escritor v2, incluida su
+detección de duplicados incompatibles y reemplazo íntegro por intento.
+**Consecuencias:** hash válido y declaración humana no prueban autoría del
+proveedor. El paquete no contiene referencias a otros archivos y requiere IDs
+exactos de una solicitud existente; no se implementa pausa durable, CLI
+operacional ni captura de plataformas. La integración probada es sintética;
+corregir/reconciliar incertidumbre permanece a cargo del operador. El inbox y
+sus ancestros deben estar bajo control local, pues las guardas previas no
+eliminan carreras con procesos hostiles. No se crean bases de datos ni otros
+almacenes; prevalecen AGENTS.md y D-012 sobre menciones históricas a BD y
+generación del prompt fase 3. Se conserva la restricción de D-043 y todo el
+texto de D-041/D-042/D-043. Fase 3 permanece IN_PROGRESS; QA independiente y
+operación real/remota no se declaran aprobadas.
+**Evidencia:** nuevas pruebas reproducibles, fixture sintético y regresiones
+focalizadas; comandos y resultados de esta reconstrucción en avances. Las 141
+PASS históricas no se reutilizan. Worktree persistente y commit local de
+respaldo obligatorios antes de READY_FOR_QA; sin push, PR ni cambios en Jira.
