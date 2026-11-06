@@ -421,3 +421,21 @@ repetido se compara con los siete outputs confirmados. No se añaden SQL, un
 segundo publicador ni respuestas generadas por la CLI. El flujo se valida solo
 con datos sintéticos. Autenticidad del proveedor, QA independiente y remoto
 continúan pendientes; D-041–D-044 y sus límites permanecen vigentes.
+
+## D-046 — OLBM-54 expone el puerto de adjudicación mediante un paquete local
+
+**Fecha:** 2026-11-06.
+**Motivación:** OLBM-53 dejaba la adjudicación y la aplicación fuera de la CLI,
+aunque ambos ejecutores existían. Un operador no podía completar el flujo sin
+invocar funciones internas.
+**Decisión:** la CLI sintética acepta un bundle 1+3+3 aportado por el operador,
+con statement, run y los tres task/attempt exactos. Un adaptador de solo lectura
+lo valida y lo entrega al puerto `BundleAdjudicatorAdapter`; el commit y los seis
+destinos siguen a cargo de los ejecutores y manifiestos v2 existentes. Para
+replay se comparan los hashes canónicos del bundle con el manifiesto y se
+verifica la completitud del statement antes de devolver `UNCHANGED`.
+**Consecuencias:** no hay un segundo almacén ni una segunda adjudicación. El
+operador debe aportar decisiones y perfiles completos; la CLI no los fabrica.
+Los seis destinos se aplican con recuperación, no con atomicidad conjunta.
+La capacidad permanece confinada a fixtures sintéticos locales; QA independiente,
+proveedores reales y remoto siguen pendientes.

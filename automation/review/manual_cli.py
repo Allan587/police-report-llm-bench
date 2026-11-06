@@ -12,6 +12,7 @@ from automation.orchestrator import OrchestratorConfig
 from automation.workflow_coordinator import WorkflowCoordinatorConfig
 
 from .manual_import_adapter import ManualReviewImportError
+from .manual_adjudication import adjudicate_manual_package, adjudication_status
 from .manual_supervisor import (
     ManualSupervisorError, _atomic_json, import_manual_package, manual_status,
     prepare_manual_request, template_for,
@@ -52,6 +53,10 @@ def main(argv: list[str] | None = None) -> int:
     importing = sub.add_parser("import")
     importing.add_argument("package", type=Path)
     importing.add_argument("--reviewer", required=True, choices=[item.value for item in Reviewer])
+    adjudicating = sub.add_parser("adjudicate")
+    adjudicating.add_argument("package", type=Path)
+    adjudicating.add_argument("--statement-index", type=int, required=True)
+    adjudicating.add_argument("--run-id", required=True)
     args = parser.parse_args(argv)
     try:
         config = _config(args.root)
@@ -59,6 +64,12 @@ def main(argv: list[str] | None = None) -> int:
         if (inbox.is_symlink() or not inbox.resolve().is_relative_to(config.fixture_root)
                 or not inbox.is_dir()):
             raise ManualSupervisorError("unsafe_inbox")
+        if args.command == "adjudicate":
+            result = adjudicate_manual_package(
+                config, args.package, inbox, statement_index=args.statement_index,
+                run_id=args.run_id)
+            print(json.dumps(result, ensure_ascii=False, sort_keys=True))
+            return 0 if result["status"] in {"APPLIED", "UNCHANGED"} else 2
         if args.command == "prepare":
             request = prepare_manual_request(config)
             template = inbox / f"manual-template-{request.reviewer.value}-{request.attempt_id}.json"
@@ -81,12 +92,14 @@ def main(argv: list[str] | None = None) -> int:
                 config, package_path=getattr(args, "package", None),
                 allowed_root=inbox if getattr(args, "package", None) else None,
             )
+            result["adjudication"] = adjudication_status(config)
             if args.command == "pending":
                 result = {"statement_index": result["statement_index"],
                           "plan_action": result["plan_action"],
                           "valid_reviewers": result["valid_reviewers"],
                           "missing_reviewers": result["missing_reviewers"],
                           "adjudication_enabled": result["adjudication_enabled"],
+                          "adjudication": result["adjudication"],
                           "pending": {name: item for name, item in result["reviewers"].items()
                                       if item["state"] != "PUBLISHED"}}
         print(json.dumps(result, ensure_ascii=False, sort_keys=True))

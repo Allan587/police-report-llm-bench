@@ -98,3 +98,11 @@ concurrentes hostiles, el operador debe asegurar ese entorno antes de usarlo.
 La aplicación incremental sigue las restricciones de los contratos existentes,
 incluidos los datos de perfil e historial requeridos y la protección de
 statements 000–009.
+
+## Continuación OLBM-54
+
+La CLI ampliada acepta un bundle de adjudicación aportado por el operador,
+continúa la aplicación incremental y muestra seis destinos verificados.
+Consultar [OLBM-54](olbm-54-manual-adjudication-cli.md) para comandos,
+contrato, recuperación y límites. Esta sección conserva el alcance histórico
+de OLBM-53 y sus pruebas originales.
