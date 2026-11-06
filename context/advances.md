@@ -13,6 +13,11 @@
 | 4. Evaluación, feedback y perfiles | TODO | Rúbricas, feedback, aprobación y perfiles versionados | Pendiente |
 
 ## Bitácora
+### 2026-11-06 — OLBM-58 cierre de evidencia del clon aislado
+- **Estado:** `LOCAL_TESTED` para macOS sintético; entrega `READY_FOR_QA`, fase 3 `IN_PROGRESS`. QA independiente `NOT_RUN`; remoto `REMOTE_NOT_CONFIGURED` y pruebas remotas `NOT_RUN`.
+- **Commit probado:** `63d97db1bdfb4361050e52de1c976cc990b2dc3e`, descendiente exacto de `f2818c9fd0a0a87e8e163ee014423f22495160aa`. En la segunda copia Git, `.git` propio, `git remote -v` vacío y worktree limpio, se ejecutó `env -u PYTHONPATH PLAYWRIGHT_BROWSERS_PATH="$PWD/.playwright-browsers" PYTHONDONTWRITEBYTECODE=1 .venv-clean/bin/python -m pytest -q -p no:cacheprovider tests/test_clean_clone_reproducibility.py` → **5 PASS, 0 FAIL, 0 SKIP en 9.30 s**. `.venv-clean/bin/python -m pip check` → PASS; `git diff --check` → PASS. El propio test verificó CLI `doctor` y `prepare`, 3/3, adjudicación, seis `APPLIED`, replay tras proceso nuevo y casos negativos. El SHA operativo de 62 archivos en `data/`, `config/feedback/`, `config/profiles/` del clon permaneció `b46c17f2483237c4a5c73e41c5d1d8a6a215014a87ca8f84287ea3dbc48c17ec`.
+- **Límites:** el commit de esta anotación modifica solo `context/advances.md`; no altera el código probado. Linux, Windows, segundo equipo, proveedores reales, integración desde GitHub y máquina remota siguen `NOT_RUN`. Sin push, PR, Jira ni QA independiente.
+
 ### 2026-11-06 — Fase 3 — OLBM-58 reproducibilidad desde clon limpio
 - **Estado:** `READY_FOR_QA` del entregable local sintético; fase 3 `IN_PROGRESS`. QA independiente `NOT_RUN`; proveedores reales `NOT_RUN`; remoto `REMOTE_NOT_CONFIGURED`, pruebas remotas `NOT_RUN`.
 - **Git:** worktree persistente `/Users/allanaron06122005gmail.com/Developer/police-report-llm-bench-f3-17`, rama `feature/f3-17-clean-clone-reproducibility`, creado desde `f2818c9fd0a0a87e8e163ee014423f22495160aa`. Segunda copia Git independiente `/Users/allanaron06122005gmail.com/Developer/police-report-llm-bench-f3-17-clean-clone` creada con `git clone --no-hardlinks --no-checkout`, primero fijada en ese baseline y sin remote persistente. Los worktrees anteriores y los cambios del checkout OneDrive quedaron intactos. Sin push, PR, merge, rebase, prune ni Jira.
