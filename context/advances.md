@@ -3,7 +3,7 @@
 > **Regla:** registrar únicamente implementación y pruebas observadas en el repositorio real.
 
 **Fase activa:** fase 3 `IN_PROGRESS`; OLBM-59 documenta reproducibilidad del commit final F3-17 y No-Go por proveedor para integración real. QA independiente integral aún `NOT_RUN`. F3-02/OLBM-51 y fase 2 conservan sus alcances anteriores.
-**Última actualización:** 2026-11-06 (OLBM-59: clon del commit final y D-051).
+**Última actualización:** 2026-11-06 (F3-19: auditoría de contexto temporal).
 
 | Fase | Estado | Entregable principal | Evidencia de pruebas |
 |---|---|---|---|
@@ -13,6 +13,16 @@
 | 4. Evaluación, feedback y perfiles | TODO | Rúbricas, feedback, aprobación y perfiles versionados | Pendiente |
 
 ## Bitácora
+### 2026-11-06 — Fase 3 — F3-19 auditoría de contexto temporal
+- **Estado:** `LOCAL_TESTED` para auditoría y proyección sintética; fase 3 `IN_PROGRESS`. Diagnóstico B: el estimador retrospectivo usa perfiles actuales, mientras la solicitud de revisor local F3-18 no carga perfiles/historiales. Contexto histórico completo `HISTORICAL_CONTEXT_UNAVAILABLE`; prompt exacto de transporte fake no persistido. QA independiente global `NOT_RUN`; remoto `REMOTE_NOT_CONFIGURED`, validación remota `NOT_RUN`.
+- **Git:** worktree persistente `~/Developer/police-report-llm-bench-f3-19`, rama `feature/f3-19-review-context-reproducibility`, base exacta `8c03c02cfac0ca73df400455ff6c319a6315c3e2`. F3-18 limpio; checkout OneDrive con cambios previos intactos. Sin push, PR, merge, Jira ni acceso remoto.
+- **Archivos:** `tests/test_review_context_reproducibility.py`, `docs/f3-19-review-context-reproducibility.md`, este registro. Código operacional, contratos v2, `context/architecture.md` y decisiones D-001..D-051 sin cambios; no se crea D-052 porque se confirma D-040.
+- **Experimento:** tres capturas previas de la proyección canónica de `ReviewerExecutionRequest` reconstruidas byte por byte y por SHA-256 después de barrera 3/3, adjudicación y aplicación; replay cero pasos. Hashes de preimagen verificados; contenido de perfil previo ausente del almacén de aplicación. Marcador futuro de perfil ausente en request fake; cambios en perfil/historial entre plan y ejecución rechazados con `STALE_PLAN`. No se afirma reconstrucción de prompt real ni de estados históricos 000–009.
+- **Pruebas:** `TMPDIR=/private/tmp PYTHONDONTWRITEBYTECODE=1 /Users/allanaron06122005gmail.com/Library/CloudStorage/OneDrive-EstudiantesITCR/OIJ_project/police-report-llm-bench/.venv311/bin/python -m pytest -q -p no:cacheprovider tests/test_review_context_reproducibility.py` → 4 PASS, 0 FAIL, 0 SKIP antes de las dos pruebas adicionales. Corrida final del archivo: 6 PASS, 0 FAIL, 0 SKIP. Regresión focal con `-q -rs -p no:cacheprovider` y los módulos `test_review_context_reproducibility.py`, `test_synthetic_range.py`, `test_review_storage.py`, `test_adjudication_storage.py`, `test_synthetic_application.py`, `test_workflow_coordinator.py`, `test_orchestrator_planner.py`, `test_review_contracts.py` → **341 PASS, 0 FAIL, 0 SKIP en 150.10 s**. Cobertura `NOT_MEASURED`. Pruebas web reales/API/QA global/remotas `NOT_RUN`.
+- **Integridad:** inventario de `data/`, `config/feedback/` y `config/profiles/`: 62 archivos, digest agregado JSON ordenado de rutas/hashes SHA-256 `d4781d804831c88f6257c2feb8df28c715df255f5db245f83ae31c75579c2a2e`, idéntico antes/después de pruebas. Reportes y script de estimación del checkout OneDrive leídos sin modificaciones.
+- **Siguiente acción:** antes de habilitar revisores reales, diseñar y probar captura durable del payload exacto y contenido previo recuperable, sin atribuir el proxy de 96.906 tokens a revisiones históricas. Esta unidad no habilita APIs, navegador real externo ni fase 4.
+- **Commit/PR:** commit local selectivo de esta unidad, identificable como HEAD de la rama F3-19; push y PR `NOT_RUN`.
+
 ### 2026-11-06 — Fase 3 — OLBM-59 reproducibilidad final y decisión por proveedor
 - **Estado:** `IN_PROGRESS`, entrega documental preparada para revisión humana; fase 3 `IN_PROGRESS`. Integración web real de ChatGPT/Gemini/Grok: **No-Go**, los tres `BLOCKED_BY_PERMISSIONS`. QA independiente `NOT_RUN`; remoto `REMOTE_NOT_CONFIGURED`, pruebas remotas `NOT_RUN`.
 - **Git:** worktree persistente `/Users/allanaron06122005gmail.com/Developer/police-report-llm-bench-f3-18`, rama `feature/f3-18-provider-readiness`, creado desde `dcf8446df2dba774c57689d937f9412679b25840`. Worktree F3-17 limpio y checkout principal OneDrive con cambios preexistentes preservados. Clon independiente `/Users/allanaron06122005gmail.com/Developer/police-report-llm-bench-f3-18-final-clone`, creado con `git clone --no-hardlinks --no-checkout` desde F3-17, `git checkout --detach` al SHA exacto, `.git` propio, no shallow, `git remote remove origin`; `git remote -v` vacío y `HEAD` exacto verificado. Sin reset, prune, rebase, push, PR, merge ni Jira.
