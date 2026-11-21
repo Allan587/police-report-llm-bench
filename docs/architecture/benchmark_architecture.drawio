@@ -1,0 +1,586 @@
+<?xml version='1.0' encoding='utf-8'?>
+<mxfile host="Electron" type="device" compressed="false">
+  <diagram id="benchmark-structural-1" name="1. Vista ejecutiva estructural">
+    <mxGraphModel grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1500" pageHeight="925" background="#FFFFFF" math="0" shadow="0">
+      <root>
+        <mxCell id="view1-root" />
+        <mxCell id="view1-layer" parent="view1-root" />
+        <mxCell id="view1-series" value="POLICE REPORT LLM BENCH  /  ARQUITECTURA DE SOFTWARE  /  c5ca0ad" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;fontSize=14;fontColor=#376D64;fontStyle=1;" vertex="1" parent="view1-layer">
+          <mxGeometry x="42" y="18" width="1416" height="24" as="geometry" />
+        </mxCell>
+        <mxCell id="view1-title" value="Vista ejecutiva estructural" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;fontSize=37;fontColor=#192B43;fontStyle=1;" vertex="1" parent="view1-layer">
+          <mxGeometry x="42" y="50" width="1416" height="51" as="geometry" />
+        </mxCell>
+        <mxCell id="view1-subtitle" value="Aplicación Python local organizada en módulos de interfaz, coordinación, contratos y acceso a recursos." style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;fontSize=19;fontColor=#455771;fontStyle=0;" vertex="1" parent="view1-layer">
+          <mxGeometry x="42" y="106" width="1416" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="view1-legend-0" value="Módulo" style="rounded=1;arcSize=11;html=1;whiteSpace=wrap;fontStyle=1;fontSize=13;fillColor=#E9F1FB;strokeColor=#6082AE;fontColor=#193B60;" vertex="1" parent="view1-layer">
+          <mxGeometry x="43" y="846" width="100" height="32" as="geometry" />
+        </mxCell>
+        <mxCell id="view1-legend-1" value="Contrato" style="rounded=1;arcSize=11;html=1;whiteSpace=wrap;fontStyle=1;fontSize=13;fillColor=#F0EBFA;strokeColor=#8970B5;fontColor=#463367;dashed=1;" vertex="1" parent="view1-layer">
+          <mxGeometry x="152" y="846" width="111" height="32" as="geometry" />
+        </mxCell>
+        <mxCell id="view1-legend-2" value="Adaptador" style="rounded=1;arcSize=11;html=1;whiteSpace=wrap;fontStyle=1;fontSize=13;fillColor=#E8F5F0;strokeColor=#5B9581;fontColor=#204C41;" vertex="1" parent="view1-layer">
+          <mxGeometry x="272" y="846" width="116" height="32" as="geometry" />
+        </mxCell>
+        <mxCell id="view1-legend-3" value="Infraestructura" style="rounded=1;arcSize=11;html=1;whiteSpace=wrap;fontStyle=1;fontSize=13;fillColor=#EDF0F5;strokeColor=#8592A6;fontColor=#38475D;" vertex="1" parent="view1-layer">
+          <mxGeometry x="397" y="846" width="145" height="32" as="geometry" />
+        </mxCell>
+        <mxCell id="view1-legend-4" value="Persistencia" style="rounded=1;arcSize=11;html=1;whiteSpace=wrap;fontStyle=1;fontSize=13;fillColor=#FFF2DF;strokeColor=#B3894D;fontColor=#654921;" vertex="1" parent="view1-layer">
+          <mxGeometry x="551" y="846" width="128" height="32" as="geometry" />
+        </mxCell>
+        <mxCell id="view1-legend-5" value="Externo al núcleo" style="rounded=1;arcSize=11;html=1;whiteSpace=wrap;fontStyle=1;fontSize=13;fillColor=#FFFFFF;strokeColor=#A4AFBF;fontColor=#4B596E;dashed=1;" vertex="1" parent="view1-layer">
+          <mxGeometry x="688" y="846" width="153" height="32" as="geometry" />
+        </mxCell>
+        <mxCell id="view1-legend-edges" value="La flecha indica quién usa el componente. Punteada o discontinua: acceso a archivos o implementación de un contrato." style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;fontSize=14;fontColor=#455771;fontStyle=0;" vertex="1" parent="view1-layer">
+          <mxGeometry x="43" y="885" width="1414" height="28" as="geometry" />
+        </mxCell>
+        <mxCell id="view1-folio" value="1 / 3" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;fontSize=14;fontColor=#566982;fontStyle=1;" vertex="1" parent="view1-layer">
+          <mxGeometry x="1404" y="847" width="54" height="27" as="geometry" />
+        </mxCell>
+        <mxCell id="view1-app" value="Benchmark local · módulos dentro de la aplicación Python" style="swimlane;rounded=1;arcSize=7;startSize=43;horizontal=1;html=1;collapsible=0;recursiveResize=0;align=left;spacingLeft=14;verticalAlign=middle;fontStyle=1;fontSize=17;fontColor=#344B68;strokeColor=#BDCBDE;fillColor=#EEF3FA;swimlaneFillColor=#FBFCFE;" vertex="1" parent="view1-layer">
+          <mxGeometry x="260" y="164" width="1200" height="604" as="geometry" />
+        </mxCell>
+        <mxCell id="view1-operator" value="&lt;b&gt;Operador&lt;/b&gt;&lt;br&gt;&lt;span style=&quot;font-size:14px&quot;&gt;Comandos y paquetes&lt;br&gt;locales&lt;/span&gt;" style="rounded=1;arcSize=11;whiteSpace=wrap;html=1;align=center;verticalAlign=middle;spacing=7;fontSize=17;fontColor=#4B596E;fillColor=#FFFFFF;strokeColor=#A4AFBF;strokeWidth=1.4;dashed=1;" vertex="1" parent="view1-layer">
+          <mxGeometry x="43" y="220" width="167" height="100" as="geometry" />
+        </mxCell>
+        <mxCell id="view1-interfaces" value="&lt;b&gt;Interfaces de operación&lt;/b&gt;&lt;br&gt;&lt;span style=&quot;font-size:16px&quot;&gt;CLI portable · CLI manual&lt;br&gt;Configuración del entorno&lt;/span&gt;" style="rounded=1;arcSize=11;whiteSpace=wrap;html=1;align=center;verticalAlign=middle;spacing=7;fontSize=19;fontColor=#193B60;fillColor=#E9F1FB;strokeColor=#6082AE;strokeWidth=1.4;" vertex="1" parent="view1-app">
+          <mxGeometry x="32" y="80" width="296" height="106" as="geometry" />
+        </mxCell>
+        <mxCell id="view1-coord" value="&lt;b&gt;Coordinación&lt;/b&gt;&lt;br&gt;&lt;span style=&quot;font-size:16px&quot;&gt;O-01 planifica · O-02 protege&lt;br&gt;Tareas e intentos&lt;/span&gt;" style="rounded=1;arcSize=11;whiteSpace=wrap;html=1;align=center;verticalAlign=middle;spacing=7;fontSize=19;fontColor=#193B60;fillColor=#E9F1FB;strokeColor=#6082AE;strokeWidth=1.4;" vertex="1" parent="view1-app">
+          <mxGeometry x="442" y="80" width="310" height="106" as="geometry" />
+        </mxCell>
+        <mxCell id="view1-services" value="&lt;b&gt;Servicios de aplicación&lt;/b&gt;&lt;br&gt;&lt;span style=&quot;font-size:16px&quot;&gt;Revisión y adjudicación&lt;br&gt;Aplicación de resultados&lt;/span&gt;" style="rounded=1;arcSize=11;whiteSpace=wrap;html=1;align=center;verticalAlign=middle;spacing=7;fontSize=19;fontColor=#193B60;fillColor=#E9F1FB;strokeColor=#6082AE;strokeWidth=1.4;" vertex="1" parent="view1-app">
+          <mxGeometry x="858" y="80" width="306" height="106" as="geometry" />
+        </mxCell>
+        <mxCell id="view1-ports" value="«interfaz»&lt;br&gt;&lt;b&gt;Contratos de revisión&lt;/b&gt;&lt;br&gt;&lt;span style=&quot;font-size:16px&quot;&gt;Puertos de revisor y adjudicador&lt;br&gt;Solicitudes y resultados tipados&lt;/span&gt;" style="rounded=1;arcSize=11;whiteSpace=wrap;html=1;align=center;verticalAlign=middle;spacing=7;fontSize=19;fontColor=#463367;fillColor=#F0EBFA;strokeColor=#8970B5;strokeWidth=1.4;dashed=1;dashPattern=5 3;" vertex="1" parent="view1-app">
+          <mxGeometry x="858" y="263" width="306" height="112" as="geometry" />
+        </mxCell>
+        <mxCell id="view1-adapters" value="&lt;b&gt;Implementaciones&lt;/b&gt;&lt;br&gt;&lt;span style=&quot;font-size:16px&quot;&gt;Importación de operador&lt;br&gt;Revisores y adjudicador de prueba&lt;/span&gt;" style="rounded=1;arcSize=11;whiteSpace=wrap;html=1;align=center;verticalAlign=middle;spacing=7;fontSize=19;fontColor=#204C41;fillColor=#E8F5F0;strokeColor=#5B9581;strokeWidth=1.4;" vertex="1" parent="view1-app">
+          <mxGeometry x="442" y="263" width="310" height="112" as="geometry" />
+        </mxCell>
+        <mxCell id="view1-browser" value="&lt;b&gt;Infraestructura de navegador&lt;/b&gt;&lt;br&gt;&lt;span style=&quot;font-size:16px&quot;&gt;Sesiones y perfiles locales&lt;br&gt;Playwright / Chromium&lt;/span&gt;" style="rounded=1;arcSize=11;whiteSpace=wrap;html=1;align=center;verticalAlign=middle;spacing=7;fontSize=19;fontColor=#38475D;fillColor=#EDF0F5;strokeColor=#8592A6;strokeWidth=1.4;" vertex="1" parent="view1-app">
+          <mxGeometry x="32" y="263" width="296" height="112" as="geometry" />
+        </mxCell>
+        <mxCell id="view1-files" value="&lt;b&gt;Persistencia local&lt;/b&gt;&lt;br&gt;&lt;span style=&quot;font-size:16px&quot;&gt;Lectura, publicación y evidencia&lt;br&gt;Archivos JSON / JSONL&lt;/span&gt;" style="shape=cylinder3;boundedLbl=1;size=9;whiteSpace=wrap;html=1;align=center;verticalAlign=middle;spacing=7;fontSize=19;fontColor=#654921;fillColor=#FFF2DF;strokeColor=#B3894D;strokeWidth=1.4;" vertex="1" parent="view1-app">
+          <mxGeometry x="858" y="453" width="306" height="108" as="geometry" />
+        </mxCell>
+        <mxCell id="view1-edge-operator" value="usa" style="edgeStyle=orthogonalEdgeStyle;rounded=1;jettySize=auto;html=1;endArrow=block;endFill=1;strokeWidth=1.75;strokeColor=#48648A;fontColor=#48648A;fontSize=13;fontStyle=1;labelBackgroundColor=#FFFFFF;exitX=1;exitY=0.54;exitDx=0;exitDy=0;entryX=0;entryY=0.32;entryDx=0;entryDy=0;" edge="1" parent="view1-layer" source="view1-operator" target="view1-interfaces">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="view1-edge-interfaces" value="usa servicios" style="edgeStyle=orthogonalEdgeStyle;rounded=1;jettySize=auto;html=1;endArrow=block;endFill=1;strokeWidth=1.75;strokeColor=#48648A;fontColor=#48648A;fontSize=13;fontStyle=1;labelBackgroundColor=#FFFFFF;exitX=0.62;exitY=0;exitDx=0;exitDy=0;entryX=0.26;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="view1-layer" source="view1-interfaces" target="view1-services">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="0" y="-10" as="offset" />
+            <Array as="points">
+              <mxPoint x="475" y="223" />
+              <mxPoint x="1198" y="223" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="view1-edge-coord" value="usa" style="edgeStyle=orthogonalEdgeStyle;rounded=1;jettySize=auto;html=1;endArrow=block;endFill=1;strokeWidth=1.75;strokeColor=#48648A;fontColor=#48648A;fontSize=13;fontStyle=1;labelBackgroundColor=#FFFFFF;exitX=0;exitY=0.55;exitDx=0;exitDy=0;entryX=1;entryY=0.55;entryDx=0;entryDy=0;" edge="1" parent="view1-layer" source="view1-services" target="view1-coord">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="view1-edge-ports" value="usa" style="edgeStyle=orthogonalEdgeStyle;rounded=1;jettySize=auto;html=1;endArrow=block;endFill=1;strokeWidth=1.75;strokeColor=#48648A;fontColor=#48648A;fontSize=13;fontStyle=1;labelBackgroundColor=#FFFFFF;exitX=0.61;exitY=1;exitDx=0;exitDy=0;entryX=0.61;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="view1-layer" source="view1-services" target="view1-ports">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="view1-edge-adapters" value="implementa" style="edgeStyle=orthogonalEdgeStyle;rounded=1;jettySize=auto;html=1;endArrow=block;endFill=0;strokeWidth=1.75;strokeColor=#795DA7;fontColor=#795DA7;fontSize=13;fontStyle=1;labelBackgroundColor=#FFFFFF;dashed=1;dashPattern=7 4;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="view1-layer" source="view1-adapters" target="view1-ports">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="0" y="-16" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="view1-edge-browser" value="usa" style="edgeStyle=orthogonalEdgeStyle;rounded=1;jettySize=auto;html=1;endArrow=block;endFill=1;strokeWidth=1.75;strokeColor=#48648A;fontColor=#48648A;fontSize=13;fontStyle=1;labelBackgroundColor=#FFFFFF;exitX=0;exitY=0.52;exitDx=0;exitDy=0;entryX=1;entryY=0.52;entryDx=0;entryDy=0;" edge="1" parent="view1-layer" source="view1-adapters" target="view1-browser">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="view1-edge-storage" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=1;jettySize=auto;html=1;endArrow=block;endFill=1;strokeWidth=1.75;strokeColor=#946822;fontColor=#946822;fontSize=13;fontStyle=1;labelBackgroundColor=#FFFFFF;dashed=1;dashPattern=2 3;exitX=1;exitY=0.68;exitDx=0;exitDy=0;entryX=1;entryY=0.65;entryDx=0;entryDy=0;" edge="1" parent="view1-layer" source="view1-services" target="view1-files">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="1443" y="318" />
+              <mxPoint x="1443" y="690" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="view1-edge-read" value="inspecciona evidencia" style="edgeStyle=orthogonalEdgeStyle;rounded=1;jettySize=auto;html=1;endArrow=block;endFill=1;strokeWidth=1.75;strokeColor=#946822;fontColor=#946822;fontSize=13;fontStyle=1;labelBackgroundColor=#FFFFFF;dashed=1;dashPattern=2 3;exitX=0.28;exitY=1;exitDx=0;exitDy=0;entryX=0;entryY=0.43;entryDx=0;entryDy=0;" edge="1" parent="view1-layer" source="view1-coord" target="view1-files">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="23" y="-12" as="offset" />
+            <Array as="points">
+              <mxPoint x="790" y="391" />
+              <mxPoint x="649" y="391" />
+              <mxPoint x="649" y="667" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="view1-scope" value="La generación de borradores vive en scripts separados. La revisión y la adjudicación se ejecutan en el entorno local." style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;fontSize=16;fontColor=#455771;fontStyle=0;" vertex="1" parent="view1-layer">
+          <mxGeometry x="52" y="786" width="1390" height="27" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+  <diagram id="benchmark-structural-2" name="2. Componentes y dependencias">
+    <mxGraphModel grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1920" pageHeight="1195" background="#FFFFFF" math="0" shadow="0">
+      <root>
+        <mxCell id="view2-root" />
+        <mxCell id="view2-layer" parent="view2-root" />
+        <mxCell id="view2-series" value="POLICE REPORT LLM BENCH  /  ARQUITECTURA DE SOFTWARE  /  c5ca0ad" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;fontSize=14;fontColor=#376D64;fontStyle=1;" vertex="1" parent="view2-layer">
+          <mxGeometry x="42" y="18" width="1836" height="24" as="geometry" />
+        </mxCell>
+        <mxCell id="view2-title" value="Componentes y dependencias" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;fontSize=37;fontColor=#192B43;fontStyle=1;" vertex="1" parent="view2-layer">
+          <mxGeometry x="42" y="50" width="1836" height="51" as="geometry" />
+        </mxCell>
+        <mxCell id="view2-subtitle" value="Vista principal · las flechas van del módulo consumidor o implementación hacia la dependencia." style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;fontSize=19;fontColor=#455771;fontStyle=0;" vertex="1" parent="view2-layer">
+          <mxGeometry x="42" y="106" width="1836" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="view2-legend-0" value="Módulo" style="rounded=1;arcSize=11;html=1;whiteSpace=wrap;fontStyle=1;fontSize=13;fillColor=#E9F1FB;strokeColor=#6082AE;fontColor=#193B60;" vertex="1" parent="view2-layer">
+          <mxGeometry x="43" y="1116" width="100" height="32" as="geometry" />
+        </mxCell>
+        <mxCell id="view2-legend-1" value="Contrato" style="rounded=1;arcSize=11;html=1;whiteSpace=wrap;fontStyle=1;fontSize=13;fillColor=#F0EBFA;strokeColor=#8970B5;fontColor=#463367;dashed=1;" vertex="1" parent="view2-layer">
+          <mxGeometry x="152" y="1116" width="111" height="32" as="geometry" />
+        </mxCell>
+        <mxCell id="view2-legend-2" value="Adaptador" style="rounded=1;arcSize=11;html=1;whiteSpace=wrap;fontStyle=1;fontSize=13;fillColor=#E8F5F0;strokeColor=#5B9581;fontColor=#204C41;" vertex="1" parent="view2-layer">
+          <mxGeometry x="272" y="1116" width="116" height="32" as="geometry" />
+        </mxCell>
+        <mxCell id="view2-legend-3" value="Infraestructura" style="rounded=1;arcSize=11;html=1;whiteSpace=wrap;fontStyle=1;fontSize=13;fillColor=#EDF0F5;strokeColor=#8592A6;fontColor=#38475D;" vertex="1" parent="view2-layer">
+          <mxGeometry x="397" y="1116" width="145" height="32" as="geometry" />
+        </mxCell>
+        <mxCell id="view2-legend-4" value="Persistencia" style="rounded=1;arcSize=11;html=1;whiteSpace=wrap;fontStyle=1;fontSize=13;fillColor=#FFF2DF;strokeColor=#B3894D;fontColor=#654921;" vertex="1" parent="view2-layer">
+          <mxGeometry x="551" y="1116" width="128" height="32" as="geometry" />
+        </mxCell>
+        <mxCell id="view2-legend-5" value="Externo al núcleo" style="rounded=1;arcSize=11;html=1;whiteSpace=wrap;fontStyle=1;fontSize=13;fillColor=#FFFFFF;strokeColor=#A4AFBF;fontColor=#4B596E;dashed=1;" vertex="1" parent="view2-layer">
+          <mxGeometry x="688" y="1116" width="153" height="32" as="geometry" />
+        </mxCell>
+        <mxCell id="view2-legend-edges" value="Azul: usa, coordina o provee · Violeta: implementa · Ocre punteado: lee/escribe · Ocre discontinuo: acoplamiento directo o recíproco" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;fontSize=14;fontColor=#455771;fontStyle=0;" vertex="1" parent="view2-layer">
+          <mxGeometry x="43" y="1155" width="1834" height="28" as="geometry" />
+        </mxCell>
+        <mxCell id="view2-folio" value="2 / 3" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;fontSize=14;fontColor=#566982;fontStyle=1;" vertex="1" parent="view2-layer">
+          <mxGeometry x="1824" y="1117" width="54" height="27" as="geometry" />
+        </mxCell>
+        <mxCell id="view2-entry" value="Interfaces · puntos de entrada y preparación" style="swimlane;rounded=1;arcSize=7;startSize=43;horizontal=1;html=1;collapsible=0;recursiveResize=0;align=left;spacingLeft=14;verticalAlign=middle;fontStyle=1;fontSize=17;fontColor=#344B68;strokeColor=#BDCBDE;fillColor=#EEF3FA;swimlaneFillColor=#FBFCFE;" vertex="1" parent="view2-layer">
+          <mxGeometry x="46" y="168" width="1830" height="155" as="geometry" />
+        </mxCell>
+        <mxCell id="view2-portable-cli" value="&lt;b&gt;portable.__main__&lt;/b&gt;&lt;br&gt;&lt;span style=&quot;font-size:15px&quot;&gt;doctor · prepare&lt;/span&gt;" style="rounded=1;arcSize=11;whiteSpace=wrap;html=1;align=center;verticalAlign=middle;spacing=7;fontSize=18;fontColor=#193B60;fillColor=#E9F1FB;strokeColor=#6082AE;strokeWidth=1.4;" vertex="1" parent="view2-entry">
+          <mxGeometry x="30" y="57" width="287" height="70" as="geometry" />
+        </mxCell>
+        <mxCell id="view2-input" value="&lt;b&gt;portable.inputs&lt;/b&gt;&lt;br&gt;&lt;span style=&quot;font-size:15px&quot;&gt;InputAdapter / PreparedInputs&lt;/span&gt;" style="rounded=1;arcSize=11;whiteSpace=wrap;html=1;align=center;verticalAlign=middle;spacing=7;fontSize=18;fontColor=#204C41;fillColor=#E8F5F0;strokeColor=#5B9581;strokeWidth=1.4;" vertex="1" parent="view2-entry">
+          <mxGeometry x="399" y="57" width="307" height="70" as="geometry" />
+        </mxCell>
+        <mxCell id="view2-manual-cli" value="&lt;b&gt;review.manual_cli&lt;/b&gt;&lt;br&gt;&lt;span style=&quot;font-size:15px&quot;&gt;manual_supervisor · manual_adjudication&lt;/span&gt;" style="rounded=1;arcSize=11;whiteSpace=wrap;html=1;align=center;verticalAlign=middle;spacing=7;fontSize=18;fontColor=#193B60;fillColor=#E9F1FB;strokeColor=#6082AE;strokeWidth=1.4;" vertex="1" parent="view2-entry">
+          <mxGeometry x="866" y="57" width="360" height="70" as="geometry" />
+        </mxCell>
+        <mxCell id="view2-range" value="&lt;b&gt;review.synthetic_range&lt;/b&gt;&lt;br&gt;&lt;span style=&quot;font-size:15px&quot;&gt;Composición de servicios mediante puertos&lt;/span&gt;" style="rounded=1;arcSize=11;whiteSpace=wrap;html=1;align=center;verticalAlign=middle;spacing=7;fontSize=18;fontColor=#193B60;fillColor=#E9F1FB;strokeColor=#6082AE;strokeWidth=1.4;" vertex="1" parent="view2-entry">
+          <mxGeometry x="1420" y="57" width="361" height="70" as="geometry" />
+        </mxCell>
+        <mxCell id="view2-types-band" value="Contratos compartidos y reglas" style="swimlane;rounded=1;arcSize=7;startSize=43;horizontal=1;html=1;collapsible=0;recursiveResize=0;align=left;spacingLeft=14;verticalAlign=middle;fontStyle=1;fontSize=17;fontColor=#344B68;strokeColor=#BDCBDE;fillColor=#EEF3FA;swimlaneFillColor=#FBFCFE;" vertex="1" parent="view2-layer">
+          <mxGeometry x="46" y="362" width="445" height="490" as="geometry" />
+        </mxCell>
+        <mxCell id="view2-types" value="&lt;b&gt;automation.contracts&lt;/b&gt;&lt;br&gt;&lt;span style=&quot;font-size:15px&quot;&gt;tasks · results&lt;br&gt;Task / ExecutionAttempt / CompleteReviewResult&lt;/span&gt;" style="rounded=1;arcSize=11;whiteSpace=wrap;html=1;align=center;verticalAlign=middle;spacing=7;fontSize=18;fontColor=#463367;fillColor=#F0EBFA;strokeColor=#8970B5;strokeWidth=1.4;dashed=1;dashPattern=5 3;" vertex="1" parent="view2-types-band">
+          <mxGeometry x="27" y="62" width="391" height="87" as="geometry" />
+        </mxCell>
+        <mxCell id="view2-state" value="&lt;b&gt;automation.state_machine&lt;/b&gt;&lt;br&gt;&lt;span style=&quot;font-size:15px&quot;&gt;Transiciones de TaskStatus&lt;/span&gt;" style="rounded=1;arcSize=11;whiteSpace=wrap;html=1;align=center;verticalAlign=middle;spacing=7;fontSize=18;fontColor=#193B60;fillColor=#E9F1FB;strokeColor=#6082AE;strokeWidth=1.4;" vertex="1" parent="view2-types-band">
+          <mxGeometry x="27" y="196" width="391" height="76" as="geometry" />
+        </mxCell>
+        <mxCell id="view2-validators" value="&lt;b&gt;review.validators&lt;/b&gt;&lt;br&gt;&lt;span style=&quot;font-size:15px&quot;&gt;Reglas de adjudicación, historial y perfil&lt;/span&gt;" style="rounded=1;arcSize=11;whiteSpace=wrap;html=1;align=center;verticalAlign=middle;spacing=7;fontSize=18;fontColor=#193B60;fillColor=#E9F1FB;strokeColor=#6082AE;strokeWidth=1.4;" vertex="1" parent="view2-types-band">
+          <mxGeometry x="27" y="342" width="391" height="79" as="geometry" />
+        </mxCell>
+        <mxCell id="view2-app-band" value="Aplicación y coordinación · automation + review" style="swimlane;rounded=1;arcSize=7;startSize=43;horizontal=1;html=1;collapsible=0;recursiveResize=0;align=left;spacingLeft=14;verticalAlign=middle;fontStyle=1;fontSize=17;fontColor=#344B68;strokeColor=#BDCBDE;fillColor=#EEF3FA;swimlaneFillColor=#FBFCFE;" vertex="1" parent="view2-layer">
+          <mxGeometry x="540" y="362" width="640" height="490" as="geometry" />
+        </mxCell>
+        <mxCell id="view2-coordinator" value="&lt;b&gt;workflow_coordinator&lt;/b&gt;&lt;br&gt;&lt;span style=&quot;font-size:14px&quot;&gt;O-02 · huella de archivos&lt;/span&gt;" style="rounded=1;arcSize=11;whiteSpace=wrap;html=1;align=center;verticalAlign=middle;spacing=7;fontSize=17;fontColor=#193B60;fillColor=#E9F1FB;strokeColor=#6082AE;strokeWidth=1.4;" vertex="1" parent="view2-app-band">
+          <mxGeometry x="25" y="63" width="268" height="76" as="geometry" />
+        </mxCell>
+        <mxCell id="view2-planner" value="&lt;b&gt;orchestrator&lt;/b&gt;&lt;br&gt;&lt;span style=&quot;font-size:14px&quot;&gt;O-01 · StatementPlan&lt;/span&gt;" style="rounded=1;arcSize=11;whiteSpace=wrap;html=1;align=center;verticalAlign=middle;spacing=7;fontSize=17;fontColor=#193B60;fillColor=#E9F1FB;strokeColor=#6082AE;strokeWidth=1.4;" vertex="1" parent="view2-app-band">
+          <mxGeometry x="350" y="63" width="266" height="76" as="geometry" />
+        </mxCell>
+        <mxCell id="view2-vertical" value="&lt;b&gt;review.vertical_flow&lt;/b&gt;&lt;br&gt;&lt;span style=&quot;font-size:14px&quot;&gt;run_synthetic_reviewer_once&lt;/span&gt;" style="rounded=1;arcSize=11;whiteSpace=wrap;html=1;align=center;verticalAlign=middle;spacing=7;fontSize=17;fontColor=#193B60;fillColor=#E9F1FB;strokeColor=#6082AE;strokeWidth=1.4;" vertex="1" parent="view2-app-band">
+          <mxGeometry x="25" y="187" width="268" height="78" as="geometry" />
+        </mxCell>
+        <mxCell id="view2-review-port" value="«interfaz»&lt;br&gt;&lt;b&gt;ReviewerAdapter&lt;/b&gt;&lt;br&gt;&lt;span style=&quot;font-size:14px&quot;&gt;vertical_flow · execute(request)&lt;br&gt;ReviewerExecutionRequest&lt;/span&gt;" style="rounded=1;arcSize=11;whiteSpace=wrap;html=1;align=center;verticalAlign=middle;spacing=7;fontSize=17;fontColor=#463367;fillColor=#F0EBFA;strokeColor=#8970B5;strokeWidth=1.4;dashed=1;dashPattern=5 3;" vertex="1" parent="view2-app-band">
+          <mxGeometry x="350" y="173" width="266" height="105" as="geometry" />
+        </mxCell>
+        <mxCell id="view2-adj" value="&lt;b&gt;review.synthetic_adjudication&lt;/b&gt;&lt;br&gt;&lt;span style=&quot;font-size:14px&quot;&gt;AdjudicationBundle · lee prompt y perfiles&lt;/span&gt;" style="rounded=1;arcSize=11;whiteSpace=wrap;html=1;align=center;verticalAlign=middle;spacing=7;fontSize=17;fontColor=#193B60;fillColor=#E9F1FB;strokeColor=#6082AE;strokeWidth=1.4;" vertex="1" parent="view2-app-band">
+          <mxGeometry x="25" y="310" width="268" height="74" as="geometry" />
+        </mxCell>
+        <mxCell id="view2-adj-port" value="«interfaz»&lt;br&gt;&lt;b&gt;BundleAdjudicatorAdapter&lt;/b&gt;&lt;br&gt;&lt;span style=&quot;font-size:14px&quot;&gt;synthetic_adjudication&lt;br&gt;execute_bundle(request)&lt;/span&gt;" style="rounded=1;arcSize=11;whiteSpace=wrap;html=1;align=center;verticalAlign=middle;spacing=7;fontSize=17;fontColor=#463367;fillColor=#F0EBFA;strokeColor=#8970B5;strokeWidth=1.4;dashed=1;dashPattern=5 3;" vertex="1" parent="view2-app-band">
+          <mxGeometry x="350" y="301" width="266" height="92" as="geometry" />
+        </mxCell>
+        <mxCell id="view2-apply" value="&lt;b&gt;review.synthetic_application&lt;/b&gt;&lt;br&gt;&lt;span style=&quot;font-size:13px&quot;&gt;Usa el almacén y la finalización. Inspecciona destinos.&lt;/span&gt;" style="rounded=1;arcSize=11;whiteSpace=wrap;html=1;align=center;verticalAlign=middle;spacing=7;fontSize=16;fontColor=#193B60;fillColor=#E9F1FB;strokeColor=#6082AE;strokeWidth=1.4;" vertex="1" parent="view2-app-band">
+          <mxGeometry x="25" y="412" width="591" height="56" as="geometry" />
+        </mxCell>
+        <mxCell id="view2-adapter-band" value="Implementaciones y frontera web · review, browser y portable" style="swimlane;rounded=1;arcSize=7;startSize=43;horizontal=1;html=1;collapsible=0;recursiveResize=0;align=left;spacingLeft=14;verticalAlign=middle;fontStyle=1;fontSize=17;fontColor=#344B68;strokeColor=#BDCBDE;fillColor=#EEF3FA;swimlaneFillColor=#FBFCFE;" vertex="1" parent="view2-layer">
+          <mxGeometry x="1230" y="362" width="646" height="490" as="geometry" />
+        </mxCell>
+        <mxCell id="view2-manual-adapter" value="&lt;b&gt;ManualImportReviewerAdapter&lt;/b&gt;&lt;br&gt;&lt;span style=&quot;font-size:14px&quot;&gt;manual_import_adapter&lt;/span&gt;" style="rounded=1;arcSize=11;whiteSpace=wrap;html=1;align=center;verticalAlign=middle;spacing=7;fontSize=17;fontColor=#204C41;fillColor=#E8F5F0;strokeColor=#5B9581;strokeWidth=1.4;" vertex="1" parent="view2-adapter-band">
+          <mxGeometry x="27" y="61" width="290" height="82" as="geometry" />
+        </mxCell>
+        <mxCell id="view2-fake-memory" value="&lt;b&gt;DeterministicFakeReviewerAdapter&lt;/b&gt;&lt;br&gt;&lt;span style=&quot;font-size:13px&quot;&gt;vertical_flow&lt;/span&gt;" style="rounded=1;arcSize=11;whiteSpace=wrap;html=1;align=center;verticalAlign=middle;spacing=7;fontSize=16;fontColor=#204C41;fillColor=#E8F5F0;strokeColor=#5B9581;strokeWidth=1.4;" vertex="1" parent="view2-adapter-band">
+          <mxGeometry x="343" y="61" width="276" height="82" as="geometry" />
+        </mxCell>
+        <mxCell id="view2-fake-web" value="&lt;b&gt;FakeSiteReviewerAdapter&lt;/b&gt;&lt;br&gt;&lt;span style=&quot;font-size:14px&quot;&gt;fake_site_adapter · capture_protocol&lt;/span&gt;" style="rounded=1;arcSize=11;whiteSpace=wrap;html=1;align=center;verticalAlign=middle;spacing=7;fontSize=17;fontColor=#204C41;fillColor=#E8F5F0;strokeColor=#5B9581;strokeWidth=1.4;" vertex="1" parent="view2-adapter-band">
+          <mxGeometry x="27" y="202" width="290" height="91" as="geometry" />
+        </mxCell>
+        <mxCell id="view2-web" value="&lt;b&gt;WebInteraction / FakePageInteraction&lt;/b&gt;&lt;br&gt;&lt;span style=&quot;font-size:13px&quot;&gt;web_interaction · LocalReviewBrowser&lt;/span&gt;" style="rounded=1;arcSize=11;whiteSpace=wrap;html=1;align=center;verticalAlign=middle;spacing=7;fontSize=16;fontColor=#38475D;fillColor=#EDF0F5;strokeColor=#8592A6;strokeWidth=1.4;" vertex="1" parent="view2-adapter-band">
+          <mxGeometry x="343" y="202" width="276" height="91" as="geometry" />
+        </mxCell>
+        <mxCell id="view2-judge-adapter" value="&lt;b&gt;OperatorBundleAdapter&lt;/b&gt;&lt;br&gt;&lt;span style=&quot;font-size:13px&quot;&gt;manual_adjudication&lt;br&gt;DeterministicFakeAdjudicatorAdapter&lt;/span&gt;" style="rounded=1;arcSize=11;whiteSpace=wrap;html=1;align=center;verticalAlign=middle;spacing=7;fontSize=16;fontColor=#204C41;fillColor=#E8F5F0;strokeColor=#5B9581;strokeWidth=1.4;" vertex="1" parent="view2-adapter-band">
+          <mxGeometry x="27" y="343" width="290" height="84" as="geometry" />
+        </mxCell>
+        <mxCell id="view2-sessions" value="&lt;b&gt;BrowserSessionFactory&lt;/b&gt;&lt;br&gt;&lt;span style=&quot;font-size:13px&quot;&gt;portable.browser · browser.manager&lt;br&gt;local_runtime / fake_session&lt;/span&gt;" style="rounded=1;arcSize=11;whiteSpace=wrap;html=1;align=center;verticalAlign=middle;spacing=7;fontSize=16;fontColor=#38475D;fillColor=#EDF0F5;strokeColor=#8592A6;strokeWidth=1.4;" vertex="1" parent="view2-adapter-band">
+          <mxGeometry x="343" y="343" width="276" height="84" as="geometry" />
+        </mxCell>
+        <mxCell id="view2-infra-band" value="Inspección, aplicación y acceso a archivos · automation/review + infraestructura local" style="swimlane;rounded=1;arcSize=7;startSize=43;horizontal=1;html=1;collapsible=0;recursiveResize=0;align=left;spacingLeft=14;verticalAlign=middle;fontStyle=1;fontSize=17;fontColor=#344B68;strokeColor=#BDCBDE;fillColor=#EEF3FA;swimlaneFillColor=#FBFCFE;" vertex="1" parent="view2-layer">
+          <mxGeometry x="46" y="920" width="1830" height="151" as="geometry" />
+        </mxCell>
+        <mxCell id="view2-inspect" value="&lt;b&gt;Inspección y selección&lt;/b&gt;&lt;br&gt;&lt;span style=&quot;font-size:13px&quot;&gt;input_loader · result_inspector&lt;br&gt;completeness · statement_selector&lt;/span&gt;" style="rounded=1;arcSize=11;whiteSpace=wrap;html=1;align=center;verticalAlign=middle;spacing=7;fontSize=16;fontColor=#193B60;fillColor=#E9F1FB;strokeColor=#6082AE;strokeWidth=1.4;" vertex="1" parent="view2-infra-band">
+          <mxGeometry x="22" y="59" width="335" height="73" as="geometry" />
+        </mxCell>
+        <mxCell id="view2-review-storage" value="&lt;b&gt;review_storage&lt;/b&gt;&lt;br&gt;&lt;span style=&quot;font-size:14px&quot;&gt;Sets y referencia activa v2&lt;/span&gt;" style="rounded=1;arcSize=11;whiteSpace=wrap;html=1;align=center;verticalAlign=middle;spacing=7;fontSize=17;fontColor=#193B60;fillColor=#E9F1FB;strokeColor=#6082AE;strokeWidth=1.4;" vertex="1" parent="view2-infra-band">
+          <mxGeometry x="397" y="59" width="259" height="73" as="geometry" />
+        </mxCell>
+        <mxCell id="view2-app-store" value="&lt;b&gt;adjudication_storage / finalization&lt;/b&gt;&lt;br&gt;&lt;span style=&quot;font-size:14px&quot;&gt;Dependencia recíproca · import diferido&lt;br&gt;Commit, aplicación, limpieza y evidencia&lt;/span&gt;" style="rounded=1;arcSize=11;whiteSpace=wrap;html=1;align=center;verticalAlign=middle;spacing=7;fontSize=17;fontColor=#193B60;fillColor=#E9F1FB;strokeColor=#6082AE;strokeWidth=1.4;" vertex="1" parent="view2-infra-band">
+          <mxGeometry x="708" y="59" width="433" height="73" as="geometry" />
+        </mxCell>
+        <mxCell id="view2-fs" value="&lt;b&gt;Sistema de archivos&lt;/b&gt;&lt;br&gt;&lt;span style=&quot;font-size:13px&quot;&gt;JSON / JSONL y rutas configuradas&lt;/span&gt;" style="shape=cylinder3;boundedLbl=1;size=9;whiteSpace=wrap;html=1;align=center;verticalAlign=middle;spacing=7;fontSize=16;fontColor=#654921;fillColor=#FFF2DF;strokeColor=#B3894D;strokeWidth=1.4;" vertex="1" parent="view2-infra-band">
+          <mxGeometry x="1212" y="59" width="284" height="73" as="geometry" />
+        </mxCell>
+        <mxCell id="view2-lease" value="&lt;b&gt;WorkflowLease&lt;/b&gt;&lt;br&gt;&lt;span style=&quot;font-size:14px&quot;&gt;workflow_lease · lock del SO&lt;/span&gt;" style="rounded=1;arcSize=11;whiteSpace=wrap;html=1;align=center;verticalAlign=middle;spacing=7;fontSize=17;fontColor=#38475D;fillColor=#EDF0F5;strokeColor=#8592A6;strokeWidth=1.4;" vertex="1" parent="view2-infra-band">
+          <mxGeometry x="1536" y="59" width="270" height="73" as="geometry" />
+        </mxCell>
+        <mxCell id="view2-edge-prepare" value="uses" style="edgeStyle=orthogonalEdgeStyle;rounded=1;jettySize=auto;html=1;endArrow=block;endFill=1;strokeWidth=1.75;strokeColor=#48648A;fontColor=#48648A;fontSize=13;fontStyle=1;labelBackgroundColor=#FFFFFF;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="view2-layer" source="view2-portable-cli" target="view2-input">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="view2-edge-workflow-config" value="provides config" style="edgeStyle=orthogonalEdgeStyle;rounded=1;jettySize=auto;html=1;endArrow=block;endFill=1;strokeWidth=1.75;strokeColor=#48648A;fontColor=#48648A;fontSize=13;fontStyle=1;labelBackgroundColor=#FFFFFF;exitX=0.68;exitY=1;exitDx=0;exitDy=0;entryX=0.6;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="view2-layer" source="view2-input" target="view2-planner">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="654" y="343" />
+              <mxPoint x="1050" y="343" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="view2-edge-manual-uses" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=1;jettySize=auto;html=1;endArrow=block;endFill=1;strokeWidth=1.75;strokeColor=#48648A;fontColor=#48648A;fontSize=13;fontStyle=1;labelBackgroundColor=#FFFFFF;exitX=0.12;exitY=1;exitDx=0;exitDy=0;entryX=0.19;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="view2-layer" source="view2-manual-cli" target="view2-vertical">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="955" y="334" />
+              <mxPoint x="523" y="334" />
+              <mxPoint x="523" y="530" />
+              <mxPoint x="616" y="530" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="view2-edge-range-coordinates" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=1;jettySize=auto;html=1;endArrow=block;endFill=1;strokeWidth=1.75;strokeColor=#48648A;fontColor=#48648A;fontSize=13;fontStyle=1;labelBackgroundColor=#FFFFFF;exitX=0.35;exitY=0;exitDx=0;exitDy=0;entryX=0.74;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="view2-layer" source="view2-range" target="view2-coordinator">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="1592" y="217" />
+              <mxPoint x="764" y="217" />
+              <mxPoint x="764" y="406" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="view2-edge-oord" value="coordinates" style="edgeStyle=orthogonalEdgeStyle;rounded=1;jettySize=auto;html=1;endArrow=block;endFill=1;strokeWidth=1.75;strokeColor=#48648A;fontColor=#48648A;fontSize=13;fontStyle=1;labelBackgroundColor=#FFFFFF;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="view2-layer" source="view2-coordinator" target="view2-planner">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="view2-edge-plan-inspect" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=1;jettySize=auto;html=1;endArrow=block;endFill=1;strokeWidth=1.75;strokeColor=#48648A;fontColor=#48648A;fontSize=13;fontStyle=1;labelBackgroundColor=#FFFFFF;exitX=0.22;exitY=0;exitDx=0;exitDy=0;entryX=0.28;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="view2-layer" source="view2-planner" target="view2-inspect">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="-16" y="31" as="offset" />
+            <Array as="points">
+              <mxPoint x="948" y="416" />
+              <mxPoint x="503" y="416" />
+              <mxPoint x="503" y="897" />
+              <mxPoint x="160" y="897" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="view2-edge-vr-guard" value="uses" style="edgeStyle=orthogonalEdgeStyle;rounded=1;jettySize=auto;html=1;endArrow=block;endFill=1;strokeWidth=1.75;strokeColor=#48648A;fontColor=#48648A;fontSize=13;fontStyle=1;labelBackgroundColor=#FFFFFF;exitX=0.58;exitY=0;exitDx=0;exitDy=0;entryX=0.58;entryY=1;entryDx=0;entryDy=0;" edge="1" parent="view2-layer" source="view2-vertical" target="view2-coordinator">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="30" y="0" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="view2-edge-vr-state" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=1;jettySize=auto;html=1;endArrow=block;endFill=1;strokeWidth=1.75;strokeColor=#48648A;fontColor=#48648A;fontSize=13;fontStyle=1;labelBackgroundColor=#FFFFFF;exitX=0;exitY=0.6;exitDx=0;exitDy=0;entryX=1;entryY=0.56;entryDx=0;entryDy=0;" edge="1" parent="view2-layer" source="view2-vertical" target="view2-state">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="view2-edge-state-types" value="depends on" style="edgeStyle=orthogonalEdgeStyle;rounded=1;jettySize=auto;html=1;endArrow=block;endFill=1;strokeWidth=1.75;strokeColor=#48648A;fontColor=#48648A;fontSize=13;fontStyle=1;labelBackgroundColor=#FFFFFF;exitX=0.5;exitY=0;exitDx=0;exitDy=0;entryX=0.5;entryY=1;entryDx=0;entryDy=0;" edge="1" parent="view2-layer" source="view2-state" target="view2-types">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="49" y="0" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="view2-edge-validate-types" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=1;jettySize=auto;html=1;endArrow=block;endFill=1;strokeWidth=1.75;strokeColor=#48648A;fontColor=#48648A;fontSize=13;fontStyle=1;labelBackgroundColor=#FFFFFF;exitX=0;exitY=0.43;exitDx=0;exitDy=0;entryX=0;entryY=0.66;entryDx=0;entryDy=0;" edge="1" parent="view2-layer" source="view2-validators" target="view2-types">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="60" y="738" />
+              <mxPoint x="60" y="484" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="view2-edge-vr-port" value="uses" style="edgeStyle=orthogonalEdgeStyle;rounded=1;jettySize=auto;html=1;endArrow=block;endFill=1;strokeWidth=1.75;strokeColor=#48648A;fontColor=#48648A;fontSize=13;fontStyle=1;labelBackgroundColor=#FFFFFF;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="view2-layer" source="view2-vertical" target="view2-review-port">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="view2-edge-ad-port" value="uses" style="edgeStyle=orthogonalEdgeStyle;rounded=1;jettySize=auto;html=1;endArrow=block;endFill=1;strokeWidth=1.75;strokeColor=#48648A;fontColor=#48648A;fontSize=13;fontStyle=1;labelBackgroundColor=#FFFFFF;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="view2-layer" source="view2-adj" target="view2-adj-port">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="view2-edge-manual-impl" value="implements" style="edgeStyle=orthogonalEdgeStyle;rounded=1;jettySize=auto;html=1;endArrow=block;endFill=0;strokeWidth=1.75;strokeColor=#795DA7;fontColor=#795DA7;fontSize=13;fontStyle=1;labelBackgroundColor=#FFFFFF;dashed=1;dashPattern=7 4;exitX=0;exitY=0.62;exitDx=0;exitDy=0;entryX=1;entryY=0.24;entryDx=0;entryDy=0;" edge="1" parent="view2-layer" source="view2-manual-adapter" target="view2-review-port">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="35" y="0" as="offset" />
+            <Array as="points">
+              <mxPoint x="1206" y="473" />
+              <mxPoint x="1206" y="560" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="view2-edge-fake-impl" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=1;jettySize=auto;html=1;endArrow=block;endFill=0;strokeWidth=1.75;strokeColor=#795DA7;fontColor=#795DA7;fontSize=13;fontStyle=1;labelBackgroundColor=#FFFFFF;dashed=1;dashPattern=7 4;exitX=0.48;exitY=1;exitDx=0;exitDy=0;entryX=1;entryY=0.46;entryDx=0;entryDy=0;" edge="1" parent="view2-layer" source="view2-fake-memory" target="view2-review-port">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="1705" y="523" />
+              <mxPoint x="1214" y="523" />
+              <mxPoint x="1214" y="583" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="view2-edge-web-impl" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=1;jettySize=auto;html=1;endArrow=block;endFill=0;strokeWidth=1.75;strokeColor=#795DA7;fontColor=#795DA7;fontSize=13;fontStyle=1;labelBackgroundColor=#FFFFFF;dashed=1;dashPattern=7 4;exitX=0;exitY=0.48;exitDx=0;exitDy=0;entryX=1;entryY=0.7;entryDx=0;entryDy=0;" edge="1" parent="view2-layer" source="view2-fake-web" target="view2-review-port">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="view2-edge-ad-impl" value="implements" style="edgeStyle=orthogonalEdgeStyle;rounded=1;jettySize=auto;html=1;endArrow=block;endFill=0;strokeWidth=1.75;strokeColor=#795DA7;fontColor=#795DA7;fontSize=13;fontStyle=1;labelBackgroundColor=#FFFFFF;dashed=1;dashPattern=7 4;exitX=0;exitY=0.57;exitDx=0;exitDy=0;entryX=1;entryY=0.56;entryDx=0;entryDy=0;" edge="1" parent="view2-layer" source="view2-judge-adapter" target="view2-adj-port">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="view2-edge-fake-web" value="uses" style="edgeStyle=orthogonalEdgeStyle;rounded=1;jettySize=auto;html=1;endArrow=block;endFill=1;strokeWidth=1.75;strokeColor=#48648A;fontColor=#48648A;fontSize=13;fontStyle=1;labelBackgroundColor=#FFFFFF;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="view2-layer" source="view2-fake-web" target="view2-web">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="view2-edge-web-session" value="uses" style="edgeStyle=orthogonalEdgeStyle;rounded=1;jettySize=auto;html=1;endArrow=block;endFill=1;strokeWidth=1.75;strokeColor=#48648A;fontColor=#48648A;fontSize=13;fontStyle=1;labelBackgroundColor=#FFFFFF;exitX=0.89;exitY=1;exitDx=0;exitDy=0;entryX=0.21;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="view2-layer" source="view2-fake-web" target="view2-sessions">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="1515" y="674" />
+              <mxPoint x="1631" y="674" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="view2-edge-adj-validation" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=1;jettySize=auto;html=1;endArrow=block;endFill=1;strokeWidth=1.75;strokeColor=#48648A;fontColor=#48648A;fontSize=13;fontStyle=1;labelBackgroundColor=#FFFFFF;exitX=0;exitY=0.5;exitDx=0;exitDy=0;entryX=1;entryY=0.46;entryDx=0;entryDy=0;" edge="1" parent="view2-layer" source="view2-adj" target="view2-validators">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="view2-edge-vr-store" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=1;jettySize=auto;html=1;endArrow=block;endFill=1;strokeWidth=1.75;strokeColor=#936336;fontColor=#936336;fontSize=13;fontStyle=1;labelBackgroundColor=#FFFFFF;dashed=1;dashPattern=8 4;exitX=0.84;exitY=1;exitDx=0;exitDy=0;entryX=0.73;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="view2-layer" source="view2-vertical" target="view2-review-storage">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="-8" y="31" as="offset" />
+            <Array as="points">
+              <mxPoint x="790" y="651" />
+              <mxPoint x="532" y="651" />
+              <mxPoint x="532" y="951" />
+              <mxPoint x="632" y="951" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="view2-edge-adj-store" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=1;jettySize=auto;html=1;endArrow=block;endFill=1;strokeWidth=1.75;strokeColor=#936336;fontColor=#936336;fontSize=13;fontStyle=1;labelBackgroundColor=#FFFFFF;dashed=1;dashPattern=8 4;exitX=0;exitY=0.71;exitDx=0;exitDy=0;entryX=0;entryY=0.28;entryDx=0;entryDy=0;" edge="1" parent="view2-layer" source="view2-adj" target="view2-app-store">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="542" y="725" />
+              <mxPoint x="542" y="875" />
+              <mxPoint x="718" y="875" />
+              <mxPoint x="718" y="999" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="view2-edge-apply-store" value="depends on" style="edgeStyle=orthogonalEdgeStyle;rounded=1;jettySize=auto;html=1;endArrow=block;endFill=1;strokeWidth=1.75;strokeColor=#936336;fontColor=#936336;fontSize=13;fontStyle=1;labelBackgroundColor=#FFFFFF;dashed=1;dashPattern=8 4;exitX=0.63;exitY=1;exitDx=0;exitDy=0;entryX=0.58;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="view2-layer" source="view2-apply" target="view2-app-store">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="40" y="0" as="offset" />
+            <Array as="points">
+              <mxPoint x="937" y="891" />
+              <mxPoint x="1005" y="891" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="view2-edge-coord-fs" value="lee árboles" style="edgeStyle=orthogonalEdgeStyle;rounded=1;jettySize=auto;html=1;endArrow=block;endFill=1;strokeWidth=1.75;strokeColor=#946822;fontColor=#946822;fontSize=13;fontStyle=1;labelBackgroundColor=#FFFFFF;dashed=1;dashPattern=2 3;exitX=0.18;exitY=0;exitDx=0;exitDy=0;entryX=0.73;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="view2-layer" source="view2-coordinator" target="view2-fs">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="30" y="-8" as="offset" />
+            <Array as="points">
+              <mxPoint x="613" y="400" />
+              <mxPoint x="521" y="400" />
+              <mxPoint x="521" y="909" />
+              <mxPoint x="1477" y="909" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="view2-edge-inspect-store" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=1;jettySize=auto;html=1;endArrow=block;endFill=1;strokeWidth=1.75;strokeColor=#48648A;fontColor=#48648A;fontSize=13;fontStyle=1;labelBackgroundColor=#FFFFFF;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="view2-layer" source="view2-inspect" target="view2-review-storage">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="view2-edge-app-review-verify" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=1;jettySize=auto;html=1;endArrow=block;endFill=1;strokeWidth=1.75;strokeColor=#936336;fontColor=#936336;fontSize=13;fontStyle=1;labelBackgroundColor=#FFFFFF;dashed=1;dashPattern=8 4;exitX=0;exitY=0.57;exitDx=0;exitDy=0;entryX=1;entryY=0.57;entryDx=0;entryDy=0;" edge="1" parent="view2-layer" source="view2-app-store" target="view2-review-storage">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="view2-edge-app-files" value="reads/writes" style="edgeStyle=orthogonalEdgeStyle;rounded=1;jettySize=auto;html=1;endArrow=block;endFill=1;strokeWidth=1.75;strokeColor=#946822;fontColor=#946822;fontSize=13;fontStyle=1;labelBackgroundColor=#FFFFFF;dashed=1;dashPattern=2 3;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="view2-layer" source="view2-app-store" target="view2-fs">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="view2-edge-review-files" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=1;jettySize=auto;html=1;endArrow=block;endFill=1;strokeWidth=1.75;strokeColor=#946822;fontColor=#946822;fontSize=13;fontStyle=1;labelBackgroundColor=#FFFFFF;dashed=1;dashPattern=2 3;exitX=0.55;exitY=1;exitDx=0;exitDy=0;entryX=0.27;entryY=1;entryDx=0;entryDy=0;" edge="1" parent="view2-layer" source="view2-review-storage" target="view2-fs">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="584" y="1061" />
+              <mxPoint x="1335" y="1061" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="view2-edge-lease" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=1;jettySize=auto;html=1;endArrow=block;endFill=1;strokeWidth=1.75;strokeColor=#48648A;fontColor=#48648A;fontSize=13;fontStyle=1;labelBackgroundColor=#FFFFFF;exitX=0.08;exitY=0;exitDx=0;exitDy=0;entryX=0.58;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="view2-layer" source="view2-coordinator" target="view2-lease">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="587" y="410" />
+              <mxPoint x="515" y="410" />
+              <mxPoint x="515" y="883" />
+              <mxPoint x="1740" y="883" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+  <diagram id="benchmark-structural-3" name="3. Despliegue y persistencia locales">
+    <mxGraphModel grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1660" pageHeight="1060" background="#FFFFFF" math="0" shadow="0">
+      <root>
+        <mxCell id="view3-root" />
+        <mxCell id="view3-layer" parent="view3-root" />
+        <mxCell id="view3-series" value="POLICE REPORT LLM BENCH  /  ARQUITECTURA DE SOFTWARE  /  c5ca0ad" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;fontSize=14;fontColor=#376D64;fontStyle=1;" vertex="1" parent="view3-layer">
+          <mxGeometry x="42" y="18" width="1576" height="24" as="geometry" />
+        </mxCell>
+        <mxCell id="view3-title" value="Despliegue y persistencia locales" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;fontSize=37;fontColor=#192B43;fontStyle=1;" vertex="1" parent="view3-layer">
+          <mxGeometry x="42" y="50" width="1576" height="51" as="geometry" />
+        </mxCell>
+        <mxCell id="view3-subtitle" value="Vista física · código, procesos de prueba, sesiones y raíces del sistema de archivos de una instalación local." style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;fontSize=19;fontColor=#455771;fontStyle=0;" vertex="1" parent="view3-layer">
+          <mxGeometry x="42" y="106" width="1576" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="view3-legend-0" value="Módulo" style="rounded=1;arcSize=11;html=1;whiteSpace=wrap;fontStyle=1;fontSize=13;fillColor=#E9F1FB;strokeColor=#6082AE;fontColor=#193B60;" vertex="1" parent="view3-layer">
+          <mxGeometry x="43" y="981" width="100" height="32" as="geometry" />
+        </mxCell>
+        <mxCell id="view3-legend-1" value="Contrato" style="rounded=1;arcSize=11;html=1;whiteSpace=wrap;fontStyle=1;fontSize=13;fillColor=#F0EBFA;strokeColor=#8970B5;fontColor=#463367;dashed=1;" vertex="1" parent="view3-layer">
+          <mxGeometry x="152" y="981" width="111" height="32" as="geometry" />
+        </mxCell>
+        <mxCell id="view3-legend-2" value="Adaptador" style="rounded=1;arcSize=11;html=1;whiteSpace=wrap;fontStyle=1;fontSize=13;fillColor=#E8F5F0;strokeColor=#5B9581;fontColor=#204C41;" vertex="1" parent="view3-layer">
+          <mxGeometry x="272" y="981" width="116" height="32" as="geometry" />
+        </mxCell>
+        <mxCell id="view3-legend-3" value="Infraestructura" style="rounded=1;arcSize=11;html=1;whiteSpace=wrap;fontStyle=1;fontSize=13;fillColor=#EDF0F5;strokeColor=#8592A6;fontColor=#38475D;" vertex="1" parent="view3-layer">
+          <mxGeometry x="397" y="981" width="145" height="32" as="geometry" />
+        </mxCell>
+        <mxCell id="view3-legend-4" value="Persistencia" style="rounded=1;arcSize=11;html=1;whiteSpace=wrap;fontStyle=1;fontSize=13;fillColor=#FFF2DF;strokeColor=#B3894D;fontColor=#654921;" vertex="1" parent="view3-layer">
+          <mxGeometry x="551" y="981" width="128" height="32" as="geometry" />
+        </mxCell>
+        <mxCell id="view3-legend-5" value="Externo al núcleo" style="rounded=1;arcSize=11;html=1;whiteSpace=wrap;fontStyle=1;fontSize=13;fillColor=#FFFFFF;strokeColor=#A4AFBF;fontColor=#4B596E;dashed=1;" vertex="1" parent="view3-layer">
+          <mxGeometry x="688" y="981" width="153" height="32" as="geometry" />
+        </mxCell>
+        <mxCell id="view3-legend-edges" value="Azul: dependencia de ejecución · Ocre punteado: lectura o escritura · Marco gris: límite de proceso, sesión o conjunto de archivos" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;fontSize=14;fontColor=#455771;fontStyle=0;" vertex="1" parent="view3-layer">
+          <mxGeometry x="43" y="1020" width="1574" height="28" as="geometry" />
+        </mxCell>
+        <mxCell id="view3-folio" value="3 / 3" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;fontSize=14;fontColor=#566982;fontStyle=1;" vertex="1" parent="view3-layer">
+          <mxGeometry x="1564" y="982" width="54" height="27" as="geometry" />
+        </mxCell>
+        <mxCell id="view3-host" value="Equipo local · ejecución comprobada en macOS Apple Silicon" style="swimlane;rounded=1;arcSize=7;startSize=43;horizontal=1;html=1;collapsible=0;recursiveResize=0;align=left;spacingLeft=14;verticalAlign=middle;fontStyle=1;fontSize=17;fontColor=#344B68;strokeColor=#BDCBDE;fillColor=#EEF3FA;swimlaneFillColor=#FBFCFE;" vertex="1" parent="view3-layer">
+          <mxGeometry x="44" y="163" width="1572" height="775" as="geometry" />
+        </mxCell>
+        <mxCell id="view3-checkout" value="Checkout Git · aplicación y herramientas Python" style="swimlane;rounded=1;arcSize=7;startSize=43;horizontal=1;html=1;collapsible=0;recursiveResize=0;align=left;spacingLeft=14;verticalAlign=middle;fontStyle=1;fontSize=17;fontColor=#344B68;strokeColor=#BDCBDE;fillColor=#EEF3FA;swimlaneFillColor=#FBFCFE;" vertex="1" parent="view3-host">
+          <mxGeometry x="23" y="65" width="541" height="554" as="geometry" />
+        </mxCell>
+        <mxCell id="view3-runtime" value="Procesos y sesiones locales" style="swimlane;rounded=1;arcSize=7;startSize=43;horizontal=1;html=1;collapsible=0;recursiveResize=0;align=left;spacingLeft=14;verticalAlign=middle;fontStyle=1;fontSize=17;fontColor=#344B68;strokeColor=#BDCBDE;fillColor=#EEF3FA;swimlaneFillColor=#FBFCFE;" vertex="1" parent="view3-host">
+          <mxGeometry x="600" y="65" width="436" height="554" as="geometry" />
+        </mxCell>
+        <mxCell id="view3-disk" value="Sistema de archivos · raíces configuradas" style="swimlane;rounded=1;arcSize=7;startSize=43;horizontal=1;html=1;collapsible=0;recursiveResize=0;align=left;spacingLeft=14;verticalAlign=middle;fontStyle=1;fontSize=17;fontColor=#344B68;strokeColor=#BDCBDE;fillColor=#EEF3FA;swimlaneFillColor=#FBFCFE;" vertex="1" parent="view3-host">
+          <mxGeometry x="1074" y="65" width="476" height="554" as="geometry" />
+        </mxCell>
+        <mxCell id="view3-settings" value="&lt;b&gt;Configuración local JSON v1&lt;/b&gt;&lt;br&gt;&lt;span style=&quot;font-size:14px&quot;&gt;config/portable.example.json es la plantilla de referencia&lt;/span&gt;" style="rounded=1;arcSize=11;whiteSpace=wrap;html=1;align=center;verticalAlign=middle;spacing=7;fontSize=17;fontColor=#38475D;fillColor=#EDF0F5;strokeColor=#8592A6;strokeWidth=1.4;" vertex="1" parent="view3-checkout">
+          <mxGeometry x="26" y="64" width="486" height="68" as="geometry" />
+        </mxCell>
+        <mxCell id="view3-python" value="&lt;b&gt;Python 3.11 · automation&lt;/b&gt;&lt;br&gt;&lt;span style=&quot;font-size:16px&quot;&gt;CLI portable y manual · servicios de revisión&lt;br&gt;Paquetes estándar JSON, pathlib y bloqueo del SO&lt;/span&gt;" style="rounded=1;arcSize=11;whiteSpace=wrap;html=1;align=center;verticalAlign=middle;spacing=7;fontSize=19;fontColor=#193B60;fillColor=#E9F1FB;strokeColor=#6082AE;strokeWidth=1.4;" vertex="1" parent="view3-checkout">
+          <mxGeometry x="26" y="172" width="486" height="90" as="geometry" />
+        </mxCell>
+        <mxCell id="view3-legacy" value="&lt;b&gt;Scripts separados · src/&lt;/b&gt;&lt;br&gt;&lt;span style=&quot;font-size:14px&quot;&gt;Generación: PyTorch y Transformers · Evaluación: PyYAML&lt;br&gt;Layout del repo: data/statements/ y data/generated/runs/&lt;/span&gt;" style="rounded=1;arcSize=11;whiteSpace=wrap;html=1;align=center;verticalAlign=middle;spacing=7;fontSize=17;fontColor=#4B596E;fillColor=#FFFFFF;strokeColor=#A4AFBF;strokeWidth=1.4;dashed=1;" vertex="1" parent="view3-checkout">
+          <mxGeometry x="26" y="323" width="486" height="84" as="geometry" />
+        </mxCell>
+        <mxCell id="view3-fixtures" value="&lt;b&gt;Herramientas de prueba · tests/&lt;/b&gt;&lt;br&gt;&lt;span style=&quot;font-size:14px&quot;&gt;Fixtures de inputs y páginas · entorno pytest&lt;/span&gt;" style="rounded=1;arcSize=11;whiteSpace=wrap;html=1;align=center;verticalAlign=middle;spacing=7;fontSize=17;fontColor=#4B596E;fillColor=#FFFFFF;strokeColor=#A4AFBF;strokeWidth=1.4;dashed=1;" vertex="1" parent="view3-checkout">
+          <mxGeometry x="26" y="447" width="486" height="77" as="geometry" />
+        </mxCell>
+        <mxCell id="view3-pw" value="&lt;b&gt;Playwright 1.60.0&lt;/b&gt;&lt;br&gt;&lt;span style=&quot;font-size:15px&quot;&gt;requirements-automation.txt&lt;/span&gt;" style="rounded=1;arcSize=11;whiteSpace=wrap;html=1;align=center;verticalAlign=middle;spacing=7;fontSize=18;fontColor=#38475D;fillColor=#EDF0F5;strokeColor=#8592A6;strokeWidth=1.4;" vertex="1" parent="view3-runtime">
+          <mxGeometry x="23" y="63" width="385" height="76" as="geometry" />
+        </mxCell>
+        <mxCell id="view3-chromium" value="&lt;b&gt;Chromium local&lt;/b&gt;&lt;br&gt;&lt;span style=&quot;font-size:15px&quot;&gt;Binario separado · contextos persistentes&lt;br&gt;BrowserManager controla el ciclo de vida&lt;/span&gt;" style="rounded=1;arcSize=11;whiteSpace=wrap;html=1;align=center;verticalAlign=middle;spacing=7;fontSize=18;fontColor=#38475D;fillColor=#EDF0F5;strokeColor=#8592A6;strokeWidth=1.4;" vertex="1" parent="view3-runtime">
+          <mxGeometry x="23" y="178" width="385" height="86" as="geometry" />
+        </mxCell>
+        <mxCell id="view3-session" value="&lt;b&gt;Sesión fake portable&lt;/b&gt;&lt;br&gt;&lt;span style=&quot;font-size:15px&quot;&gt;Contexto por operador, intento y revisor&lt;br&gt;Perfil nuevo · bloqueo por perfil&lt;/span&gt;" style="rounded=1;arcSize=11;whiteSpace=wrap;html=1;align=center;verticalAlign=middle;spacing=7;fontSize=18;fontColor=#38475D;fillColor=#EDF0F5;strokeColor=#8592A6;strokeWidth=1.4;" vertex="1" parent="view3-runtime">
+          <mxGeometry x="23" y="311" width="385" height="87" as="geometry" />
+        </mxCell>
+        <mxCell id="view3-loopback" value="&lt;b&gt;Servidor HTTP de pruebas&lt;/b&gt;&lt;br&gt;&lt;span style=&quot;font-size:14px&quot;&gt;127.0.0.1 · tests/helpers/fake_reviewer_sites.py&lt;/span&gt;" style="rounded=1;arcSize=11;whiteSpace=wrap;html=1;align=center;verticalAlign=middle;spacing=7;fontSize=17;fontColor=#4B596E;fillColor=#FFFFFF;strokeColor=#A4AFBF;strokeWidth=1.4;dashed=1;" vertex="1" parent="view3-runtime">
+          <mxGeometry x="23" y="447" width="385" height="77" as="geometry" />
+        </mxCell>
+        <mxCell id="view3-source-data" value="&lt;b&gt;Raíz de entradas suministradas&lt;/b&gt;&lt;br&gt;&lt;span style=&quot;font-size:14px&quot;&gt;statements.jsonl · runs/&amp;lt;run_id&amp;gt;/metadata.json&lt;br&gt;&amp;lt;modelo&amp;gt;/generation/draft_reports.jsonl&lt;/span&gt;" style="shape=cylinder3;boundedLbl=1;size=9;whiteSpace=wrap;html=1;align=center;verticalAlign=middle;spacing=7;fontSize=17;fontColor=#654921;fillColor=#FFF2DF;strokeColor=#B3894D;strokeWidth=1.4;" vertex="1" parent="view3-disk">
+          <mxGeometry x="27" y="62" width="422" height="90" as="geometry" />
+        </mxCell>
+        <mxCell id="view3-output-data" value="&lt;b&gt;Raíz operativa · JSON / JSONL&lt;/b&gt;&lt;br&gt;&lt;span style=&quot;font-size:14px&quot;&gt;portable_manifest.json · review_cases/statement_NNN/&lt;br&gt;.review_sets/ y .adjudication_applications/ · manifiestos v2&lt;br&gt;adjudication.json · application_evidence.json&lt;br&gt;feedback/ · profiles/ · solicitudes manuales&lt;/span&gt;" style="shape=cylinder3;boundedLbl=1;size=9;whiteSpace=wrap;html=1;align=center;verticalAlign=middle;spacing=7;fontSize=17;fontColor=#654921;fillColor=#FFF2DF;strokeColor=#B3894D;strokeWidth=1.4;" vertex="1" parent="view3-disk">
+          <mxGeometry x="27" y="196" width="422" height="133" as="geometry" />
+        </mxCell>
+        <mxCell id="view3-profile-data" value="&lt;b&gt;Raíz privada de perfiles Chromium&lt;/b&gt;&lt;br&gt;&lt;span style=&quot;font-size:14px&quot;&gt;Fuera del checkout · estado y lock del navegador&lt;/span&gt;" style="shape=cylinder3;boundedLbl=1;size=9;whiteSpace=wrap;html=1;align=center;verticalAlign=middle;spacing=7;fontSize=17;fontColor=#654921;fillColor=#FFF2DF;strokeColor=#B3894D;strokeWidth=1.4;" vertex="1" parent="view3-disk">
+          <mxGeometry x="27" y="367" width="422" height="72" as="geometry" />
+        </mxCell>
+        <mxCell id="view3-workflow-lock" value="&lt;b&gt;Lease del workflow&lt;/b&gt;&lt;br&gt;&lt;span style=&quot;font-size:13px&quot;&gt;Ruta separada de datos y perfiles&lt;/span&gt;" style="rounded=1;arcSize=11;whiteSpace=wrap;html=1;align=center;verticalAlign=middle;spacing=7;fontSize=16;fontColor=#38475D;fillColor=#EDF0F5;strokeColor=#8592A6;strokeWidth=1.4;" vertex="1" parent="view3-disk">
+          <mxGeometry x="27" y="470" width="422" height="55" as="geometry" />
+        </mxCell>
+        <mxCell id="view3-edge-config" value="lee" style="edgeStyle=orthogonalEdgeStyle;rounded=1;jettySize=auto;html=1;endArrow=block;endFill=1;strokeWidth=1.75;strokeColor=#946822;fontColor=#946822;fontSize=13;fontStyle=1;labelBackgroundColor=#FFFFFF;dashed=1;dashPattern=2 3;exitX=0.45;exitY=0;exitDx=0;exitDy=0;entryX=0.45;entryY=1;entryDx=0;entryDy=0;" edge="1" parent="view3-layer" source="view3-python" target="view3-settings">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="33" y="0" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="view3-edge-deps" value="usa" style="edgeStyle=orthogonalEdgeStyle;rounded=1;jettySize=auto;html=1;endArrow=block;endFill=1;strokeWidth=1.75;strokeColor=#48648A;fontColor=#48648A;fontSize=13;fontStyle=1;labelBackgroundColor=#FFFFFF;exitX=1;exitY=0.26;exitDx=0;exitDy=0;entryX=0;entryY=0.55;entryDx=0;entryDy=0;" edge="1" parent="view3-layer" source="view3-python" target="view3-pw">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="625" y="422" />
+              <mxPoint x="625" y="331" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="view3-edge-chrome" value="controla" style="edgeStyle=orthogonalEdgeStyle;rounded=1;jettySize=auto;html=1;endArrow=block;endFill=1;strokeWidth=1.75;strokeColor=#48648A;fontColor=#48648A;fontSize=13;fontStyle=1;labelBackgroundColor=#FFFFFF;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="view3-layer" source="view3-pw" target="view3-chromium">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="44" y="0" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="view3-edge-session" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=1;jettySize=auto;html=1;endArrow=block;endFill=1;strokeWidth=1.75;strokeColor=#48648A;fontColor=#48648A;fontSize=13;fontStyle=1;labelBackgroundColor=#FFFFFF;exitX=0.5;exitY=0;exitDx=0;exitDy=0;entryX=0.5;entryY=1;entryDx=0;entryDy=0;" edge="1" parent="view3-layer" source="view3-session" target="view3-chromium">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="view3-edge-pages" value="solo loopback" style="edgeStyle=orthogonalEdgeStyle;rounded=1;jettySize=auto;html=1;endArrow=block;endFill=1;strokeWidth=1.75;strokeColor=#48648A;fontColor=#48648A;fontSize=13;fontStyle=1;labelBackgroundColor=#FFFFFF;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="view3-layer" source="view3-session" target="view3-loopback">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="60" y="0" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="view3-edge-fixture" value="aloja" style="edgeStyle=orthogonalEdgeStyle;rounded=1;jettySize=auto;html=1;endArrow=block;endFill=1;strokeWidth=1.75;strokeColor=#48648A;fontColor=#48648A;fontSize=13;fontStyle=1;labelBackgroundColor=#FFFFFF;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="view3-layer" source="view3-fixtures" target="view3-loopback">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="view3-edge-sources" value="lee entradas" style="edgeStyle=orthogonalEdgeStyle;rounded=1;jettySize=auto;html=1;endArrow=block;endFill=1;strokeWidth=1.75;strokeColor=#946822;fontColor=#946822;fontSize=13;fontStyle=1;labelBackgroundColor=#FFFFFF;dashed=1;dashPattern=2 3;exitX=0.68;exitY=0;exitDx=0;exitDy=0;entryX=0.48;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="view3-layer" source="view3-python" target="view3-source-data">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="0" y="-9" as="offset" />
+            <Array as="points">
+              <mxPoint x="423" y="374" />
+              <mxPoint x="604" y="374" />
+              <mxPoint x="604" y="275" />
+              <mxPoint x="1325" y="275" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="view3-edge-operational" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=1;jettySize=auto;html=1;endArrow=block;endFill=1;strokeWidth=1.75;strokeColor=#946822;fontColor=#946822;fontSize=13;fontStyle=1;labelBackgroundColor=#FFFFFF;dashed=1;dashPattern=2 3;exitX=1;exitY=0.58;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="view3-layer" source="view3-python" target="view3-output-data">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="-110" y="-11" as="offset" />
+            <Array as="points">
+              <mxPoint x="622" y="452" />
+              <mxPoint x="622" y="512" />
+              <mxPoint x="1098" y="512" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="view3-edge-sessionfiles" value="usa" style="edgeStyle=orthogonalEdgeStyle;rounded=1;jettySize=auto;html=1;endArrow=block;endFill=1;strokeWidth=1.75;strokeColor=#946822;fontColor=#946822;fontSize=13;fontStyle=1;labelBackgroundColor=#FFFFFF;dashed=1;dashPattern=2 3;exitX=1;exitY=0.72;exitDx=0;exitDy=0;entryX=0;entryY=0.43;entryDx=0;entryDy=0;" edge="1" parent="view3-layer" source="view3-session" target="view3-profile-data">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="1100" y="602" />
+              <mxPoint x="1100" y="626" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="view3-edge-lock" value="lock independiente" style="edgeStyle=orthogonalEdgeStyle;rounded=1;jettySize=auto;html=1;endArrow=block;endFill=1;strokeWidth=1.75;strokeColor=#48648A;fontColor=#48648A;fontSize=13;fontStyle=1;labelBackgroundColor=#FFFFFF;exitX=0;exitY=0.62;exitDx=0;exitDy=0;entryX=0.5;entryY=1;entryDx=0;entryDy=0;" edge="1" parent="view3-layer" source="view3-python" target="view3-workflow-lock">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="0" y="-9" as="offset" />
+            <Array as="points">
+              <mxPoint x="78" y="458" />
+              <mxPoint x="78" y="864" />
+              <mxPoint x="1356" y="864" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="view3-deployment-note" value="La CLI manual usa un fixture temporal con operational/ e inbox privado. La prueba de clon ejecuta la ruta portable y Chromium con datos sintéticos." style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;fontSize=15;fontColor=#455771;fontStyle=0;" vertex="1" parent="view3-layer">
+          <mxGeometry x="76" y="897" width="1500" height="23" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
